@@ -1,0 +1,1361 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Tazrian Rafin builds fast, beautiful, mobile-first websites for small businesses — salons, restaurants, gyms and local brands." />
+    <link rel="icon" href="data:," />
+    <title>Tazrian Rafin — Websites for Small Businesses · Dark Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+    <style>
+      html:root {
+        color-scheme: dark;
+        --bg: #05080f;
+        --bg-2: #070c16;
+        --panel: #0b1220;
+        --panel-2: #0e1626;
+        --ink: #eef2f9;
+        /* Secondary whites brightened one step: the old #ccd8ee /
+           #acbcd4 read as dim grey on the near-black panels at phone
+           brightness and users found the white text hard to read. */
+        --ink-soft: #e0eaf8;
+        --muted: #c6d5ec;
+        --line: #1d2a44;
+        --line-soft: #131e33;
+        --teal: #2dd4bf;
+        --teal-deep: #14b8a6;
+        --teal-btn: #0f766e;
+        --teal-tint: #0a2b27;
+        --amber: #f59e0b;
+        --amber-hi: #fbbf24;
+        --amber-ink: #231600;
+        --shadow: 0 30px 60px -28px rgba(0, 0, 0, .8);
+        --header-h: 72px;
+      }
+      /* Theme is locked DARK by design: this is the Dark Edition — a
+         separate redesign of the portfolio with its own layout and
+         identity. There is deliberately no light override anywhere.
+
+         SHIELDED SELECTORS — do not simplify: when this page is shown
+         in the chat preview, the platform inlines the two bundled
+         sample sites' stylesheets (Lumière, Saffron Table) into a
+         <style data-hatch-cvm-bundle> block right after this one.
+         Those sheets reuse the same :root variable names (--bg, --ink,
+         --line, --shadow, --header-h…) with LIGHT values, plus global
+         h1/h2/h3 serif rules and .strip/.btn/.field overrides — they
+         restyled this page light with unreadable strip/card text.
+         Every selector below therefore carries one extra level of
+         specificity (html:root for the variables, a `body ` prefix
+         elsewhere) so this theme wins the cascade no matter what is
+         injected after it. The standalone hosted file is unaffected. */
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
+      html body {
+        margin: 0;
+        font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        font-size: 1rem;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      body img { max-width: 100%; display: block; }
+      body a { color: inherit; }
+      body h1, body h2, body h3 { font-family: "Outfit", "Manrope", system-ui, sans-serif; line-height: 1.05; margin: 0; }
+      body p { margin: 0; }
+      ::selection { background: var(--amber); color: var(--amber-ink); }
+      body .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+      body .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+      body .wrap { width: min(1200px, 100% - 2.5rem); margin-inline: auto; }
+      @media (min-width: 720px) { body .wrap { width: min(1200px, 100% - 4rem); } }
+
+      /* ---------- Header ---------- */
+      body header {
+        position: fixed; inset: 0 0 auto 0; z-index: 60; height: var(--header-h);
+        transition: background .3s ease, box-shadow .3s ease, border-color .3s ease;
+        border-bottom: 1px solid transparent;
+      }
+      body header.scrolled {
+        background: color-mix(in srgb, var(--bg) 86%, transparent);
+        backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+        border-bottom-color: var(--line-soft);
+        box-shadow: 0 14px 34px -22px rgba(0, 0, 0, .85);
+      }
+      body .header-in { height: var(--header-h); display: flex; align-items: center; gap: 1rem; }
+      body .brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; font-weight: 800; font-size: 1.05rem; min-height: 44px; transition: opacity .3s ease, transform .3s cubic-bezier(.22,.9,.28,1); }
+      body .brand:active { transform: scale(.97); opacity: .85; }
+      body .brand > span { white-space: nowrap; }
+      body .brand-mark {
+        width: 38px; height: 38px; border-radius: 50%; flex: none;
+        background: var(--panel-2); border: 1px solid var(--line); color: var(--amber);
+        display: grid; place-items: center;
+        font-family: "Outfit", sans-serif; font-weight: 800; font-size: .95rem;
+      }
+      body .brand small { display: block; font-size: .66rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); font-family: "JetBrains Mono", monospace; }
+      /* Desktop: brand LEFT, nav + CTA hard RIGHT (margin-left:auto). */
+      body nav.main-nav { display: none; margin-left: auto; }
+      body nav.main-nav a {
+        position: relative; text-decoration: none; font-weight: 600; font-size: .95rem; color: var(--ink-soft);
+        padding: .6rem .8rem; border-radius: 10px; min-height: 44px; display: inline-flex; align-items: center;
+        transition: color .35s cubic-bezier(.22,.9,.28,1), background .35s cubic-bezier(.22,.9,.28,1);
+      }
+      body nav.main-nav a::after {
+        content: ""; position: absolute; left: .8rem; right: .8rem; bottom: .38rem; height: 2.5px; border-radius: 3px;
+        background: linear-gradient(90deg, var(--teal), var(--amber));
+        transform: scaleX(0); transform-origin: left center;
+        transition: transform .45s cubic-bezier(.22,.9,.28,1);
+      }
+      body nav.main-nav a:hover { color: var(--ink); background: var(--panel); }
+      body nav.main-nav a:hover::after { transform: scaleX(1); }
+      body .header-in > .header-cta { display: none; margin-left: .9rem; }
+      body .burger {
+        margin-left: auto;
+        width: 48px; height: 48px; border: 1px solid var(--line); border-radius: 50%;
+        background: var(--panel); cursor: pointer; display: grid; place-items: center; flex: none;
+        transition: transform .3s cubic-bezier(.22,.9,.28,1), background .3s ease, border-color .3s ease;
+      }
+      body .burger:active { transform: scale(.9); }
+      body .burger:hover { border-color: var(--teal); }
+      body .burger span { display: block; width: 20px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform .3s ease, opacity .2s ease; }
+      body .burger span + span { margin-top: 5px; }
+      body .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      body .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+      body .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+      /* The menu animates both ways: opening plays menuIn, and closing
+         plays menuOut while JS holds the .closing state, only dropping
+         display after the fade finishes — so a tap never snaps the
+         menu in or out, and the closed menu is fully display:none. */
+      body .mobile-menu {
+        position: fixed; inset: var(--header-h) 0 auto 0; z-index: 55;
+        background: var(--panel); border-bottom: 1px solid var(--line);
+        box-shadow: var(--shadow); padding: .75rem 1.25rem 1.25rem; display: none;
+      }
+      body .mobile-menu.open { display: block; animation: menuIn .34s cubic-bezier(.22,.9,.28,1) both; }
+      body .mobile-menu.closing { display: block; animation: menuOut .3s ease both; }
+      @keyframes menuIn { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
+      @keyframes menuOut { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(-14px); } }
+      body .mobile-menu a {
+        display: flex; align-items: center; justify-content: space-between;
+        min-height: 52px; padding: .5rem .25rem; text-decoration: none;
+        font-family: "Outfit", sans-serif; font-weight: 700; font-size: 1.15rem;
+        border-bottom: 1px solid var(--line-soft); border-radius: 10px;
+        transition: color .3s ease, background .3s ease, transform .3s cubic-bezier(.22,.9,.28,1), padding-left .3s cubic-bezier(.22,.9,.28,1);
+      }
+      body .mobile-menu a:last-of-type { border-bottom: none; }
+      body .mobile-menu a .arr { color: var(--teal); font-weight: 800; transition: transform .3s cubic-bezier(.22,.9,.28,1); }
+      body .mobile-menu a:hover { color: var(--teal); }
+      body .mobile-menu a:active { background: var(--panel-2); transform: scale(.985); }
+      body .mobile-menu a:active .arr { transform: translateX(4px); }
+      /* The menu's last option — the "Start a project" CTA — is a .btn,
+         not a nav row: it must not inherit the row layout above
+         (space-between pushed its label to one side). Its label sits
+         dead centre in the middle of the pill. The html-prefixed
+         selector + !important keep the centring safe from the bundled
+         sample-site styles inlined after this sheet in chat preview. */
+      html body .mobile-menu a.btn {
+        justify-content: center !important; align-items: center !important;
+        text-align: center !important; width: 100%; margin-inline: auto;
+        padding-left: 1.7rem; padding-right: 1.7rem;
+      }
+      @media (min-width: 860px) {
+        body nav.main-nav { display: flex; gap: .25rem; }
+        body .header-in > .header-cta { display: inline-flex; }
+        body .burger, body .mobile-menu { display: none; }
+      }
+
+      /* ---------- Buttons ---------- */
+      body .btn {
+        position: relative; overflow: hidden;
+        display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+        min-height: 52px; padding: .8rem 1.7rem; border-radius: 999px;
+        font-weight: 800; font-size: 1rem; text-decoration: none; cursor: pointer;
+        border: 1px solid transparent; font-family: inherit;
+        transition: transform .35s cubic-bezier(.22,.9,.28,1), background .35s ease, border-color .35s ease, color .35s ease, box-shadow .35s ease;
+      }
+      body .btn::after {
+        content: ""; position: absolute; inset: 0; pointer-events: none;
+        background: linear-gradient(115deg, transparent 32%, rgba(255,255,255,.45) 50%, transparent 68%);
+        transform: translateX(-130%); transition: transform .8s cubic-bezier(.22,.9,.28,1);
+      }
+      body .btn:hover { transform: translateY(-2px); }
+      body .btn:hover::after { transform: translateX(130%); }
+      body .btn:active { transform: scale(.97); }
+      body .btn-amber { background: var(--amber); color: var(--amber-ink); box-shadow: 0 14px 30px -12px rgba(245, 158, 11, .55); }
+      body .btn-amber:hover { background: var(--amber-hi); box-shadow: 0 20px 38px -12px rgba(245, 158, 11, .6); }
+      body .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+      body .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+      body .btn-teal { background: var(--teal-btn); color: #fff; }
+      body .btn-teal:hover { background: #0b5f57; box-shadow: 0 16px 34px -14px rgba(45, 212, 191, .5); }
+      body .btn-sm { min-height: 46px; padding: .6rem 1.2rem; font-size: .92rem; }
+
+      /* ---------- Scroll progress ---------- */
+      body #scrollProgress {
+        position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 75;
+        background: linear-gradient(90deg, var(--teal), var(--amber));
+        transform: scaleX(0); transform-origin: left center;
+      }
+
+      /* ---------- Ambient layers ---------- */
+      body #bgParticles { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+      /* A pool of light that trails the cursor — screen blend makes it
+         read as a lantern glow cast onto the dark page; it swells gently
+         over anything clickable. Desktop fine pointers only. */
+      body #cursorGlow {
+        position: fixed; left: 0; top: 0; width: 260px; height: 260px;
+        margin: -130px 0 0 -130px; border-radius: 50%;
+        pointer-events: none; z-index: 40; opacity: 0;
+        mix-blend-mode: screen; will-change: transform;
+        background:
+          radial-gradient(circle, rgba(245, 158, 11, .10) 0%, rgba(245, 158, 11, 0) 46%),
+          radial-gradient(circle, rgba(45, 212, 191, .17) 0%, rgba(45, 212, 191, .05) 44%, rgba(45, 212, 191, 0) 70%);
+        transition: opacity .45s ease;
+      }
+      body #cursorGlow.on { opacity: 1; }
+      @media (pointer: coarse) { body #cursorGlow { display: none; } }
+
+      /* ---------- Hero: centred stage, blueprint grid, glow rings, fanned showcase ---------- */
+      body .hero {
+        position: relative; overflow: hidden; isolation: isolate;
+        padding: calc(var(--header-h) + clamp(2.8rem, 7vw, 5rem)) 0 clamp(3.5rem, 8vw, 5.5rem);
+        text-align: center;
+      }
+      body .hero::before {
+        content: ""; position: absolute; inset: 0; z-index: -3; pointer-events: none;
+        background-image:
+          linear-gradient(rgba(139, 153, 180, .055) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(139, 153, 180, .055) 1px, transparent 1px);
+        background-size: 54px 54px;
+        -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 30%, transparent 78%);
+        mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 30%, transparent 78%);
+      }
+      body .hero-glow {
+        position: absolute; z-index: -2; pointer-events: none; border-radius: 50%;
+        left: 50%; top: 240px; transform: translate(-50%, -50%);
+      }
+      body .hero-glow--teal { width: 640px; height: 640px; background: radial-gradient(circle, rgba(45,212,191,.13) 0%, rgba(45,212,191,0) 62%); }
+      body .hero-glow--amber { width: 420px; height: 420px; top: 300px; background: radial-gradient(circle, rgba(245,158,11,.10) 0%, rgba(245,158,11,0) 62%); }
+      body .hero-ring {
+        position: absolute; z-index: -1; pointer-events: none; border-radius: 50%;
+        left: 50%; top: 250px; transform: translate(-50%, -50%);
+        border: 1px solid rgba(45, 212, 191, .14);
+      }
+      body .hero-ring--a { width: 520px; height: 520px; }
+      body .hero-ring--b {
+        width: 760px; height: 760px; border-style: dashed; border-color: rgba(139, 153, 180, .13);
+        animation: ringSpin 70s linear infinite;
+      }
+      @keyframes ringSpin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+      body .hero-copy { max-width: 56rem; margin-inline: auto; position: relative; }
+      body .hero-copy > * { animation: heroIn .8s cubic-bezier(.22,.9,.28,1) both; }
+      body .hero-copy > *:nth-child(1) { animation-delay: .02s; }
+      body .hero-copy > *:nth-child(2) { animation-delay: .10s; }
+      body .hero-copy > *:nth-child(3) { animation-delay: .20s; }
+      body .hero-copy > *:nth-child(4) { animation-delay: .30s; }
+      body .hero-copy > *:nth-child(5) { animation-delay: .40s; }
+      body .hero-copy > *:nth-child(6) { animation-delay: .50s; }
+      @keyframes heroIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+      body .hero-tag {
+        display: inline-flex; align-items: center; gap: .55rem;
+        background: var(--teal-tint); color: var(--teal);
+        border: 1px solid rgba(45, 212, 191, .3);
+        font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase;
+        padding: .5rem 1rem; border-radius: 999px; margin-bottom: 1.6rem;
+      }
+      body .hero-tag i { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex: none; animation: pulseDot 2.2s infinite; }
+      @keyframes pulseDot { 0%,100% { box-shadow: 0 0 0 0 rgba(45,212,191,.45);} 55% { box-shadow: 0 0 0 7px rgba(45,212,191,0);} }
+      body .hero h1 {
+        font-size: clamp(3.4rem, 12vw, 7.2rem); font-weight: 900; line-height: .94; letter-spacing: -0.02em;
+        text-transform: uppercase;
+      }
+      body .hero h1 .name-line { display: block; }
+      body .hero h1 .name-last {
+        color: transparent; -webkit-text-stroke: 2px var(--teal);
+        text-shadow: 0 0 34px rgba(45, 212, 191, .25);
+      }
+      body .hero-type {
+        margin: 1.5rem auto 0; display: inline-flex; align-items: baseline; gap: .1rem; flex-wrap: nowrap;
+        font-family: "JetBrains Mono", monospace;
+        /* One size smaller again, and the floor is lowered: the old
+           .92rem minimum was wider than a narrow phone's content box,
+           so "small businesses" dropped to a second line no matter how
+           small the vw term got. The size now tracks the viewport down
+           to small phones, and the whole line is pinned nowrap below. */
+        font-size: clamp(.78rem, 3.6vw, 1.22rem); font-weight: 500; color: var(--ink-soft);
+        min-height: 1.6em; max-width: 100%;
+      }
+      body .hero-type > span[aria-hidden="true"] { white-space: nowrap; flex: none; }
+      @media (max-width: 340px) { body .hero-type { font-size: .72rem; } }
+      body .hero-type .type-static { white-space: nowrap; }
+      body .hero-type .type-word { color: var(--amber); font-weight: 700; white-space: nowrap; }
+      body .type-cursor {
+        display: inline-block; width: 9px; height: 1.05em; margin-left: 5px; vertical-align: -0.16em;
+        background: var(--teal); animation: cursorBlink .75s step-end infinite;
+      }
+      @keyframes cursorBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+      body .hero-sub { margin: 1.4rem auto 0; font-size: clamp(1.05rem, 2.6vw, 1.22rem); color: var(--ink-soft); max-width: 38rem; }
+      body .hero-sub strong { color: var(--ink); }
+      body .hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.1rem; justify-content: center; }
+      body .hero-points { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; margin-top: 1.9rem; justify-content: center; color: var(--muted); font-weight: 600; font-size: .92rem; padding: 0; }
+      body .hero-points li { list-style: none; display: flex; align-items: center; gap: .45rem; }
+      body .hero-points svg { color: var(--teal); flex: none; }
+
+      /* Showcase: three tilted site cards under the hero copy, laid out
+         in a row with real gaps between them — every card and every
+         photo is shown WHOLE. No card sits in front of another (the old
+         overlapped fan hid most of the two side photos behind the
+         centre card, which read as cropping), there is no fixed stage
+         box to clip them, and each photo keeps its natural aspect —
+         never fitted into a frame. The stage is deliberately padded —
+         a tall band above and below the cards — so the two corner
+         badges sit fully INSIDE the stage with margin to spare: they
+         used to hang past the stage edges (negative offsets) and got
+         visually cut, and the bottom one covered a card caption. On
+         phones the cards stack full-width instead of shrinking into
+         a fan, with the same badge bands top and bottom. */
+      body .hero-fan {
+        position: relative; margin: clamp(2.6rem, 6vw, 4rem) auto 0;
+        width: min(1200px, 100%);
+        /* +10px top and +10px bottom: the stage is 20px taller than
+           the previous build, per the owner's request. */
+        padding: calc(5.2rem + 10px) 1.8rem calc(5.6rem + 10px);
+        display: flex; align-items: flex-start; gap: clamp(1.1rem, 2.6vw, 1.9rem);
+      }
+      body .fan-card {
+        position: relative; flex: 1 1 0; min-width: 0;
+        border-radius: 18px; overflow: hidden; border: 1px solid var(--line);
+        box-shadow: var(--shadow); background: var(--panel);
+        transition: transform .55s cubic-bezier(.22,.9,.28,1), box-shadow .55s ease;
+      }
+      body .fan-card img { width: 100%; height: auto; }
+      body .fan-card figcaption {
+        position: absolute; left: .8rem; bottom: .8rem;
+        font-family: "JetBrains Mono", monospace; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+        background: rgba(5, 8, 15, .78); color: var(--ink); border: 1px solid var(--line);
+        padding: .34rem .65rem; border-radius: 999px; backdrop-filter: blur(6px);
+      }
+      body .fan-card--left { transform: rotate(-4deg) translateY(16px); }
+      body .fan-card--right { transform: rotate(4deg) translateY(16px); }
+      body .fan-card--center { z-index: 2; box-shadow: var(--shadow), 0 24px 70px -26px rgba(45, 212, 191, .30); }
+      body .hero-fan:hover .fan-card--left { transform: rotate(-2deg) translateY(6px); }
+      body .hero-fan:hover .fan-card--right { transform: rotate(2deg) translateY(6px); }
+      body .hero-fan:hover .fan-card--center { transform: translateY(-6px); }
+      @media (max-width: 719px) {
+        body .hero-fan { flex-direction: column; align-items: center; gap: 1.15rem; }
+        body .fan-card { flex: none; width: min(430px, 100%); }
+        body .fan-card--left { transform: rotate(-2deg); }
+        body .fan-card--right { transform: rotate(2deg); }
+        body .fan-card--center { transform: none; }
+      }
+      /* Tilted sticker chips on the fan — tilt baked into the transform,
+         never the standalone rotate property (some mobile browsers skip it). */
+      @keyframes floatyChipL { 0%,100% { transform: rotate(-12deg) translateY(0); } 50% { transform: rotate(-12deg) translateY(-8px); } }
+      @keyframes floatyChipR { 0%,100% { transform: rotate(12deg) translateY(0); } 50% { transform: rotate(12deg) translateY(-8px); } }
+      body .fan-chip {
+        position: absolute; z-index: 4;
+        background: var(--panel-2); border: 1px solid var(--line); border-radius: 14px;
+        box-shadow: var(--shadow); padding: .6rem .9rem;
+        display: flex; align-items: center; gap: .55rem; text-align: left;
+        font-weight: 800; font-size: .85rem; color: var(--ink);
+      }
+      body .fan-chip svg { color: var(--teal); flex: none; }
+      body .fan-chip small { display: block; font-weight: 600; color: var(--muted); font-size: .72rem; }
+      /* Badges live in the stage's padded bands (see .hero-fan): always
+         a positive inset from the stage edges, so the whole badge —
+         tilt and ±8px float travel included — stays inside the frame
+         and never covers a photo or its caption. */
+      body .fan-chip--speed { right: 12px; top: 8px; transform: rotate(12deg); animation: floatyChipR 6.5s ease-in-out infinite; }
+      body .fan-chip--perfect { left: 8px; bottom: 8px; transform: rotate(-12deg); animation: floatyChipL 5s ease-in-out infinite; }
+      @media (min-width: 720px) {
+        body .fan-chip--speed { right: 26px; top: 8px; }
+        body .fan-chip--perfect { left: 22px; bottom: 8px; }
+      }
+
+      /* ---------- Marquee (runs right-to-left, opposite the light edition) ---------- */
+      body .strip { border-block: 1px solid var(--line-soft); background: var(--bg-2); overflow: hidden; padding: 1.1rem 0; }
+      body .strip-track { display: flex; gap: 3.2rem; width: max-content; animation: marqueeR 32s linear infinite; }
+      body .strip:hover .strip-track { animation-play-state: paused; }
+      body .strip-track span {
+        font-family: "Outfit", sans-serif; font-weight: 800; font-style: normal; font-size: 1.05rem; letter-spacing: .05em; text-transform: uppercase;
+        white-space: nowrap; display: flex; align-items: center; gap: 3.2rem; color: var(--ink);
+      }
+      /* Alternating words are SOLID bright teal, never hollow outline
+         type — transparent fill with a 1px stroke rendered as murky
+         dark teal on the near-black strip and was hard to read. */
+      body .strip-track span i { font-style: normal; color: #5eead4; }
+      body .strip-track b { color: var(--amber); font-weight: 400; }
+      @keyframes marqueeR { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+      /* ---------- Sections ---------- */
+      body section { padding: clamp(3.8rem, 9vw, 6.8rem) 0; }
+      body .sec-head { margin-bottom: clamp(2.2rem, 5vw, 3.4rem); max-width: 44rem; }
+      body .sec-head .kicker {
+        display: flex; align-items: center; gap: .8rem;
+        font-family: "JetBrains Mono", monospace; color: var(--teal); font-weight: 700;
+        font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 1rem;
+      }
+      body .sec-head .kicker::after { content: ""; height: 1px; width: 64px; background: linear-gradient(90deg, var(--teal), transparent); }
+      body .sec-head h2 { font-size: clamp(2rem, 5.6vw, 3.1rem); font-weight: 800; letter-spacing: -0.01em; }
+      body .sec-head h2 em { font-style: normal; color: var(--teal); }
+      body .sec-head p { margin-top: 1rem; color: var(--ink-soft); font-size: 1.06rem; }
+
+      /* ---------- Work: alternating feature rows ---------- */
+      body .work-rows { display: grid; gap: clamp(2.4rem, 6vw, 4.2rem); }
+      body .feature {
+        position: relative; display: grid; gap: 1.8rem; align-items: center;
+        background: linear-gradient(180deg, var(--panel) 0%, var(--bg-2) 100%);
+        border: 1px solid var(--line-soft); border-radius: 28px;
+        padding: clamp(1.3rem, 3.5vw, 2.4rem);
+        transition: border-color .45s ease, box-shadow .45s ease;
+      }
+      body .feature:hover { border-color: color-mix(in srgb, var(--teal) 40%, var(--line)); box-shadow: var(--shadow), 0 22px 50px -24px rgba(45, 212, 191, .25); }
+      @media (min-width: 900px) {
+        body .feature { grid-template-columns: 1.08fr .92fr; gap: 2.8rem; }
+        body .feature--flip .feature-media { order: 2; }
+      }
+      body .feature-media { position: relative; }
+      body .feature-media .shot {
+        border-radius: 20px; overflow: hidden; border: 1px solid var(--line);
+        transform: rotate(-1.6deg); transition: transform .6s cubic-bezier(.22,.9,.28,1);
+        box-shadow: var(--shadow);
+      }
+      body .feature--flip .feature-media .shot { transform: rotate(1.6deg); }
+      body .feature:hover .feature-media .shot { transform: rotate(0deg) scale(1.012); }
+      body .feature-media .shot img { width: 100%; height: auto; transition: transform 1.1s cubic-bezier(.22,.9,.28,1); }
+      body .feature:hover .feature-media .shot img { transform: scale(1.05); }
+      body .feature-index {
+        position: absolute; top: -1.15rem; left: -0.4rem; z-index: 2;
+        font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: .8rem; letter-spacing: .12em;
+        background: var(--amber); color: var(--amber-ink); padding: .4rem .8rem; border-radius: 999px;
+        box-shadow: 0 10px 22px -10px rgba(245, 158, 11, .7);
+      }
+      body .feature--flip .feature-index { left: auto; right: -0.4rem; }
+      body .feature-body .project-cat {
+        font-family: "JetBrains Mono", monospace; font-size: .74rem; font-weight: 700;
+        letter-spacing: .16em; text-transform: uppercase; color: var(--teal);
+      }
+      body .feature-body h3 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 800; margin-top: .55rem; }
+      body .feature-body > p { margin-top: .7rem; color: var(--ink-soft); font-size: 1rem; max-width: 30rem; }
+      body .feat { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.2rem 0 1.6rem; padding: 0; }
+      body .feat li {
+        list-style: none; font-size: .8rem; font-weight: 700; color: var(--ink-soft);
+        background: var(--panel-2); border: 1px solid var(--line-soft);
+        padding: .32rem .7rem; border-radius: 999px;
+      }
+      body .feature-body .btn { min-width: min(100%, 260px); }
+
+      /* ---------- Services: hairline index rows ---------- */
+      body .services { background: var(--bg-2); border-block: 1px solid var(--line-soft); }
+      body .svc-rows { border-top: 1px solid var(--line-soft); }
+      body .svc-row {
+        position: relative; display: grid; gap: .9rem; align-items: center;
+        grid-template-columns: auto 1fr auto;
+        padding: 1.7rem .4rem; border-bottom: 1px solid var(--line-soft);
+        overflow: hidden; isolation: isolate;
+      }
+      body .svc-row::before {
+        content: ""; position: absolute; inset: 0; z-index: -1;
+        background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(45, 212, 191, .13), transparent 70%);
+        opacity: 0; transition: opacity .45s ease;
+      }
+      body .svc-row:hover::before { opacity: 1; }
+      body .svc-num {
+        font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: .85rem; color: var(--muted);
+        border: 1px solid var(--line); border-radius: 999px; padding: .45rem .7rem; min-width: 3.4rem; text-align: center;
+        transition: color .35s ease, border-color .35s ease, background .35s ease;
+      }
+      body .svc-row:hover .svc-num { color: var(--amber-ink); background: var(--amber); border-color: var(--amber); }
+      body .svc-main h3 { font-size: clamp(1.25rem, 3.4vw, 1.6rem); font-weight: 700; transition: transform .45s cubic-bezier(.22,.9,.28,1); }
+      body .svc-row:hover .svc-main h3 { transform: translateX(8px); }
+      body .svc-main p { margin-top: .4rem; color: var(--ink-soft); font-size: .97rem; max-width: 40rem; }
+      body .svc-icon {
+        width: 56px; height: 56px; border-radius: 50%; flex: none;
+        border: 1px solid var(--line); background: var(--panel); color: var(--teal);
+        display: grid; place-items: center;
+        transition: transform .5s cubic-bezier(.22,.9,.28,1), background .35s ease, color .35s ease;
+      }
+      body .svc-row:hover .svc-icon { transform: rotate(-10deg) scale(1.08); background: var(--teal-tint); }
+      @media (max-width: 560px) { body .svc-icon { width: 48px; height: 48px; } body .svc-num { min-width: 3rem; padding: .4rem .55rem; } }
+
+      /* ---------- Process: alternating timeline ---------- */
+      body .timeline { position: relative; display: grid; gap: 2.2rem; }
+      body .timeline::before {
+        content: ""; position: absolute; top: 6px; bottom: 6px; left: 15px; width: 2px;
+        background: linear-gradient(180deg, var(--teal), var(--amber));
+        opacity: .5; border-radius: 2px;
+      }
+      @media (min-width: 900px) {
+        body .timeline { gap: 3rem; }
+        body .timeline::before { left: 50%; transform: translateX(-50%); }
+      }
+      body .t-step { position: relative; padding-left: 3.2rem; }
+      body .t-step .dot {
+        position: absolute; left: 16px; top: 10px; transform: translateX(-50%);
+        width: 15px; height: 15px; border-radius: 50%;
+        background: var(--bg); border: 3px solid var(--amber); z-index: 1;
+        box-shadow: 0 0 0 5px rgba(245, 158, 11, .12);
+      }
+      body .t-card {
+        background: var(--panel); border: 1px solid var(--line-soft); border-radius: 22px;
+        padding: 1.6rem 1.6rem 1.7rem; max-width: 34rem;
+        transition: transform .45s cubic-bezier(.22,.9,.28,1), border-color .45s ease, box-shadow .45s ease;
+      }
+      body .t-card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--teal) 38%, var(--line)); box-shadow: var(--shadow-sm, 0 10px 30px -14px rgba(0,0,0,.65)); }
+      body .t-card .num {
+        font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: .8rem; letter-spacing: .14em;
+        color: var(--teal); display: block; margin-bottom: .6rem;
+      }
+      body .t-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: .45rem; }
+      body .t-card p { color: var(--ink-soft); font-size: .96rem; }
+      @media (min-width: 900px) {
+        body .t-step { padding-left: 0; width: 50%; }
+        body .t-step .dot { top: 12px; }
+        body .t-step--l { padding-right: 3.4rem; justify-self: start; }
+        body .t-step--l .dot { left: auto; right: 0; transform: translateX(50%); }
+        body .t-step--l .t-card { margin-left: auto; }
+        body .t-step--r { padding-left: 3.4rem; justify-self: end; }
+        body .t-step--r .dot { left: 0; transform: translateX(-50%); }
+      }
+
+      /* ---------- About: round portrait + amber skills ---------- */
+      body .about {
+        background:
+          radial-gradient(720px 420px at 85% -10%, rgba(45, 212, 191, .10), transparent 65%),
+          radial-gradient(560px 380px at 0% 110%, rgba(245, 158, 11, .07), transparent 65%),
+          var(--bg-2);
+        border-block: 1px solid var(--line-soft);
+      }
+      body .about-grid { display: grid; gap: 2.6rem; align-items: center; }
+      @media (min-width: 900px) { body .about-grid { grid-template-columns: 330px 1fr; gap: 4rem; } }
+      body .photo-slot {
+        aspect-ratio: 1/1; max-width: 330px; margin-inline: auto; width: 100%;
+        border-radius: 50%; position: relative; overflow: hidden;
+        background: linear-gradient(165deg, var(--panel-2), #080d18);
+        border: 1px solid var(--line);
+        display: grid; place-items: center;
+        box-shadow: var(--shadow), 0 24px 60px -30px rgba(45, 212, 191, .3);
+      }
+      body .photo-slot .initials { font-family: "Outfit", sans-serif; font-size: 5.2rem; font-weight: 900; color: var(--amber); line-height: 1; }
+      body .photo-slot .ring { position: absolute; inset: 14px; border: 1px dashed rgba(238, 242, 249, .25); border-radius: 50%; pointer-events: none; }
+      body .photo-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.22,.9,.28,1); }
+      body .photo-slot:hover img { transform: scale(1.045); }
+      body .about .kicker {
+        display: flex; align-items: center; gap: .8rem;
+        font-family: "JetBrains Mono", monospace; color: var(--amber); font-weight: 700;
+        font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 1rem;
+      }
+      body .about .kicker::after { content: ""; height: 1px; width: 64px; background: linear-gradient(90deg, var(--amber), transparent); }
+      body .about h2 { font-size: clamp(2rem, 5.6vw, 3.1rem); font-weight: 800; }
+      body .about-text { margin-top: 1.1rem; color: var(--ink-soft); font-size: 1.05rem; max-width: 36rem; }
+      body .about-text strong { color: var(--ink); }
+      body .skills { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.8rem; padding: 0; }
+      /* EVERY filled skill chip uses the same amber fill — no exceptions. */
+      body .skills li {
+        list-style: none; font-weight: 800; font-size: .92rem;
+        background: var(--amber); border: 1px solid var(--amber); color: var(--amber-ink);
+        padding: .5rem 1rem; border-radius: 999px;
+        transition: transform .35s cubic-bezier(.22,.9,.28,1), background .35s ease;
+      }
+      body .skills li:hover { transform: translateY(-3px); background: var(--amber-hi); }
+
+      /* ---------- Contact ---------- */
+      body .contact-grid { display: grid; gap: 2.6rem; }
+      @media (min-width: 960px) { body .contact-grid { grid-template-columns: .9fr 1.1fr; gap: 4rem; } }
+      body .contact-side h2 { font-size: clamp(2rem, 5.6vw, 3.1rem); font-weight: 800; }
+      body .contact-side h2 em { font-style: normal; color: var(--teal); }
+      body .contact-side .kicker {
+        display: flex; align-items: center; gap: .8rem;
+        font-family: "JetBrains Mono", monospace; color: var(--teal); font-weight: 700;
+        font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 1rem;
+      }
+      body .contact-side .kicker::after { content: ""; height: 1px; width: 64px; background: linear-gradient(90deg, var(--teal), transparent); }
+      body .contact-side p { margin-top: 1rem; color: var(--ink-soft); font-size: 1.05rem; max-width: 26rem; }
+      body .expect { margin-top: 1.9rem; padding: 0; display: grid; gap: 1rem; }
+      body .expect li { list-style: none; display: flex; gap: .7rem; align-items: flex-start; font-weight: 600; color: var(--ink-soft); }
+      body .expect svg { color: var(--teal); flex: none; margin-top: .2rem; }
+      body .form-shell {
+        border-radius: 26px; padding: 1.5px;
+        background: linear-gradient(150deg, rgba(45, 212, 191, .55), var(--line) 38%, rgba(245, 158, 11, .55));
+        box-shadow: var(--shadow);
+      }
+      body form.enquiry { background: var(--panel); border-radius: 25px; padding: clamp(1.4rem, 4vw, 2.2rem); }
+      body .field { margin-bottom: 1.15rem; }
+      body .field label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: .45rem; transition: color .35s ease; }
+      body .field label span { color: var(--muted); font-weight: 600; }
+      body .field:focus-within label { color: var(--teal); }
+      body .field input, body .field select, body .field textarea {
+        width: 100%; min-height: 52px; padding: .8rem 1rem; border-radius: 13px;
+        border: 1.5px solid var(--line); background: var(--bg-2); color: var(--ink);
+        font: inherit; font-size: 1rem; appearance: none;
+        transition: border-color .35s ease, box-shadow .35s ease;
+      }
+      body .field textarea { min-height: 120px; resize: vertical; }
+      body .field input:focus, body .field select:focus, body .field textarea:focus {
+        outline: none; border-color: var(--teal); box-shadow: 0 0 0 4px rgba(45, 212, 191, .18);
+      }
+      body .field select option { background: var(--panel); color: var(--ink); }
+      /* Placeholder hints inside the dark form card were the browser's
+         default dim grey at reduced opacity — nearly invisible on the
+         near-black inputs. Pin them to a readable light blue-grey. */
+      body .field input::placeholder, body .field textarea::placeholder { color: #c9d9f2; opacity: 1; }
+      body .field-row { display: grid; gap: 1.15rem; }
+      @media (min-width: 560px) { body .field-row { grid-template-columns: 1fr 1fr; } body .field-row .field { margin-bottom: 0; } body .field-row { margin-bottom: 1.15rem; } }
+      body form.enquiry .btn { width: 100%; }
+      body .form-note { text-align: center; color: var(--muted); font-size: .86rem; margin-top: .9rem; }
+      body .enquiry-done { display: none; margin-top: 1.2rem; border: 1.5px solid var(--teal-deep); background: var(--teal-tint); border-radius: 16px; padding: 1.2rem 1.3rem; }
+      /* Appears with a slide + fade, never a sudden pop-in. */
+      body .enquiry-done.show { display: block; animation: doneIn .45s cubic-bezier(.22,.9,.28,1) both; }
+      @keyframes doneIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+      body .enquiry-done h3 { font-size: 1.1rem; margin-bottom: .4rem; }
+      body .enquiry-done p { font-size: .94rem; color: var(--ink-soft); }
+      body .enquiry-done pre {
+        white-space: pre-wrap; word-break: break-word; background: var(--panel); border: 1px solid var(--line);
+        border-radius: 12px; padding: 1rem; font: 500 .88rem/1.55 "Manrope", sans-serif; color: var(--ink);
+        margin: .9rem 0; max-height: 220px; overflow: auto;
+      }
+      body .done-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+      body .field .err { display: none; color: #f87171; font-size: .82rem; font-weight: 700; margin-top: .35rem; }
+      body .field.invalid input, body .field.invalid textarea, body .field.invalid select { border-color: #f87171; }
+      body .field.invalid .err { display: block; animation: errIn .3s ease both; }
+      @keyframes errIn { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: none; } }
+
+      /* ---------- Footer ---------- */
+      body footer { border-top: 1px solid var(--line-soft); padding: 2.4rem 0 2.6rem; background: var(--bg-2); }
+      body .footer-in { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; justify-content: space-between; }
+      body footer p { color: var(--muted); font-size: .9rem; }
+      body .footer-nav { display: flex; flex-wrap: wrap; gap: .25rem; }
+      body .footer-nav a { text-decoration: none; font-weight: 600; color: var(--ink-soft); padding: .55rem .7rem; min-height: 40px; display: inline-flex; align-items: center; border-radius: 8px; transition: color .3s ease, background .3s ease, transform .3s cubic-bezier(.22,.9,.28,1); }
+      body .footer-nav a:hover { color: var(--ink); background: var(--panel); }
+      body .footer-nav a:active { transform: scale(.95); }
+      body .footer-big {
+        margin-top: 2.2rem; text-align: center; user-select: none; overflow: hidden;
+        font-family: "Outfit", sans-serif; font-weight: 900; text-transform: uppercase;
+        font-size: clamp(3rem, 12.2vw, 10.5rem); line-height: .92; letter-spacing: -0.01em;
+        color: rgba(238, 242, 249, .085); white-space: nowrap;
+      }
+
+      /* ---------- Toast ---------- */
+      body .toast {
+        position: fixed; left: 50%; bottom: calc(1.2rem + env(safe-area-inset-bottom)); transform: translate(-50%, 140%);
+        z-index: 80; background: var(--panel-2); color: var(--ink); border: 1px solid var(--line);
+        padding: .95rem 1.3rem; border-radius: 14px; box-shadow: var(--shadow);
+        font-weight: 700; font-size: .95rem; max-width: min(92vw, 30rem); text-align: center;
+        transition: transform .35s cubic-bezier(.2,.9,.3,1.2);
+      }
+      body .toast.show { transform: translate(-50%, 0); }
+      body .toast b { color: var(--amber); }
+
+      /* ---------- Reveal: slide + fade ----------
+         NO clip-path here, and fill is "backwards" only — do not
+         re-add either. The old riseIn keyframes animated
+         clip-path: inset(0 0 26% 0) -> inset(0 0 0 0) with fill
+         "both", which left a permanent clip-path sitting on every
+         .reveal container forever. On mobile Chrome/WebView a
+         clip-path ancestor makes the compositor clip each animated,
+         transformed descendant layer (the hero fan's tilted float
+         badges) to axis-aligned lines at the layer's own layout
+         rect — the badges' rotated corners, which paint just
+         outside that rect, were sliced off flat at the top/bottom
+         no matter how much padding the fan stage had. Removing the
+         clip-path from the keyframes and the forwards fill removes
+         the clip entirely once the entrance finishes. */
+      body .reveal.in { animation: riseIn .85s cubic-bezier(.22,.9,.28,1) backwards; animation-delay: calc(var(--i, 0) * 110ms); }
+      @keyframes riseIn {
+        from { opacity: 0; transform: translateY(36px); }
+        to { opacity: 1; transform: none; }
+      }
+      body .svc-rows .svc-row:nth-child(2) { --i: 1; }
+      body .svc-rows .svc-row:nth-child(3) { --i: 2; }
+      body .svc-rows .svc-row:nth-child(4) { --i: 3; }
+
+      body :focus-visible { outline: 3px solid rgba(45, 212, 191, .6); outline-offset: 3px; }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        body .reveal.in { animation: none; }
+        body .enquiry-done.show, body .field.invalid .err { animation: none; }
+        body .mobile-menu.open, body .mobile-menu.closing { animation: none; }
+        body .strip-track, body .hero-ring--b, body .hero-tag i, body .type-cursor, body .fan-chip { animation: none !important; }
+        body .hero-copy > * { animation: none !important; }
+        body #scrollProgress, body #cursorGlow { display: none; }
+        * { transition-duration: .01ms !important; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="scrollProgress" aria-hidden="true"></div>
+    <canvas id="bgParticles" aria-hidden="true"></canvas>
+    <div id="cursorGlow" aria-hidden="true"></div>
+
+    <header id="siteHeader">
+      <div class="wrap header-in">
+        <a class="brand" href="#top" aria-label="Tazrian Rafin — home">
+          <span class="brand-mark">TR</span>
+          <span>Tazrian Rafin<small>Web Developer</small></span>
+        </a>
+        <nav class="main-nav" aria-label="Main">
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="btn btn-amber btn-sm header-cta" href="#contact">Start a project</a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#work">Work <span class="arr">→</span></a>
+      <a href="#services">Services <span class="arr">→</span></a>
+      <a href="#process">Process <span class="arr">→</span></a>
+      <a href="#about">About <span class="arr">→</span></a>
+      <a href="#contact">Contact <span class="arr">→</span></a>
+      <a class="btn btn-amber" href="#contact" style="margin-top:1rem; border-bottom:none; justify-content:center; text-align:center; width:100%;">Start a project</a>
+    </div>
+
+    <main id="top">
+      <!-- HERO -->
+      <div class="hero">
+        <span class="hero-glow hero-glow--teal" aria-hidden="true"></span>
+        <span class="hero-glow hero-glow--amber" aria-hidden="true"></span>
+        <span class="hero-ring hero-ring--a" aria-hidden="true"></span>
+        <span class="hero-ring hero-ring--b" aria-hidden="true"></span>
+        <div class="wrap">
+          <div class="hero-copy">
+            <span class="hero-tag"><i></i> Available for new projects</span>
+            <h1><span class="name-line">Tazrian</span><span class="name-line name-last">Rafin</span></h1>
+            <p class="hero-type">
+              <span class="sr-only">I make websites for small businesses, cafés, salons, restaurants, gyms, clinics and local brands.</span>
+              <span aria-hidden="true"><span class="type-static">I make websites for&nbsp;</span><span class="type-word" id="typeWord">small businesses</span><span class="type-cursor"></span></span>
+            </p>
+            <p class="hero-sub">I design and build <strong>fast, beautiful, mobile-first websites</strong> — the kind that make a small business look big, and turn phone-scrolling visitors into paying customers.</p>
+            <div class="hero-ctas">
+              <a class="btn btn-amber" href="#work">See my work</a>
+              <a class="btn btn-ghost" href="#contact">Send an enquiry</a>
+            </div>
+            <ul class="hero-points">
+              <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Mobile-first design</li>
+              <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Loads in a blink</li>
+              <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Built to bring enquiries</li>
+            </ul>
+          </div>
+
+          <div class="hero-fan reveal" id="heroFan" aria-label="Previews of the three sample websites">
+            <figure class="fan-card fan-card--left" style="margin:0;">
+              <img src="assets/restaurant.jpg" alt="Warm, candle-lit dining room of Saffron Table restaurant" loading="lazy" />
+              <figcaption>Saffron Table</figcaption>
+            </figure>
+            <figure class="fan-card fan-card--center" style="margin:0;">
+              <img src="assets/salon.jpg" alt="Elegant interior of Lumière Salon &amp; Spa with styling chairs and glowing mirrors" fetchpriority="high" />
+              <figcaption>Lumière Salon &amp; Spa</figcaption>
+            </figure>
+            <figure class="fan-card fan-card--right" style="margin:0;">
+              <img src="assets/gym.jpg" alt="Bright, modern training floor of PulseFit Studio gym" loading="lazy" />
+              <figcaption>PulseFit Studio</figcaption>
+            </figure>
+            <div class="fan-chip fan-chip--speed">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+              <span>Fast &amp; mobile-first<small>loads in a blink</small></span>
+            </div>
+            <div class="fan-chip fan-chip--perfect">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M12 18h.01"/></svg>
+              <span>Perfect on phones<small>where your customers are</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STRIP -->
+      <div class="strip" aria-hidden="true">
+        <div class="strip-track" id="stripTrack">
+          <span>Salons <b>✦</b> <i>Restaurants</i> <b>✦</b> Gyms &amp; Studios <b>✦</b> <i>Cafés</i> <b>✦</b> Clinics <b>✦</b> <i>Local Brands</i> <b>✦</b></span>
+          <span>Salons <b>✦</b> <i>Restaurants</i> <b>✦</b> Gyms &amp; Studios <b>✦</b> <i>Cafés</i> <b>✦</b> Clinics <b>✦</b> <i>Local Brands</i> <b>✦</b></span>
+        </div>
+      </div>
+
+      <!-- WORK -->
+      <section id="work">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="kicker">Selected work</span>
+            <h2>Sample websites, built like <em>the real thing</em></h2>
+            <p>Each of these is a concept site for a type of business I build for. This is a glimpse — all three full websites, Saffron Table, Lumière Salon &amp; Spa and PulseFit Studio, are live now behind their buttons.</p>
+          </div>
+          <div class="work-rows">
+            <article class="feature reveal">
+              <div class="feature-media">
+                <span class="feature-index">SITE / 01</span>
+                <div class="shot"><img src="assets/salon.jpg" alt="Elegant interior of Lumière Salon &amp; Spa with styling chairs and glowing mirrors" loading="lazy" /></div>
+              </div>
+              <div class="feature-body">
+                <span class="project-cat">Salon &amp; Spa</span>
+                <h3>Lumière Salon &amp; Spa</h3>
+                <p>A soft, luxurious site for a beauty salon — services with prices on display, stylist profiles, a gallery, and one-tap appointment booking.</p>
+                <ul class="feat">
+                  <li>Online booking</li><li>Service menu</li><li>Gallery</li><li>Stylist profiles</li>
+                </ul>
+                <a class="btn btn-teal site-link" data-folder="lumiere-salon" href="lumiere-salon/">Visit full website
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="feature feature--flip reveal">
+              <div class="feature-media">
+                <span class="feature-index">SITE / 02</span>
+                <div class="shot"><img src="assets/restaurant.jpg" alt="Warm, candle-lit dining room of Saffron Table restaurant" loading="lazy" /></div>
+              </div>
+              <div class="feature-body">
+                <span class="project-cat">Restaurant</span>
+                <h3>Saffron Table</h3>
+                <p>A rich, atmospheric site for a fine-dining restaurant — a browsable menu, chef's specials, private dining, and table reservations.</p>
+                <ul class="feat">
+                  <li>Full menu</li><li>Reservations</li><li>Chef's specials</li><li>Private dining</li>
+                </ul>
+                <a class="btn btn-teal site-link" data-folder="saffron-table" href="saffron-table/">Visit full website
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="feature reveal">
+              <div class="feature-media">
+                <span class="feature-index">SITE / 03</span>
+                <div class="shot"><img src="assets/gym.jpg" alt="Bright, modern training floor of PulseFit Studio gym" loading="lazy" /></div>
+              </div>
+              <div class="feature-body">
+                <span class="project-cat">Gym &amp; Fitness</span>
+                <h3>PulseFit Studio</h3>
+                <p>A bold, high-energy site for a gym — class timetables, trainer profiles, membership plans, and a free-trial signup that converts.</p>
+                <ul class="feat">
+                  <li>Class timetable</li><li>Membership plans</li><li>Trainers</li><li>Free-trial signup</li>
+                </ul>
+                <a class="btn btn-teal site-link" data-folder="pulsefit-studio" href="pulsefit-studio/">Visit full website
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="services" id="services">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="kicker">What I do</span>
+            <h2>Everything your business needs to look <em>established</em> online</h2>
+            <p>One website, done properly — designed around how your customers actually find you, call you, and book you.</p>
+          </div>
+          <div class="svc-rows">
+            <div class="svc-row reveal">
+              <span class="svc-num">/ 01</span>
+              <div class="svc-main">
+                <h3>Business websites</h3>
+                <p>A complete online home for your business — your story, services, photos and reviews, presented with the polish of a much bigger brand.</p>
+              </div>
+              <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            </div>
+            <div class="svc-row reveal">
+              <span class="svc-num">/ 02</span>
+              <div class="svc-main">
+                <h3>Mobile-first design</h3>
+                <p>Most of your customers will find you on a phone. Every page is designed for thumbs first — big tap targets, fluid type, zero pinching or squinting.</p>
+              </div>
+              <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M12 18h.01"/></svg></div>
+            </div>
+            <div class="svc-row reveal">
+              <span class="svc-num">/ 03</span>
+              <div class="svc-main">
+                <h3>Booking, menus &amp; enquiries</h3>
+                <p>The parts that make you money: appointment booking, browsable menus and price lists, and enquiry forms that land straight in your inbox.</p>
+              </div>
+              <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+            </div>
+            <div class="svc-row reveal">
+              <span class="svc-num">/ 04</span>
+              <div class="svc-main">
+                <h3>Speed &amp; search basics</h3>
+                <p>Pages that load in a blink and are set up so Google can find and rank them — because a beautiful site nobody sees earns nothing.</p>
+              </div>
+              <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section id="process">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="kicker">How it works</span>
+            <h2>From first message to launch, in <em>four steps</em></h2>
+            <p>No jargon, no endless meetings. You tell me about your business; I build it; you approve it; it goes live.</p>
+          </div>
+          <div class="timeline">
+            <div class="t-step t-step--l reveal">
+              <span class="dot" aria-hidden="true"></span>
+              <div class="t-card">
+                <span class="num">STEP — 01</span>
+                <h3>Tell me about your business</h3>
+                <p>Send an enquiry below with what you do and what you want the website to achieve. I reply with honest next steps.</p>
+              </div>
+            </div>
+            <div class="t-step t-step--r reveal">
+              <span class="dot" aria-hidden="true"></span>
+              <div class="t-card">
+                <span class="num">STEP — 02</span>
+                <h3>See a design made for you</h3>
+                <p>I design the look around your brand — colours, photos and layout — and show you a preview before anything is final.</p>
+              </div>
+            </div>
+            <div class="t-step t-step--l reveal">
+              <span class="dot" aria-hidden="true"></span>
+              <div class="t-card">
+                <span class="num">STEP — 03</span>
+                <h3>I build it</h3>
+                <p>I build the full site — every page, every photo, booking and forms included — and test it on phones and computers alike.</p>
+              </div>
+            </div>
+            <div class="t-step t-step--r reveal">
+              <span class="dot" aria-hidden="true"></span>
+              <div class="t-card">
+                <span class="num">STEP — 04</span>
+                <h3>Launch &amp; grow</h3>
+                <p>Your site goes live on your own address, ready to share with customers. Need changes later? I can keep it updated for you.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="about" id="about">
+        <div class="wrap about-grid">
+          <div class="photo-slot reveal" role="img" aria-label="Monogram portrait placeholder for Tazrian Rafin">
+            <span class="initials">TR</span>
+            <span class="ring"></span>
+            <!-- To add your photo later, save it as assets/portrait.jpg and it will appear here automatically. -->
+            <img src="assets/portrait.jpg" alt="Portrait of Tazrian Rafin" loading="lazy" onerror="this.remove()" />
+          </div>
+          <div class="reveal">
+            <span class="kicker">About me</span>
+            <h2>The developer behind the websites</h2>
+            <p class="about-text">I'm <strong>Tazrian Rafin</strong>, a Computer Science &amp; Engineering student and web developer. I build websites for small businesses because I've seen what a great one does: a salon that looks booked-out, a restaurant that looks worth dressing up for, a gym that looks like the serious choice.</p>
+            <p class="about-text">Every site I build is designed mobile-first, loads fast, and is written to turn visitors into enquiries — not just to sit there looking pretty.</p>
+            <ul class="skills" aria-label="Skills">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>Python</li>
+              <li>C#</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="wrap contact-grid">
+          <div class="contact-side reveal">
+            <span class="kicker">Contact</span>
+            <h2>Let's build <em>yours</em></h2>
+            <p>Tell me a little about your business and what you'd like your website to do. Fill in the form and hit <strong>Send enquiry</strong> — your message is prepared for you to send from your own email app in one tap.</p>
+            <ul class="expect">
+              <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> A personal reply — no bots, no call centres</li>
+              <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Honest advice on what your business actually needs</li>
+              <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No obligation — if it's not a fit, I'll say so</li>
+            </ul>
+          </div>
+          <div class="form-shell reveal">
+            <form class="enquiry" id="enquiryForm" novalidate>
+              <div class="field-row">
+                <div class="field" data-field="name">
+                  <label for="fName">Your name</label>
+                  <input id="fName" name="name" type="text" autocomplete="name" placeholder="e.g. Sarah Ahmed" />
+                  <p class="err">Please add your name.</p>
+                </div>
+                <div class="field" data-field="business">
+                  <label for="fBusiness">Business name <span>(optional)</span></label>
+                  <input id="fBusiness" name="business" type="text" autocomplete="organization" placeholder="e.g. Glow Studio" />
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field" data-field="email">
+                  <label for="fEmail">Your email</label>
+                  <input id="fEmail" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" />
+                  <p class="err">Please add a valid email so I can reply.</p>
+                </div>
+                <div class="field" data-field="type">
+                  <label for="fType">Type of business</label>
+                  <select id="fType" name="type">
+                    <option value="">Choose one…</option>
+                    <option>Salon / Spa / Beauty</option>
+                    <option>Restaurant / Café / Food</option>
+                    <option>Gym / Fitness studio</option>
+                    <option>Clinic / Healthcare</option>
+                    <option>Shop / Retail</option>
+                    <option>Other local business</option>
+                  </select>
+                  <p class="err">Please choose your type of business.</p>
+                </div>
+              </div>
+              <div class="field" data-field="message">
+                <label for="fMessage">What do you need?</label>
+                <textarea id="fMessage" name="message" placeholder="Tell me about your business and what you'd like the website to do — booking, a menu, more calls, anything."></textarea>
+                <p class="err">A sentence or two helps me reply properly.</p>
+              </div>
+              <button class="btn btn-amber" type="submit">
+                Send enquiry
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+              </button>
+              <p class="form-note">Your enquiry opens in your email app, ready to send — or copy it and send it any way you like.</p>
+              <div class="enquiry-done" id="enquiryDone" role="status">
+                <h3>Your enquiry is ready ✉</h3>
+                <p>Send it from your email app, or copy the text below and paste it into any email or message to me.</p>
+                <pre id="enquiryText"></pre>
+                <div class="done-actions">
+                  <a class="btn btn-teal btn-sm" id="mailBtn" href="#">Open in email app</a>
+                  <button class="btn btn-ghost btn-sm" type="button" id="copyBtn">Copy enquiry</button>
+                  <button class="btn btn-ghost btn-sm" type="button" id="againBtn">Write another</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer-in">
+        <a class="brand" href="#top" aria-label="Back to top">
+          <span class="brand-mark">TR</span>
+          <span>Tazrian Rafin<small>Web Developer</small></span>
+        </a>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <p>© 2026 Tazrian Rafin. Websites for small businesses, built with care.</p>
+      </div>
+      <div class="footer-big" aria-hidden="true">TAZRIAN RAFIN</div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+      (function () {
+        var header = document.getElementById('siteHeader');
+        var burger = document.getElementById('burger');
+        var menu = document.getElementById('mobileMenu');
+        var toast = document.getElementById('toast');
+        var toastTimer = null;
+
+        function showToast(html, ms) {
+          toast.innerHTML = html;
+          toast.classList.add('show');
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(function () { toast.classList.remove('show'); }, ms || 4200);
+        }
+
+        /* Header state + reading-progress bar on scroll */
+        var progress = document.getElementById('scrollProgress');
+        function onScroll() {
+          header.classList.toggle('scrolled', window.scrollY > 8);
+          if (progress) {
+            var max = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.transform = 'scaleX(' + (max > 0 ? Math.min(window.scrollY / max, 1) : 0) + ')';
+          }
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        /* Mobile menu — closing plays the fade-out first; the menu is
+           only hidden once the animation ends, so it never snaps shut. */
+        var menuTimer = null;
+        function setMenu(open) {
+          burger.setAttribute('aria-expanded', String(open));
+          burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+          clearTimeout(menuTimer);
+          if (open) {
+            menu.classList.remove('closing');
+            menu.classList.add('open');
+          } else if (menu.classList.contains('open')) {
+            menu.classList.add('closing');
+            menuTimer = setTimeout(function () {
+              menu.classList.remove('open');
+              menu.classList.remove('closing');
+            }, 290);
+          }
+        }
+        burger.addEventListener('click', function () { setMenu(!menu.classList.contains('open')); });
+        menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+        document.addEventListener('click', function (e) {
+          if (menu.classList.contains('open') && !menu.contains(e.target) && !burger.contains(e.target)) setMenu(false);
+        });
+
+        /* "Visit full website" links — one link, two homes.
+           Hosted layout: the sample sites sit in folders beside this page
+           (saffron-table/, lumiere-salon/, pulsefit-studio/), and the plain
+           relative href reaches them. Chat preview: only this page and its
+           assets/ are served, so a full copy of each site also lives under assets/.
+           Probe the folder's stylesheet: if the hosted folder is really
+           there, keep the href; otherwise point the button at the assets/
+           copy's index.html. Either way the visitor lands on the real
+           full website. */
+        document.querySelectorAll('.site-link').forEach(function (link) {
+          var folder = link.getAttribute('data-folder');
+          if (!folder || !window.fetch) return;
+          function folderIsReal(base) {
+            return fetch(base + 'style.css', { credentials: 'same-origin' })
+              .then(function (r) {
+                var ct = (r.headers.get('content-type') || '').toLowerCase();
+                return r.ok && ct.indexOf('css') !== -1;
+              })
+              .catch(function () { return false; });
+          }
+          folderIsReal(folder + '/').then(function (hosted) {
+            if (hosted) return;
+            return folderIsReal('assets/' + folder + '/').then(function (inAssets) {
+              if (inAssets) link.setAttribute('href', 'assets/' + folder + '/index.html');
+            });
+          });
+        });
+
+        /* Hero type-and-erase line: types a word, holds 0.5s, erases, types the next */
+        var typeEl = document.getElementById('typeWord');
+        if (typeEl) {
+          var typeWords = ['small businesses', 'cafés', 'salons', 'restaurants', 'gyms', 'clinics', 'local brands'];
+          var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (!reduceMotion) {
+            var wi = 0, ci = typeWords[0].length, deleting = false;
+            typeEl.textContent = typeWords[0];
+            function typeTick() {
+              var word = typeWords[wi];
+              if (!deleting) {
+                ci++;
+                typeEl.textContent = word.slice(0, ci);
+                if (ci >= word.length) { deleting = true; setTimeout(typeTick, 500); return; }
+                setTimeout(typeTick, 68);
+              } else {
+                ci--;
+                typeEl.textContent = word.slice(0, ci);
+                if (ci <= 0) { deleting = false; wi = (wi + 1) % typeWords.length; setTimeout(typeTick, 260); return; }
+                setTimeout(typeTick, 32);
+              }
+            }
+            setTimeout(typeTick, 1400);
+          }
+        }
+
+        /* Scroll reveal */
+        var revealEls = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+              if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+            });
+          }, { threshold: 0.12 });
+          revealEls.forEach(function (el) { io.observe(el); });
+        } else {
+          revealEls.forEach(function (el) { el.classList.add('in'); });
+        }
+
+        /* Service rows: feed the spotlight position */
+        document.querySelectorAll('.svc-row').forEach(function (el) {
+          el.addEventListener('mousemove', function (e) {
+            var r = el.getBoundingClientRect();
+            el.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+            el.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+          });
+        });
+
+        /* Enquiry form → opens the visitor's email app via mailto:,
+           with a copyable fallback shown on the page. */
+        var form = document.getElementById('enquiryForm');
+        var done = document.getElementById('enquiryDone');
+        var doneText = document.getElementById('enquiryText');
+
+        function fieldVal(id) { return document.getElementById(id).value.trim(); }
+        function setInvalid(name, bad) {
+          var f = form.querySelector('[data-field="' + name + '"]');
+          if (f) f.classList.toggle('invalid', bad);
+          return !bad;
+        }
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var name = fieldVal('fName');
+          var business = fieldVal('fBusiness');
+          var email = fieldVal('fEmail');
+          var type = fieldVal('fType');
+          var message = fieldVal('fMessage');
+
+          var ok = true;
+          ok = setInvalid('name', !name) && ok;
+          ok = setInvalid('email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) && ok;
+          ok = setInvalid('type', !type) && ok;
+          ok = setInvalid('message', message.length < 10) && ok;
+          if (!ok) {
+            var firstBad = form.querySelector('.field.invalid input, .field.invalid select, .field.invalid textarea');
+            if (firstBad) firstBad.focus();
+            return;
+          }
+
+          var lines = [
+            'New website enquiry',
+            '--------------------',
+            'Name: ' + name,
+            business ? 'Business: ' + business : null,
+            'Email: ' + email,
+            'Type of business: ' + type,
+            '',
+            'What they need:',
+            message
+          ].filter(function (l) { return l !== null; });
+          var body = lines.join('\n');
+          var subject = 'Website enquiry — ' + (business || name);
+
+          doneText.textContent = body;
+          document.getElementById('mailBtn').href =
+            'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+          done.classList.add('show');
+          done.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          showToast('Enquiry ready — open it in your email app or copy it to send.');
+        });
+
+        ['fName', 'fEmail', 'fType', 'fMessage'].forEach(function (id) {
+          document.getElementById(id).addEventListener('input', function () {
+            var map = { fName: 'name', fEmail: 'email', fType: 'type', fMessage: 'message' };
+            setInvalid(map[id], false);
+          });
+        });
+
+        document.getElementById('copyBtn').addEventListener('click', function () {
+          var text = doneText.textContent;
+          function copied() { showToast('Enquiry copied — paste it into an email or message to send it.'); }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(copied, function () { fallbackCopy(); });
+          } else { fallbackCopy(); }
+          function fallbackCopy() {
+            var ta = document.createElement('textarea');
+            ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); copied(); } catch (err) { showToast('Select the enquiry text above and copy it manually.'); }
+            document.body.removeChild(ta);
+          }
+        });
+
+        document.getElementById('againBtn').addEventListener('click', function () {
+          form.reset();
+          done.classList.remove('show');
+          document.getElementById('fName').focus();
+        });
+
+        /* Star-dust sparks drifting up through the dark background,
+           twinkling as they rise (teal, amber, pale-star colours). */
+        var pCanvas = document.getElementById('bgParticles');
+        if (pCanvas && pCanvas.getContext) {
+          var pctx = pCanvas.getContext('2d');
+          var dpr = Math.min(window.devicePixelRatio || 1, 2);
+          var PW = 0, PH = 0, parts = [];
+          var pColors = ['45,212,191', '245,158,11', '203,225,255'];
+          function newPart(anywhere) {
+            return {
+              x: Math.random() * PW,
+              y: anywhere ? Math.random() * PH : PH + 6,
+              r: 0.8 + Math.random() * 1.9,
+              vx: (Math.random() - 0.5) * 0.16,
+              vy: -(0.05 + Math.random() * 0.22),
+              a: 0.16 + Math.random() * 0.3,
+              c: pColors[Math.floor(Math.random() * pColors.length)],
+              wob: Math.random() * Math.PI * 2,
+              ws: 0.004 + Math.random() * 0.01,
+              tw: Math.random() * Math.PI * 2,
+              ts: 0.008 + Math.random() * 0.02
+            };
+          }
+          function sizeParticles() {
+            PW = window.innerWidth; PH = window.innerHeight;
+            pCanvas.width = PW * dpr; pCanvas.height = PH * dpr;
+            pctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            var target = Math.max(28, Math.min(85, Math.round(PW * PH / 20000)));
+            while (parts.length < target) parts.push(newPart(true));
+            parts.length = target;
+            drawParts();
+          }
+          function drawParts() {
+            pctx.clearRect(0, 0, PW, PH);
+            for (var i = 0; i < parts.length; i++) {
+              var p = parts[i];
+              var twinkle = 0.55 + 0.45 * Math.sin(p.tw);
+              pctx.beginPath();
+              pctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+              pctx.fillStyle = 'rgba(' + p.c + ',' + (p.a * twinkle).toFixed(3) + ')';
+              pctx.fill();
+            }
+          }
+          function stepParts() {
+            for (var i = 0; i < parts.length; i++) {
+              var p = parts[i];
+              p.wob += p.ws;
+              p.tw += p.ts;
+              p.x += p.vx + Math.sin(p.wob) * 0.12;
+              p.y += p.vy;
+              if (p.y < -8 || p.x < -8 || p.x > PW + 8) parts[i] = newPart(false);
+            }
+            drawParts();
+            requestAnimationFrame(stepParts);
+          }
+          sizeParticles();
+          var resizeT = null;
+          window.addEventListener('resize', function () {
+            clearTimeout(resizeT);
+            resizeT = setTimeout(sizeParticles, 180);
+          });
+          var pReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (!pReduced) requestAnimationFrame(stepParts);
+        }
+
+        /* Cursor glow: a soft screen-blend pool of light trailing the
+           pointer with spring lag, swelling over anything interactive.
+           Desktop fine pointers only; native cursor stays visible. */
+        var cGlow = document.getElementById('cursorGlow');
+        if (cGlow && window.matchMedia &&
+            window.matchMedia('(pointer: fine)').matches &&
+            !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          var shX = -400, shY = -400, shTX = -400, shTY = -400, shS = 1, shTS = 1, shShown = false;
+          document.addEventListener('mousemove', function (e) {
+            shTX = e.clientX; shTY = e.clientY;
+            if (!shShown) { shShown = true; shX = shTX; shY = shTY; cGlow.classList.add('on'); }
+          }, { passive: true });
+          document.addEventListener('mouseleave', function () {
+            cGlow.classList.remove('on'); shShown = false;
+          });
+          document.addEventListener('mouseover', function (e) {
+            shTS = (e.target.closest && e.target.closest('a, button, input, select, textarea, label, .feature, .svc-row')) ? 1.55 : 1;
+          });
+          (function glowLoop() {
+            shX += (shTX - shX) * 0.16;
+            shY += (shTY - shY) * 0.16;
+            shS += (shTS - shS) * 0.12;
+            cGlow.style.transform = 'translate(' + shX.toFixed(1) + 'px,' + shY.toFixed(1) + 'px) scale(' + shS.toFixed(3) + ')';
+            requestAnimationFrame(glowLoop);
+          })();
+        }
+      })();
+    </script>
+  </body>
+</html>

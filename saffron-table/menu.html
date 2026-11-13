@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="The Saffron Table menu — starters, mains, desserts and drinks, plus the nine-course chef's tasting menu. Seasonal, saffron-led fine dining." />
+<title>Menu — Saffron Table</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site" style="position:relative;top:auto">
+  <div class="wrap header-in">
+    <a class="logo" href="index.html" aria-label="Saffron Table — home">
+      <span class="logo-mark">S</span>
+      <span class="logo-name">Saffron Table<small>Fine Dining</small></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="menu.html" aria-current="page">Menu</a>
+      <a href="story.html">Our Story</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn-wine btn-sm header-cta" href="reservations.html">Reserve a table</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home <span class="arr">→</span></a>
+  <a href="menu.html">Menu <span class="arr">→</span></a>
+  <a href="story.html">Our Story <span class="arr">→</span></a>
+  <a href="gallery.html">Gallery <span class="arr">→</span></a>
+  <a href="reservations.html">Reservations <span class="arr">→</span></a>
+  <a href="contact.html">Contact <span class="arr">→</span></a>
+  <a class="btn btn-wine" href="reservations.html" style="margin-top:1rem;border-bottom:none">Reserve a table</a>
+</div>
+
+<main>
+  <div class="page-hero">
+    <img class="bg" src="assets/dish-hero.jpg" alt="" />
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">Home</a> · Menu</p>
+      <span class="kicker">The menu</span>
+      <h1>Cooked tonight, gone tomorrow</h1>
+      <p>Our à la carte changes with the market — what follows is this week's. The signatures never leave; everything else follows the seasons.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="menu-tabs" role="tablist" aria-label="Menu sections">
+        <button type="button" class="active" data-menu-tab="starters" role="tab" aria-selected="true">Starters</button>
+        <button type="button" data-menu-tab="mains" role="tab" aria-selected="false">Mains</button>
+        <button type="button" data-menu-tab="desserts" role="tab" aria-selected="false">Desserts</button>
+        <button type="button" data-menu-tab="drinks" role="tab" aria-selected="false">Drinks</button>
+        <button type="button" data-menu-tab="tasting" role="tab" aria-selected="false">Tasting Menu</button>
+      </div>
+
+      <div class="menu-panel active" id="panel-starters" role="tabpanel">
+        <div class="menu-cols">
+          <div class="menu-item reveal"><div class="row"><h3>Saffron &amp; Tomato Broth</h3><span class="dots"></span><span class="price">£11</span></div>
+            <p>Clear consommé, confit tomatoes, basil oil, grilled sourdough crisp.</p><div class="flags"><span class="flag">Vegetarian</span></div></div>
+          <div class="menu-item reveal"><div class="row"><h3>Hand-Dived Scallops</h3><span class="dots"></span><span class="price">£17</span></div>
+            <p>Seared scallops, cauliflower velouté, curry leaf, golden raisin.</p><div class="flags"><span class="flag hot">Guest favourite</span></div></div>
+          <div class="menu-item reveal"><div class="row"><h3>Burrata &amp; Ember Peppers</h3><span class="dots"></span><span class="price">£13</span></div>
+            <p>Creamy burrata, fire-blistered peppers, saffron honey, grilled focaccia.</p><div class="flags"><span class="flag">Vegetarian</span></div></div>
+          <div class="menu-item reveal"><div class="row"><h3>Cured Sea Trout</h3><span class="dots"></span><span class="price">£15</span></div>
+            <p>House-cured trout, pickled fennel, rye crisp, dill crème fraîche.</p></div>
+          <div class="menu-item reveal"><div class="row"><h3>Charred Leeks, Romesco</h3><span class="dots"></span><span class="price">£12</span></div>
+            <p>Whole leeks off the coals, almond romesco, sherry caramel, chive oil.</p><div class="flags"><span class="flag">Vegan</span></div></div>
+          <div class="menu-item reveal"><div class="row"><h3>Chicken Liver Parfait</h3><span class="dots"></span><span class="price">£13</span></div>
+            <p>Silky parfait, saffron &amp; apricot chutney, toasted brioche.</p></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="panel-mains" role="tabpanel">
+        <div class="menu-cols">
+          <div class="menu-item"><div class="row"><h3>Saffron Risotto</h3><span class="dots"></span><span class="price">£24</span></div>
+            <p>Carnaroli rice, aged parmesan, brown butter, a whole pinch of Persian saffron per plate.</p><div class="flags"><span class="flag hot">House signature</span><span class="flag">Vegetarian</span></div></div>
+          <div class="menu-item"><div class="row"><h3>Ember Salmon</h3><span class="dots"></span><span class="price">£29</span></div>
+            <p>Crisp-skinned salmon off the coals, charred asparagus, herb oil, saffron beurre blanc.</p></div>
+          <div class="menu-item"><div class="row"><h3>Dry-Aged Ribeye</h3><span class="dots"></span><span class="price">£38</span></div>
+            <p>35-day aged ribeye for one, bone-marrow butter, ember onions, red wine jus. Add truffle fries £6.</p></div>
+          <div class="menu-item"><div class="row"><h3>Slow Duck Leg</h3><span class="dots"></span><span class="price">£27</span></div>
+            <p>Confit duck, spiced lentils, charred orange, saffron &amp; honey glaze.</p></div>
+          <div class="menu-item"><div class="row"><h3>Wild Mushroom Agnolotti</h3><span class="dots"></span><span class="price">£23</span></div>
+            <p>Hand-folded pasta, roasted mushrooms, chestnut, sage butter, aged pecorino.</p><div class="flags"><span class="flag">Vegetarian</span></div></div>
+          <div class="menu-item"><div class="row"><h3>Whole Grilled Sea Bream</h3><span class="dots"></span><span class="price">£34</span></div>
+            <p>For the table — fennel salad, green olive &amp; lemon salsa, saffron aioli.</p><div class="flags"><span class="flag hot">To share</span></div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="panel-desserts" role="tabpanel">
+        <div class="menu-cols">
+          <div class="menu-item"><div class="row"><h3>Midnight Chocolate</h3><span class="dots"></span><span class="price">£13</span></div>
+            <p>70% single-origin chocolate, cocoa-nib crumble, olive oil, smoked salt, warm ganache poured tableside.</p><div class="flags"><span class="flag hot">House signature</span></div></div>
+          <div class="menu-item"><div class="row"><h3>Saffron Panna Cotta</h3><span class="dots"></span><span class="price">£11</span></div>
+            <p>Golden panna cotta, poached pear, honeycomb, bee pollen.</p></div>
+          <div class="menu-item"><div class="row"><h3>Burnt Basque Cheesecake</h3><span class="dots"></span><span class="price">£12</span></div>
+            <p>Caramelised top, molten middle, macerated plums, bay leaf cream.</p></div>
+          <div class="menu-item"><div class="row"><h3>Quince &amp; Almond Tart</h3><span class="dots"></span><span class="price">£11</span></div>
+            <p>Frangipane, saffron-poached quince, brown butter ice cream.</p><div class="flags"><span class="flag">Vegan option</span></div></div>
+          <div class="menu-item"><div class="row"><h3>Cheese, Done Properly</h3><span class="dots"></span><span class="price">£16</span></div>
+            <p>Four British farmhouse cheeses, quince paste, walnut bread, truffle honey.</p><div class="flags"><span class="flag hot">To share</span></div></div>
+          <div class="menu-item"><div class="row"><h3>Affogato &amp; Biscotti</h3><span class="dots"></span><span class="price">£8</span></div>
+            <p>Vanilla gelato drowned in double espresso, house almond biscotti.</p></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="panel-drinks" role="tabpanel">
+        <div class="menu-cols">
+          <div class="menu-item"><div class="row"><h3>The Saffron Old Fashioned</h3><span class="dots"></span><span class="price">£15</span></div>
+            <p>Bourbon, saffron syrup, orange oils, a wisp of applewood smoke — our bar's calling card.</p><div class="flags"><span class="flag hot">House pour</span></div></div>
+          <div class="menu-item"><div class="row"><h3>Ember Martini</h3><span class="dots"></span><span class="price">£14</span></div>
+            <p>Gin, dry vermouth, charred lemon, olive brine mist.</p></div>
+          <div class="menu-item"><div class="row"><h3>Golden Hour Spritz</h3><span class="dots"></span><span class="price">£12</span></div>
+            <p>Prosecco, saffron &amp; peach cordial, soda, thyme. Zero-proof version £8.</p><div class="flags"><span class="flag">Low &amp; no</span></div></div>
+          <div class="menu-item"><div class="row"><h3>Natural Wines by the Glass</h3><span class="dots"></span><span class="price">£9–16</span></div>
+            <p>A rotating list of low-intervention pours — ask the team what's open and interesting tonight.</p></div>
+          <div class="menu-item"><div class="row"><h3>Craft Beers &amp; Cider</h3><span class="dots"></span><span class="price">£6–8</span></div>
+            <p>Two local taps and a short bottled list, chosen to sit happily next to spice.</p></div>
+          <div class="menu-item"><div class="row"><h3>Saffron &amp; Honey Iced Tea</h3><span class="dots"></span><span class="price">£6</span></div>
+            <p>Cold-brew black tea, saffron, honey, lemon — golden, cold, quietly addictive.</p><div class="flags"><span class="flag">Alcohol-free</span></div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="panel-tasting" role="tabpanel">
+        <div class="split" style="align-items:start">
+          <div>
+            <h2 style="font-size:1.9rem">The Chef's Counter — nine courses, six seats</h2>
+            <p style="margin-top:1rem;color:var(--ink-soft)">Sit at the marble counter in front of the kitchen and let Chef Amara cook the menu she wishes existed. Nine courses built around the day's best produce, saffron running quietly through all of them.</p>
+            <p style="margin-top:.8rem;color:var(--ink-soft)"><strong style="color:var(--ink)">£95 per guest</strong> · optional wine pairing £55 · vegetarian counter menu always available. One sitting nightly at 7:00 pm — <a href="reservations.html" style="color:var(--saffron-deep);font-weight:700">reserve the counter</a>.</p>
+          </div>
+          <div class="menu-cols" style="grid-template-columns:1fr">
+            <div class="menu-item"><div class="row"><h3>I.</h3><span class="dots"></span></div><p>Saffron broth, confit tomato, basil — the welcome.</p></div>
+            <div class="menu-item"><div class="row"><h3>II – IV.</h3><span class="dots"></span></div><p>Cured trout · scallops off the coals · charred leeks with romesco.</p></div>
+            <div class="menu-item"><div class="row"><h3>V – VII.</h3><span class="dots"></span></div><p>The risotto · ember salmon or dry-aged ribeye · a pause of cheese.</p></div>
+            <div class="menu-item"><div class="row"><h3>VIII – IX.</h3><span class="dots"></span></div><p>Saffron panna cotta, then Midnight Chocolate to finish.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-note reveal">
+        <b>Allergies &amp; dietary needs:</b> tell us when you book and the kitchen will plan around you — the full menu can be made vegetarian, and most dishes adapt to gluten-free. A discretionary 12.5% service charge is shared with the whole team.
+      </div>
+
+      <div class="cta-band reveal" style="margin-top:2.6rem">
+        <img class="bg" src="assets/dining-room.jpg" alt="" loading="lazy" />
+        <h2>Hungry? Good.</h2>
+        <p>Book ahead for weekends and the chef's counter — or try your luck at the bar, where we keep a few seats for walk-ins.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-gold" href="reservations.html">Reserve a table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="index.html" style="margin-bottom:1rem">
+          <span class="logo-mark">S</span>
+          <span class="logo-name" style="color:var(--on-dark)">Saffron Table<small>Fine Dining</small></span>
+        </a>
+        <p>Modern fine dining built around the world's rarest spice. Forty seats, two sittings, one golden thread through every plate.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul class="foot-links">
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="reservations.html">Reservations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Opening hours</h3>
+        <ul class="foot-links">
+          <li>Tue – Thu · 5:30 pm – 10:30 pm</li>
+          <li>Fri – Sat · 5:30 pm – 11:00 pm</li>
+          <li>Sunday · 12:00 pm – 9:00 pm</li>
+          <li>Monday · Closed</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul class="foot-links">
+          <li>14 Ember Lane, Mayfair, London W1K 4QT</li>
+          <li><a href="tel:+442071234567">+44 20 7123 4567</a></li>
+          <li><a href="mailto:hello@saffrontable.example">hello@saffrontable.example</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Saffron Table. All rights reserved.</span>
+      <span>Website by <a href="#" style="color:var(--gold)">Tazrian Rafin</a></span>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

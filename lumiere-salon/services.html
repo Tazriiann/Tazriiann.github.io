@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Lumière Salon & Spa services and prices — hair, colour, nails, facials and skin, massage and spa, and bridal. 24 services with clear prices and durations." />
+<title>Services &amp; Prices — Lumière Salon &amp; Spa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site">
+  <div class="wrap header-in">
+    <a class="logo" href="index.html" aria-label="Lumière Salon and Spa — home">
+      <span class="logo-mark">L</span>
+      <span class="logo-name">Lumière<small>Salon &amp; Spa</small></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="services.html" aria-current="page">Services</a>
+      <a href="stylists.html">Stylists</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn-rose btn-sm header-cta" href="booking.html">Book appointment</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home <span class="arr">→</span></a>
+  <a href="services.html">Services <span class="arr">→</span></a>
+  <a href="stylists.html">Stylists <span class="arr">→</span></a>
+  <a href="gallery.html">Gallery <span class="arr">→</span></a>
+  <a href="contact.html">Contact <span class="arr">→</span></a>
+  <a class="btn btn-rose" href="booking.html" style="margin-top:1rem;border-bottom:none">Book appointment</a>
+</div>
+
+<main>
+  <div class="page-hero">
+    <img class="bg" src="assets/salon-cover.jpg" alt="" />
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">Home</a> · Services</p>
+      <span class="kicker">Services &amp; prices</span>
+      <h1>Everything, priced in the open</h1>
+      <p>Twenty-four services, six specialisms, no surprise add-ons at the till. Filter by what you're after — every price includes the consultation.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="chips" role="group" aria-label="Filter services">
+        <button type="button" class="active" data-svc-filter="all">All services</button>
+        <button type="button" data-svc-filter="hair">Hair</button>
+        <button type="button" data-svc-filter="colour">Colour</button>
+        <button type="button" data-svc-filter="nails">Nails</button>
+        <button type="button" data-svc-filter="facials">Facials &amp; Skin</button>
+        <button type="button" data-svc-filter="spa">Massage &amp; Spa</button>
+        <button type="button" data-svc-filter="bridal">Bridal</button>
+      </div>
+
+      <div class="svc-grid" id="svcGrid">
+        <!-- HAIR -->
+        <article class="svc-card" data-cat="hair">
+          <span class="cat">Hair</span><h3>Signature Cut &amp; Finish</h3>
+          <p>Consultation, cleanse and scalp massage, a precision cut shaped to your hair's natural fall, blow-dry finish and a styling lesson to take home.</p>
+          <div class="svc-foot"><span class="price">£68</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 60 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Signature%20Cut%20%26%20Finish">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="hair">
+          <span class="cat">Hair</span><h3>Luxury Blow-Dry</h3>
+          <p>The full works: cleanse, deep-condition treatment, and a bouncy, brushed-out blow-dry that holds for days, not hours.</p>
+          <div class="svc-foot"><span class="price">£48</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 45 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Luxury%20Blow-Dry">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="hair">
+          <span class="cat">Hair</span><h3>Silk Press &amp; Style</h3>
+          <p>For natural and textured hair: hydration cleanse, steam treatment and a smooth, glossy silk press with movement — no damage, no rush.</p>
+          <div class="svc-foot"><span class="price">£58</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 75 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Silk%20Press%20%26%20Style">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="hair">
+          <span class="cat">Hair</span><h3>Occasion Updo</h3>
+          <p>Chignons, twists and sculpted waves for evenings that matter. Bring a photo of the dress — we'll design around it.</p>
+          <div class="svc-foot"><span class="price">£72</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 60 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Occasion%20Updo">Book this service</a>
+        </article>
+        <!-- COLOUR -->
+        <article class="svc-card" data-cat="colour">
+          <span class="cat">Colour</span><h3>Full Balayage</h3>
+          <p>Hand-painted, sun-lit dimension from root to tip, with gloss, toner and finish included. The low-maintenance colour that grows out gracefully.</p>
+          <div class="svc-foot"><span class="price">£165</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 150 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Full%20Balayage">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="colour">
+          <span class="cat">Colour</span><h3>Full Head Colour</h3>
+          <p>All-over permanent or demi colour, matched to your skin tone in consultation — root to tip richness with a gloss finish.</p>
+          <div class="svc-foot"><span class="price">£110</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 120 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Full%20Head%20Colour">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="colour">
+          <span class="cat">Colour</span><h3>Half Head Highlights</h3>
+          <p>Foiled highlights through the parting and sides for brightness where it counts, finished with toner and a blow-dry.</p>
+          <div class="svc-foot"><span class="price">£125</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 120 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Half%20Head%20Highlights">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="colour">
+          <span class="cat">Colour</span><h3>Gloss &amp; Tone</h3>
+          <p>The 45-minute refresh: gloss treatment and toner to revive faded colour, cancel brassiness and bring back the shine.</p>
+          <div class="svc-foot"><span class="price">£55</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 45 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Gloss%20%26%20Tone">Book this service</a>
+        </article>
+        <!-- NAILS -->
+        <article class="svc-card" data-cat="nails">
+          <span class="cat">Nails</span><h3>Gel Manicure</h3>
+          <p>Cuticle care, shaping and a gel finish from 120 shades, with a hand massage while it cures. Chips repaired free within seven days.</p>
+          <div class="svc-foot"><span class="price">£52</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 60 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Gel%20Manicure">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="nails">
+          <span class="cat">Nails</span><h3>Luxury Spa Pedicure</h3>
+          <p>Warm soak, sugar scrub, hard-skin care, a long massage and gel polish. The full reset your feet have been asking for.</p>
+          <div class="svc-foot"><span class="price">£64</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 75 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Luxury%20Spa%20Pedicure">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="nails">
+          <span class="cat">Nails</span><h3>Bespoke Nail Art</h3>
+          <p>Hand-painted detail, chrome, French variations or something entirely yours — priced per set, agreed before we start.</p>
+          <div class="svc-foot"><span class="price">£28</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 40 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Bespoke%20Nail%20Art">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="nails">
+          <span class="cat">Nails</span><h3>Acrylic Extensions</h3>
+          <p>Sculpted length and strength in almond, square or stiletto, finished with gel colour. Includes your first infill consultation.</p>
+          <div class="svc-foot"><span class="price">£70</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 90 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Acrylic%20Extensions">Book this service</a>
+        </article>
+        <!-- FACIALS -->
+        <article class="svc-card" data-cat="facials">
+          <span class="cat">Facials &amp; Skin</span><h3>Lumière Signature Facial</h3>
+          <p>Our 75-minute reset: double cleanse, enzyme peel, sculpting massage and a mask mixed for your skin on the day.</p>
+          <div class="svc-foot"><span class="price">£95</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 75 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Lumi%C3%A8re%20Signature%20Facial">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="facials">
+          <span class="cat">Facials &amp; Skin</span><h3>Hydra-Glow Facial</h3>
+          <p>Deep hydration therapy for thirsty, tired skin — gentle resurfacing, hyaluronic infusion and a glow that reads as eight hours' sleep.</p>
+          <div class="svc-foot"><span class="price">£85</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 60 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Hydra-Glow%20Facial">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="facials">
+          <span class="cat">Facials &amp; Skin</span><h3>Anti-Ageing Lift Facial</h3>
+          <p>Firming massage techniques, a collagen mask and targeted serums for skin that wants its bounce back. Includes brow tidy.</p>
+          <div class="svc-foot"><span class="price">£120</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 90 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Anti-Ageing%20Lift%20Facial">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="facials">
+          <span class="cat">Facials &amp; Skin</span><h3>Express Radiance Facial</h3>
+          <p>Thirty minutes, maximum effect: cleanse, brightening peel, vitamin mask and SPF. The pre-event favourite.</p>
+          <div class="svc-foot"><span class="price">£48</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 30 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Express%20Radiance%20Facial">Book this service</a>
+        </article>
+        <!-- SPA -->
+        <article class="svc-card" data-cat="spa">
+          <span class="cat">Massage &amp; Spa</span><h3>Hot Stone Massage</h3>
+          <p>Heated basalt stones and slow, deep strokes that melt the knots your shoulders have been collecting for months.</p>
+          <div class="svc-foot"><span class="price">£88</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 75 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Hot%20Stone%20Massage">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="spa">
+          <span class="cat">Massage &amp; Spa</span><h3>Swedish Full-Body Massage</h3>
+          <p>Classic, flowing full-body massage at your pressure — tell Sofia once, she remembers it for every visit after.</p>
+          <div class="svc-foot"><span class="price">£78</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 60 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Swedish%20Full-Body%20Massage">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="spa">
+          <span class="cat">Massage &amp; Spa</span><h3>Aromatherapy Ritual</h3>
+          <p>Ninety minutes: a bespoke oil blend chosen with you, full-body massage, scalp ritual and quiet time with herbal tea to land.</p>
+          <div class="svc-foot"><span class="price">£98</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 90 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Aromatherapy%20Ritual">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="spa">
+          <span class="cat">Massage &amp; Spa</span><h3>Head, Neck &amp; Shoulders</h3>
+          <p>The desk-worker rescue: thirty focused minutes on the exact places screens and stress live.</p>
+          <div class="svc-foot"><span class="price">£45</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 30 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Head%2C%20Neck%20%26%20Shoulders">Book this service</a>
+        </article>
+        <!-- BRIDAL -->
+        <article class="svc-card" data-cat="bridal">
+          <span class="cat">Bridal</span><h3>Bridal Hair &amp; Makeup</h3>
+          <p>The full morning-of package: hair, makeup and lashes with Amara, a touch-up kit for the day, and a glass of something cold while we work.</p>
+          <div class="svc-foot"><span class="price">£220</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 150 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Bridal%20Hair%20%26%20Makeup">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="bridal">
+          <span class="cat">Bridal</span><h3>Bridal Trial</h3>
+          <p>The rehearsal: we trial the full hair and makeup look, photograph it in daylight, and adjust until it's unmistakably you.</p>
+          <div class="svc-foot"><span class="price">£95</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 90 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Bridal%20Trial">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="bridal">
+          <span class="cat">Bridal</span><h3>Bridesmaid Package</h3>
+          <p>Hair and soft-glam makeup for one bridesmaid, styled to complement — never copy — the bride. Groups of four or more save 10%.</p>
+          <div class="svc-foot"><span class="price">£110</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 90 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Bridesmaid%20Package">Book this service</a>
+        </article>
+        <article class="svc-card" data-cat="bridal">
+          <span class="cat">Bridal</span><h3>Mother of the Bride</h3>
+          <p>An elegant blow-dry or set, plus polished, camera-kind makeup. Because she deserves her own moment too.</p>
+          <div class="svc-foot"><span class="price">£85</span><span class="dur"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 60 min</span></div>
+          <a class="btn btn-outline btn-sm" style="margin-top:1rem" href="booking.html?service=Mother%20of%20the%20Bride">Book this service</a>
+        </article>
+      </div>
+
+      <div class="note-band reveal">
+        <b>Good to know:</b> colour services need a patch test at least 48 hours before your first colour appointment — it takes two minutes, just pop in. Running late? Call us and we'll always do our best; appointments are held for ten minutes.
+      </div>
+
+      <div class="cta-band reveal" style="margin-top:2.6rem">
+        <img class="bg" src="assets/interior-gold.jpg" alt="" loading="lazy" />
+        <h2>Found your treatment?</h2>
+        <p>Pick your service, your stylist and your moment — booking takes under a minute.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-rose" href="booking.html">Book an appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="index.html" style="margin-bottom:1rem">
+          <span class="logo-mark">L</span>
+          <span class="logo-name" style="color:var(--on-dark)">Lumière<small>Salon &amp; Spa</small></span>
+        </a>
+        <p>Hair, beauty and quiet spa rooms in Mayfair. Unhurried appointments, honest advice, and results that last past the weekend.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul class="foot-links">
+          <li><a href="services.html">Services &amp; prices</a></li>
+          <li><a href="stylists.html">Stylists</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="booking.html">Book appointment</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Opening hours</h3>
+        <ul class="foot-links">
+          <li>Tue – Fri · 9:00 AM – 7:00 PM</li>
+          <li>Saturday · 9:00 AM – 6:00 PM</li>
+          <li>Sunday · 10:00 AM – 4:00 PM</li>
+          <li>Monday · Closed</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul class="foot-links">
+          <li>8 Blossom Row, Mayfair, London W1K 3QT</li>
+          <li><a href="tel:+442079460821">+44 20 7946 0821</a></li>
+          <li><a href="mailto:hello@lumiere-salon.example">hello@lumiere-salon.example</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Lumière Salon &amp; Spa. All rights reserved.</span>
+      <span>Website by <a href="../index.html" style="color:var(--gold)">Tazrian Rafin</a></span>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

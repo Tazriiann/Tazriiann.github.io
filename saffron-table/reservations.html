@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Reserve a table at Saffron Table — dining room, chef's counter or the Amber Room for private dining. Request online and we'll call to confirm." />
+<title>Reservations — Saffron Table</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site" style="position:relative;top:auto">
+  <div class="wrap header-in">
+    <a class="logo" href="index.html" aria-label="Saffron Table — home">
+      <span class="logo-mark">S</span>
+      <span class="logo-name">Saffron Table<small>Fine Dining</small></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="story.html">Our Story</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn-wine btn-sm header-cta" href="reservations.html" aria-current="page">Reserve a table</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home <span class="arr">→</span></a>
+  <a href="menu.html">Menu <span class="arr">→</span></a>
+  <a href="story.html">Our Story <span class="arr">→</span></a>
+  <a href="gallery.html">Gallery <span class="arr">→</span></a>
+  <a href="reservations.html">Reservations <span class="arr">→</span></a>
+  <a href="contact.html">Contact <span class="arr">→</span></a>
+  <a class="btn btn-wine" href="reservations.html" style="margin-top:1rem;border-bottom:none">Reserve a table</a>
+</div>
+
+<main>
+  <div class="page-hero">
+    <img class="bg" src="assets/dining-room.jpg" alt="" />
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">Home</a> · Reservations</p>
+      <span class="kicker">Reservations</span>
+      <h1>Save your seat at the table</h1>
+      <p>Tell us when, and for how many — we'll call you back to confirm. For parties of 9 or more, or the Amber Room, call us on <a href="tel:+442071234567" style="color:var(--gold);font-weight:700">+44 20 7123 4567</a>.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="info-grid" style="margin-bottom:2.6rem">
+        <div class="info reveal">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
+          <h3>The Dining Room</h3>
+          <p>Forty seats across two sittings — 5:30 pm and 8:15 pm. The full à la carte, the full room buzz.</p>
+        </div>
+        <div class="info reveal">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 0 0 12 0V3"/><path d="M12 16v5M8 21h8"/></svg></div>
+          <h3>The Chef's Counter</h3>
+          <p>Six marble seats in front of the kitchen. Nine courses, one sitting at 7:00 pm, cooked by Chef Amara herself.</p>
+        </div>
+        <div class="info reveal">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M15.5 3.1a4 4 0 0 1 0 7.8"/></svg></div>
+          <h3>The Amber Room</h3>
+          <p>Private dining for 8–14 guests upstairs — its own pass, its own pace, a set menu built with you in advance.</p>
+        </div>
+      </div>
+
+      <div class="split" style="align-items:start">
+        <form class="form-card reveal" id="resForm" novalidate>
+          <h2 style="font-size:1.7rem;margin-bottom:.4rem">Request a table</h2>
+          <p style="color:var(--ink-soft);font-size:.97rem;margin-bottom:1.5rem">We hold every request for 15 minutes and confirm by phone — usually within the hour during opening times.</p>
+          <div class="field-row">
+            <div class="field" data-field="name">
+              <label for="rName">Your name</label>
+              <input id="rName" type="text" autocomplete="name" placeholder="e.g. Alex Morgan" />
+              <p class="err">Please add your name.</p>
+            </div>
+            <div class="field" data-field="phone">
+              <label for="rPhone">Phone number</label>
+              <input id="rPhone" type="tel" autocomplete="tel" inputmode="tel" placeholder="e.g. 07123 456789" />
+              <p class="err">Please add a phone number so we can confirm.</p>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field" data-field="date">
+              <label for="rDate">Date</label>
+              <input id="rDate" type="date" />
+              <p class="err">Please pick a date.</p>
+            </div>
+            <div class="field" data-field="time">
+              <label for="rTime">Time</label>
+              <select id="rTime">
+                <option value="">Choose a time…</option>
+                <option>12:00 pm (Sunday lunch)</option>
+                <option>1:30 pm (Sunday lunch)</option>
+                <option>5:30 pm — first sitting</option>
+                <option>6:00 pm</option>
+                <option>7:00 pm — chef's counter</option>
+                <option>8:15 pm — second sitting</option>
+                <option>9:00 pm</option>
+                <option>9:45 pm</option>
+              </select>
+              <p class="err">Please choose a time.</p>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field" data-field="guests">
+              <label for="rGuests">Guests</label>
+              <select id="rGuests">
+                <option value="">How many?</option>
+                <option>1 guest</option>
+                <option>2 guests</option>
+                <option>3 guests</option>
+                <option>4 guests</option>
+                <option>5 guests</option>
+                <option>6 guests</option>
+                <option>7 guests</option>
+                <option>8 guests</option>
+                <option>9+ / Amber Room (we'll call)</option>
+              </select>
+              <p class="err">Please tell us how many guests.</p>
+            </div>
+            <div class="field" data-field="occasion">
+              <label for="rOccasion">Occasion <span>(optional)</span></label>
+              <select id="rOccasion">
+                <option value="">Just dinner</option>
+                <option>Birthday</option>
+                <option>Anniversary</option>
+                <option>Date night</option>
+                <option>Business dinner</option>
+                <option>Celebration</option>
+              </select>
+            </div>
+          </div>
+          <div class="field" data-field="notes">
+            <label for="rNotes">Anything we should know? <span>(optional)</span></label>
+            <textarea id="rNotes" placeholder="Allergies, dietary needs, a quiet corner, a candle in the dessert — tell us here."></textarea>
+          </div>
+          <button class="btn btn-wine" type="submit" style="width:100%">Request this table</button>
+          <p class="form-note">No card details, no deposit for parties under 9. Life happens — cancel or move your booking free of charge up to 4 hours before.</p>
+          <div class="done-panel" id="resDone" role="status">
+            <h3>Request received — thank you!</h3>
+            <p>Here's what you've asked for. We'll call to confirm shortly; if we can't reach you, we'll hold the table for 15 minutes past your time.</p>
+            <dl>
+              <dt>Name</dt><dd id="sumName"></dd>
+              <dt>When</dt><dd id="sumWhen"></dd>
+              <dt>Party</dt><dd id="sumGuests"></dd>
+              <dt>Confirm to</dt><dd id="sumPhone"></dd>
+              <div id="sumNotesRow" style="display:contents"><dt>Notes</dt><dd id="sumNotes"></dd></div>
+            </dl>
+            <div class="done-actions">
+              <button class="btn btn-outline btn-sm" type="button" id="resAgain">Make another request</button>
+              <a class="btn btn-gold btn-sm" href="menu.html">Browse the menu meanwhile</a>
+            </div>
+          </div>
+        </form>
+
+        <div class="reveal">
+          <span class="kicker">Good to know</span>
+          <h2 style="font-size:1.9rem">Before you book</h2>
+          <div style="margin-top:1.4rem">
+            <div class="faq open">
+              <button class="q" type="button">How far ahead can I book?<span class="chev">＋</span></button>
+              <div class="a">Bookings open 60 days ahead. The chef's counter and Friday–Saturday second sittings usually go first — a fortnight's notice is a good rule.</div>
+            </div>
+            <div class="faq">
+              <button class="q" type="button">What if I'm running late?<span class="chev">＋</span></button>
+              <div class="a">Call us and we'll do our best. Tables are held for 15 minutes; after that we may need to offer your table to the waitlist, but we'll always try to seat you.</div>
+            </div>
+            <div class="faq">
+              <button class="q" type="button">Can you handle allergies?<span class="chev">＋</span></button>
+              <div class="a">Yes — note them in the request form or tell us on the confirmation call. The kitchen plans around allergies every service, and the full menu can be made vegetarian.</div>
+            </div>
+            <div class="faq">
+              <button class="q" type="button">Is there a dress code?<span class="chev">＋</span></button>
+              <div class="a">Smart casual, and whatever makes you feel like dinner matters. Jackets are admired, never required.</div>
+            </div>
+            <div class="faq">
+              <button class="q" type="button">Can I book the whole restaurant?<span class="chev">＋</span></button>
+              <div class="a">For 30–40 guests, yes — full hire includes the dining room, the counter and a menu built with Chef Amara. Start on the <a href="contact.html" style="color:var(--saffron-deep);font-weight:700">contact page</a>.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="index.html" style="margin-bottom:1rem">
+          <span class="logo-mark">S</span>
+          <span class="logo-name" style="color:var(--on-dark)">Saffron Table<small>Fine Dining</small></span>
+        </a>
+        <p>Modern fine dining built around the world's rarest spice. Forty seats, two sittings, one golden thread through every plate.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul class="foot-links">
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="reservations.html">Reservations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Opening hours</h3>
+        <ul class="foot-links">
+          <li>Tue – Thu · 5:30 pm – 10:30 pm</li>
+          <li>Fri – Sat · 5:30 pm – 11:00 pm</li>
+          <li>Sunday · 12:00 pm – 9:00 pm</li>
+          <li>Monday · Closed</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul class="foot-links">
+          <li>14 Ember Lane, Mayfair, London W1K 4QT</li>
+          <li><a href="tel:+442071234567">+44 20 7123 4567</a></li>
+          <li><a href="mailto:hello@saffrontable.example">hello@saffrontable.example</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Saffron Table. All rights reserved.</span>
+      <span>Website by <a href="#" style="color:var(--gold)">Tazrian Rafin</a></span>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

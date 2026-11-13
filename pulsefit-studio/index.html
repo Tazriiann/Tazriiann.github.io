@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="PulseFit Studio — Banani's strength & fitness studio. Coach-led classes, a full weekly timetable, personal training and flexible memberships. First workout free." />
+    <link rel="icon" href="data:," />
+    <title>PulseFit Studio — Gym &amp; Fitness Studio in Banani, Dhaka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header" id="siteHeader">
+      <div class="wrap header-in">
+        <a class="logo" href="#top" aria-label="PulseFit Studio — home">
+          <span class="logo-mark" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2.5-6 4 12L15 12h7"/></svg>
+          </span>
+          <span class="logo-text">PulseFit<small>Studio</small></span>
+        </a>
+        <nav class="main-nav" aria-label="Main">
+          <a href="#classes">Classes</a>
+          <a href="#timetable">Timetable</a>
+          <a href="#coaches">Coaches</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="btn btn-volt header-cta" href="#join">Claim free workout</a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+        <a href="#classes">Classes <span aria-hidden="true">→</span></a>
+        <a href="#timetable">Timetable <span aria-hidden="true">→</span></a>
+        <a href="#coaches">Coaches <span aria-hidden="true">→</span></a>
+        <a href="#pricing">Pricing <span aria-hidden="true">→</span></a>
+        <a href="#gallery">Gallery <span aria-hidden="true">→</span></a>
+        <a href="#contact">Contact <span aria-hidden="true">→</span></a>
+        <a class="btn btn-volt" href="#join">Claim free workout</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- ================= HERO ================= -->
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true"><img src="assets/hero.webp" alt="" fetchpriority="high" /></div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="wrap">
+          <div class="hero-in">
+            <span class="hero-badge"><span class="dot" aria-hidden="true"></span> Banani, Dhaka · Open today until 11:00 PM</span>
+            <h1>Stronger<br />every <span class="volt">rep.</span></h1>
+            <p class="hero-sub">Coach-led classes, a proper strength floor and programming that actually progresses. Whether it's your first workout or your five-hundredth — you train with a plan here, not a guess.</p>
+            <div class="hero-ctas">
+              <a class="btn btn-volt" href="#join">Claim your free workout
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="#timetable">See today's classes</a>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div><b>2,400+</b><span>active members</span></div>
+            <div><b>60+</b><span>classes every week</span></div>
+            <div><b>12</b><span>certified coaches</span></div>
+            <div><b>18,000</b><span>sq ft training floor</span></div>
+          </div>
+        </div>
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee-track" id="marqueeTrack">
+            <span>Strength <i>✦</i> HIIT <i>✦</i> Spin <i>✦</i> Boxing <i>✦</i> Kettlebell <i>✦</i> Yoga &amp; Mobility <i>✦</i> Personal Training <i>✦</i></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CLASSES ================= -->
+      <section id="classes">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="kicker">Classes</span>
+            <h2>Train your way</h2>
+            <p>Six signature formats, coached in small groups so your form gets fixed, not ignored. Every class is included in every membership.</p>
+          </div>
+          <div class="filter-row reveal" role="group" aria-label="Filter classes">
+            <button class="filter-btn active" type="button" data-filter="all">All classes</button>
+            <button class="filter-btn" type="button" data-filter="strength">Strength</button>
+            <button class="filter-btn" type="button" data-filter="cardio">Cardio</button>
+            <button class="filter-btn" type="button" data-filter="combat">Combat</button>
+            <button class="filter-btn" type="button" data-filter="mind">Mind &amp; Body</button>
+          </div>
+          <div class="class-grid" id="classGrid">
+            <article class="class-card reveal" data-cat="strength">
+              <div class="class-media">
+                <img src="assets/strength.jpg" alt="Member performing a heavy barbell deadlift in a dark gym" />
+                <span class="class-tag">Strength</span>
+              </div>
+              <div class="class-body">
+                <h3>Iron Strength</h3>
+                <p>Barbell-first coaching on the big lifts — squat, bench, deadlift, press. Percentage-based programming, tested every 8 weeks.</p>
+                <div class="class-meta"><span>60 min</span><span class="meter lvl-3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Hard</span><span>~420 kcal</span></div>
+              </div>
+            </article>
+            <article class="class-card reveal" data-cat="cardio">
+              <div class="class-media">
+                <img src="assets/hiit.jpg" alt="Group fitness class mid-workout in a bright studio" />
+                <span class="class-tag">Cardio</span>
+              </div>
+              <div class="class-body">
+                <h3>Pulse HIIT</h3>
+                <p>45 minutes of intervals that spike your heart rate and torch calories — sleds, ropes, boxes and bodyweight, scaled to your level.</p>
+                <div class="class-meta"><span>45 min</span><span class="meter lvl-4" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Max</span><span>~550 kcal</span></div>
+              </div>
+            </article>
+            <article class="class-card reveal" data-cat="cardio">
+              <div class="class-media">
+                <img src="assets/spin.webp" alt="Rows of indoor cycling bikes in a neon-lit spin studio" />
+                <span class="class-tag">Cardio</span>
+              </div>
+              <div class="class-body">
+                <h3>Rhythm Ride</h3>
+                <p>Low-impact, high-energy cycling in our neon studio. Ride to the beat, chase the leaderboard, leave drenched and grinning.</p>
+                <div class="class-meta"><span>45 min</span><span class="meter lvl-3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Hard</span><span>~480 kcal</span></div>
+              </div>
+            </article>
+            <article class="class-card reveal" data-cat="combat">
+              <div class="class-media">
+                <img src="assets/boxing.jpg" alt="Boxer training with red gloves on a heavy punching bag" />
+                <span class="class-tag">Combat</span>
+              </div>
+              <div class="class-body">
+                <h3>Boxing Lab</h3>
+                <p>Footwork, pad work and heavy-bag rounds. Real technique from competitive coaches — the most fun cardio you'll ever do.</p>
+                <div class="class-meta"><span>60 min</span><span class="meter lvl-4" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Max</span><span>~600 kcal</span></div>
+              </div>
+            </article>
+            <article class="class-card reveal" data-cat="strength">
+              <div class="class-media">
+                <img src="assets/kettlebell.jpg" alt="Athlete pressing a kettlebell overhead during a functional workout" />
+                <span class="class-tag">Strength</span>
+              </div>
+              <div class="class-body">
+                <h3>Kettlebell Club</h3>
+                <p>Swings, snatches, carries and Turkish get-ups. Build grip, hips and a bulletproof core with the most versatile tool in the gym.</p>
+                <div class="class-meta"><span>50 min</span><span class="meter lvl-3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Hard</span><span>~450 kcal</span></div>
+              </div>
+            </article>
+            <article class="class-card reveal" data-cat="mind">
+              <div class="class-media">
+                <img src="assets/yoga.jpg" alt="Instructor leading a group stretching and mobility class on mats" />
+                <span class="class-tag">Mind &amp; Body</span>
+              </div>
+              <div class="class-body">
+                <h3>Yoga &amp; Mobility</h3>
+                <p>Slow flows, deep stretching and breathwork that keep your joints young and your lifts pain-free. The class your future self thanks you for.</p>
+                <div class="class-meta"><span>55 min</span><span class="meter lvl-1" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Gentle</span><span>~180 kcal</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= WHY ================= -->
+      <section class="why" id="why">
+        <div class="wrap split">
+          <div class="split-media reveal">
+            <img src="assets/coaching.jpg" alt="PulseFit coach guiding a member through a dumbbell curl" />
+            <div class="float-card"><b>1-on-1</b><span>Every member gets a free personal-training session and a written starter programme.</span></div>
+          </div>
+          <div class="reveal">
+            <span class="kicker">Why PulseFit</span>
+            <h2 style="font-size:clamp(1.9rem,4.6vw,2.9rem)">Not just equipment.<br />A system.</h2>
+            <div class="why-list">
+              <div class="why-item">
+                <span class="why-num">01</span>
+                <div><h3>Coaches on the floor, always</h3><p>A certified coach is on the training floor at all hours — form checks and questions are free, forever.</p></div>
+              </div>
+              <div class="why-item">
+                <span class="why-num">02</span>
+                <div><h3>A programme that progresses</h3><p>Your plan is reviewed every 8 weeks against your numbers, so you never plateau wondering what to do next.</p></div>
+              </div>
+              <div class="why-item">
+                <span class="why-num">03</span>
+                <div><h3>Train early, train late</h3><p>Doors open at 5:30 AM and close at 11 PM, seven days a week — before office, after office, whenever life allows.</p></div>
+              </div>
+              <div class="why-item">
+                <span class="why-num">04</span>
+                <div><h3>No lock-in, ever</h3><p>Monthly plans cancel anytime from your phone. We keep members with results, not contracts.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TIMETABLE ================= -->
+      <section id="timetable">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="kicker">Timetable</span>
+            <h2>This week at PulseFit</h2>
+            <p>Pick a day to see what's on. Classes cap at 14 people — members book in the app up to 7 days ahead.</p>
+          </div>
+          <div class="day-tabs reveal" id="dayTabs" role="tablist" aria-label="Day of week"></div>
+          <div class="tt-table reveal" id="ttTable" role="tabpanel"></div>
+          <p class="tt-note reveal">The gym floor, cardio deck and stretching zone are open to members all day — the timetable above is for coached classes only.</p>
+        </div>
+      </section>
+
+      <!-- ================= COACHES ================= -->
+      <section class="coaches" id="coaches">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="kicker">Coaches</span>
+            <h2>Meet your corner team</h2>
+            <p>Certified, experienced, and genuinely obsessed with your progress. Say hello — they will remember your name by day two.</p>
+          </div>
+          <div class="coach-grid">
+            <article class="coach-card reveal">
+              <img src="assets/coach-1.jpg" alt="Portrait of Head Coach Arif Rahman smiling with arms crossed in the gym" />
+              <div class="coach-body">
+                <h3>Arif Rahman</h3>
+                <p class="coach-role">Head Coach · Strength</p>
+                <p>11 years under the bar. Has coached 40+ members to their first 100&nbsp;kg deadlift — patiently, and without a single injury.</p>
+                <div class="coach-tags"><span>Powerlifting</span><span>Programming</span><span>NSCA-CPT</span></div>
+              </div>
+            </article>
+            <article class="coach-card reveal">
+              <img src="assets/coach-2.webp" alt="Portrait of HIIT coach Daniel Costa standing in the gym" />
+              <div class="coach-body">
+                <h3>Daniel Costa</h3>
+                <p class="coach-role">HIIT &amp; Conditioning</p>
+                <p>Former sprinter who makes the hardest 45 minutes of your week feel like a game. His finishers are legendary — sorry in advance.</p>
+                <div class="coach-tags"><span>HIIT</span><span>Fat Loss</span><span>ACE-CPT</span></div>
+              </div>
+            </article>
+            <article class="coach-card reveal">
+              <img src="assets/coach-3.webp" alt="Portrait of spin coach Maya Chen smiling in the gym" />
+              <div class="coach-body">
+                <h3>Maya Chen</h3>
+                <p class="coach-role">Spin &amp; Endurance</p>
+                <p>Builds the playlists, the climbs and the atmosphere. Her Rhythm Ride waitlist is the worst-kept secret in Banani.</p>
+                <div class="coach-tags"><span>Cycling</span><span>Endurance</span><span>ICG Coach</span></div>
+              </div>
+            </article>
+            <article class="coach-card reveal">
+              <img src="assets/coach-4.webp" alt="Portrait of boxing coach Sara Ahmed with arms crossed in a dark gym" />
+              <div class="coach-body">
+                <h3>Sara Ahmed</h3>
+                <p class="coach-role">Boxing &amp; Mobility</p>
+                <p>Competitive boxer, mobility nerd. Teaches you to hit hard <em>and</em> move well — the combination that keeps people training for years.</p>
+                <div class="coach-tags"><span>Boxing</span><span>Mobility</span><span>FRC</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PRICING ================= -->
+      <section id="pricing">
+        <div class="wrap">
+          <div class="sec-head center reveal">
+            <span class="kicker">Membership</span>
+            <h2>Simple, honest pricing</h2>
+            <p>Every plan includes all classes, the full gym floor and one free PT session. No joining fee this month.</p>
+          </div>
+          <div style="text-align:center" class="reveal">
+            <div class="billing-toggle" role="group" aria-label="Billing period">
+              <button type="button" class="active" data-billing="monthly">Monthly</button>
+              <button type="button" data-billing="annual">Annual<span class="save">2 months free</span></button>
+            </div>
+          </div>
+          <div class="price-grid">
+            <article class="price-card reveal">
+              <h3>Off-Peak</h3>
+              <p class="for">For flexible schedules — train outside the rush.</p>
+              <div class="price-amt"><b data-monthly="৳1,800" data-annual="৳1,500">৳1,800</b><span>/ month</span></div>
+              <p class="price-per" data-monthly="Billed monthly · cancel anytime" data-annual="৳18,000 billed once a year">Billed monthly · cancel anytime</p>
+              <ul>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Gym floor access, 9 AM – 4 PM</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Off-peak classes included</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>1 free PT session</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Locker room &amp; showers</li>
+                <li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Peak-hour access (4 – 9 PM)</li>
+                <li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Guest passes</li>
+              </ul>
+              <a class="btn btn-ghost" href="#join" data-plan="Off-Peak">Start with Off-Peak</a>
+            </article>
+            <article class="price-card featured reveal">
+              <span class="price-flag">Most popular</span>
+              <h3>All-Access</h3>
+              <p class="for">The full PulseFit — any hour, every class.</p>
+              <div class="price-amt"><b data-monthly="৳2,800" data-annual="৳2,333">৳2,800</b><span>/ month</span></div>
+              <p class="price-per" data-monthly="Billed monthly · cancel anytime" data-annual="৳28,000 billed once a year">Billed monthly · cancel anytime</p>
+              <ul>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Full access, 5:30 AM – 11 PM</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>All 60+ weekly classes</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>1 free PT session + starter programme</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>8-week progress reviews</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>1 guest pass every month</li>
+                <li class="off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Monthly 1-on-1 PT sessions</li>
+              </ul>
+              <a class="btn btn-volt" href="#join" data-plan="All-Access">Start with All-Access</a>
+            </article>
+            <article class="price-card reveal">
+              <h3>All-Access + PT</h3>
+              <p class="for">Maximum coaching, fastest results.</p>
+              <div class="price-amt"><b data-monthly="৳5,500" data-annual="৳4,583">৳5,500</b><span>/ month</span></div>
+              <p class="price-per" data-monthly="Billed monthly · cancel anytime" data-annual="৳55,000 billed once a year">Billed monthly · cancel anytime</p>
+              <ul>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Everything in All-Access</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>4 personal-training sessions / month</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Personalised nutrition targets</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Weekly coach check-ins</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>2 guest passes every month</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Priority class booking</li>
+              </ul>
+              <a class="btn btn-ghost" href="#join" data-plan="All-Access + PT">Start with + PT</a>
+            </article>
+          </div>
+          <p class="price-note reveal">Students get 15% off All-Access with a valid ID. Corporate plans for teams of 5+ — ask at the front desk.</p>
+        </div>
+      </section>
+
+      <!-- ================= BMI ================= -->
+      <section class="bmi-band" id="bmi">
+        <div class="wrap bmi-grid">
+          <div class="reveal">
+            <span class="kicker">Start smart</span>
+            <h2 style="font-size:clamp(1.9rem,4.6vw,2.9rem)">Know your<br />starting point</h2>
+            <p style="color:var(--muted);max-width:480px">Your BMI is one rough compass reading — not a verdict. Check yours here, then let a coach measure the things that actually matter: strength, mobility and body composition.</p>
+          </div>
+          <form class="bmi-form reveal" id="bmiForm" novalidate>
+            <div class="field">
+              <label for="bmiHeight">Height (cm)</label>
+              <input id="bmiHeight" type="number" inputmode="decimal" min="100" max="250" placeholder="e.g. 170" />
+            </div>
+            <div class="field">
+              <label for="bmiWeight">Weight (kg)</label>
+              <input id="bmiWeight" type="number" inputmode="decimal" min="25" max="400" placeholder="e.g. 68" />
+            </div>
+            <button class="btn btn-volt" type="submit" style="grid-column:1/-1">Calculate my BMI</button>
+            <div class="bmi-result" id="bmiResult" role="status"></div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ================= GALLERY ================= -->
+      <section id="gallery">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="kicker">Gallery</span>
+            <h2>Inside the studio</h2>
+            <p>18,000 square feet across two floors — strength floor, cardio deck, spin studio, boxing corner and a dedicated mobility zone.</p>
+          </div>
+          <div class="gal-grid reveal" id="galGrid">
+            <button type="button" data-full="assets/hero.webp" data-cap="The main training floor — cardio deck on the left, strength zone on the right"><img src="assets/hero.webp" alt="Main training floor with treadmills and weight racks" /></button>
+            <button type="button" data-full="assets/strength.jpg" data-cap="Deadlift platform, Iron Strength class"><img src="assets/strength.jpg" alt="Member deadlifting on the platform" /></button>
+            <button type="button" data-full="assets/spin.webp" data-cap="The Rhythm Ride spin studio"><img src="assets/spin.webp" alt="Spin studio with neon lighting and rows of bikes" /></button>
+            <button type="button" data-full="assets/kettlebell.jpg" data-cap="Kettlebell Club in full swing"><img src="assets/kettlebell.jpg" alt="Athlete pressing a kettlebell overhead" /></button>
+            <button type="button" data-full="assets/boxing.jpg" data-cap="Boxing corner — bags, pads and ring craft"><img src="assets/boxing.jpg" alt="Boxer working the heavy bag" /></button>
+            <button type="button" data-full="assets/hero.jpg" data-cap="Machine row and cable stations"><img src="assets/hero.jpg" alt="Rows of gym machines and benches" /></button>
+            <button type="button" data-full="assets/dumbbells.jpg" data-cap="Free-weights area — dumbbells from 2.5 to 50 kg"><img src="assets/dumbbells.jpg" alt="Member curling a dumbbell beside the dumbbell rack" /></button>
+            <button type="button" data-full="assets/yoga.jpg" data-cap="Mobility zone — where lifts stay pain-free"><img src="assets/yoga.jpg" alt="Group mobility session on mats" /></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TESTIMONIALS ================= -->
+      <section style="padding-top:0">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="kicker">Members</span>
+            <h2>People like you, progressing</h2>
+          </div>
+          <div class="testi-grid">
+            <article class="testi reveal">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <p>"I've joined three gyms before PulseFit and quit all of them by month two. Here the coaches noticed when I missed a week — and my programme actually changed as I got stronger. Down 9 kilos, deadlifting 120."</p>
+              <footer><span class="avatar" aria-hidden="true">TH</span><div><b>Tanvir Hasan</b><span>Member since 2023 · All-Access</span></div></footer>
+            </article>
+            <article class="testi reveal">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <p>"As a beginner I was terrified of the weights floor. Arif started me on machines, taught me the barbell over six weeks, and now Iron Strength is the best part of my week. Zero ego in this place."</p>
+              <footer><span class="avatar" aria-hidden="true">NA</span><div><b>Nusrat Ahmed</b><span>Member since 2024 · All-Access</span></div></footer>
+            </article>
+            <article class="testi reveal">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <p>"I train at 6 AM before office. It's clean, the equipment is never broken, and Maya's spin class does more for my stress than anything else in my routine. The annual plan paid for itself by March."</p>
+              <footer><span class="avatar" aria-hidden="true">RK</span><div><b>Rahim Khan</b><span>Member since 2022 · All-Access + PT</span></div></footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= JOIN / FREE TRIAL ================= -->
+      <section class="join" id="join">
+        <div class="wrap join-grid">
+          <div class="reveal">
+            <span class="kicker">Free first workout</span>
+            <h2 style="font-size:clamp(1.9rem,4.6vw,2.9rem)">Try PulseFit<br />on us</h2>
+            <p style="color:var(--muted);max-width:470px">One full day: the gym floor, any class on the timetable, and a chat with a coach about your goals. No card, no commitment, no sales pressure at the door.</p>
+            <ul class="join-points">
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Full-day pass — floor + any one class</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free starter programme from a coach</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Bring a friend free on Saturdays</li>
+            </ul>
+            <p style="color:var(--muted);margin-top:22px">Prefer to talk first? Call <a href="tel:+8801700000000" style="color:var(--volt);font-weight:800;text-decoration:none">+880 1700-000000</a></p>
+          </div>
+          <div class="form-card reveal">
+            <form id="trialForm" novalidate>
+              <h3>Book your free workout</h3>
+              <p>Tell us when you'd like to come in — we'll confirm by phone or email.</p>
+              <div class="form-err" id="formErr" role="alert"></div>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="fName">Your name</label>
+                  <input id="fName" type="text" autocomplete="name" placeholder="e.g. Farhan Ahmed" />
+                </div>
+                <div class="field">
+                  <label for="fPhone">Phone</label>
+                  <input id="fPhone" type="tel" autocomplete="tel" placeholder="01XXXXXXXXX" />
+                </div>
+                <div class="field full">
+                  <label for="fEmail">Email</label>
+                  <input id="fEmail" type="email" autocomplete="email" placeholder="you@example.com" />
+                </div>
+                <div class="field">
+                  <label for="fGoal">Main goal</label>
+                  <select id="fGoal">
+                    <option value="">Choose a goal…</option>
+                    <option>Lose fat</option>
+                    <option>Build muscle &amp; strength</option>
+                    <option>Get fitter / more energy</option>
+                    <option>Learn boxing</option>
+                    <option>Just try it out</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="fPlan">Plan you're eyeing</label>
+                  <select id="fPlan">
+                    <option>Not sure yet</option>
+                    <option>Off-Peak</option>
+                    <option>All-Access</option>
+                    <option>All-Access + PT</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="fClass">Class you'd like to try</label>
+                  <select id="fClass">
+                    <option>Just the gym floor</option>
+                    <option>Iron Strength</option>
+                    <option>Pulse HIIT</option>
+                    <option>Rhythm Ride (Spin)</option>
+                    <option>Boxing Lab</option>
+                    <option>Kettlebell Club</option>
+                    <option>Yoga &amp; Mobility</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="fDate">Preferred day</label>
+                  <input id="fDate" type="date" />
+                </div>
+                <div class="field full">
+                  <label for="fMsg">Anything we should know? <span style="text-transform:none;letter-spacing:0;color:var(--faint)">(optional)</span></label>
+                  <textarea id="fMsg" placeholder="Injuries, experience, questions…"></textarea>
+                </div>
+              </div>
+              <button class="btn btn-volt" type="submit" style="width:100%;margin-top:18px">Review my booking
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+              </button>
+            </form>
+            <div class="form-done" id="formDone">
+              <div class="done-check">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              </div>
+              <h3>You're one tap away</h3>
+              <p style="color:var(--muted);margin:6px 0 0">Your free-workout request is ready. Send it to us by email and we'll confirm your slot — or copy the details and reach us any way you like.</p>
+              <div class="done-summary" id="doneSummary"></div>
+              <div class="done-actions">
+                <a class="btn btn-volt" id="doneMail" href="#">Send booking by email</a>
+                <button class="btn btn-ghost" type="button" id="copyBtn">Copy details</button>
+                <span class="copied-note" id="copiedNote">Copied ✓</span>
+              </div>
+              <button class="link-btn" type="button" id="editBtn">← Edit my details</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT ================= -->
+      <section id="contact">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="kicker">Visit us</span>
+            <h2>Find the studio</h2>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-card reveal">
+              <h3>Address</h3>
+              <p>House 18, Road 27, Banani<br />Dhaka 1213, Bangladesh</p>
+              <p style="margin-top:12px"><a href="https://www.google.com/maps/search/?api=1&amp;query=PulseFit+Studio+Road+27+Banani+Dhaka" target="_blank" rel="noopener">Get directions →</a></p>
+            </div>
+            <div class="contact-card reveal">
+              <h3>Opening hours</h3>
+              <div id="hoursList">
+                <div class="hours-row" data-days="6"><span>Saturday</span><b>5:30 AM – 11:00 PM</b></div>
+                <div class="hours-row" data-days="0"><span>Sunday</span><b>5:30 AM – 11:00 PM</b></div>
+                <div class="hours-row" data-days="1"><span>Monday</span><b>5:30 AM – 11:00 PM</b></div>
+                <div class="hours-row" data-days="2"><span>Tuesday</span><b>5:30 AM – 11:00 PM</b></div>
+                <div class="hours-row" data-days="3"><span>Wednesday</span><b>5:30 AM – 11:00 PM</b></div>
+                <div class="hours-row" data-days="4"><span>Thursday</span><b>5:30 AM – 11:00 PM</b></div>
+                <div class="hours-row" data-days="5"><span>Friday</span><b>7:00 AM – 10:00 PM</b></div>
+              </div>
+            </div>
+            <div class="contact-card reveal">
+              <h3>Talk to us</h3>
+              <p>Phone<br /><a href="tel:+8801700000000">+880 1700-000000</a></p>
+              <p style="margin-top:12px">Email<br /><a href="mailto:hello@pulsefitstudio.example">hello@pulsefitstudio.example</a></p>
+              <p style="margin-top:12px">Corporate &amp; student plans — ask for the membership desk.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <a class="logo" href="#top" aria-label="PulseFit Studio — back to top">
+            <span class="logo-mark" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2.5-6 4 12L15 12h7"/></svg>
+            </span>
+            <span class="logo-text">PulseFit<small>Studio</small></span>
+          </a>
+          <nav class="footer-nav" aria-label="Footer">
+            <a href="#classes">Classes</a>
+            <a href="#timetable">Timetable</a>
+            <a href="#coaches">Coaches</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#join">Free workout</a>
+          </nav>
+        </div>
+        <div class="foot-bottom">
+          <span>© <span id="year">2026</span> PulseFit Studio. All rights reserved.</span>
+          <span>Demo website — sample content for illustration.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= LIGHTBOX ================= -->
+    <figure class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <img id="lbImg" alt="" />
+      <figcaption id="lbCap"></figcaption>
+      <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Close photo viewer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Previous photo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Next photo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </figure>
+
+    <script src="script.js"></script>
+  </body>
+</html>

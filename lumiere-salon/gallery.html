@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Inside Lumière Salon & Spa — the styling floor, finished hair, nail artistry and bridal work. Browse the gallery and tap any photo to view it full-screen." />
+<title>Gallery — Lumière Salon &amp; Spa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site">
+  <div class="wrap header-in">
+    <a class="logo" href="index.html" aria-label="Lumière Salon and Spa — home">
+      <span class="logo-mark">L</span>
+      <span class="logo-name">Lumière<small>Salon &amp; Spa</small></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="stylists.html">Stylists</a>
+      <a href="gallery.html" aria-current="page">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn-rose btn-sm header-cta" href="booking.html">Book appointment</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home <span class="arr">→</span></a>
+  <a href="services.html">Services <span class="arr">→</span></a>
+  <a href="stylists.html">Stylists <span class="arr">→</span></a>
+  <a href="gallery.html">Gallery <span class="arr">→</span></a>
+  <a href="contact.html">Contact <span class="arr">→</span></a>
+  <a class="btn btn-rose" href="booking.html" style="margin-top:1rem;border-bottom:none">Book appointment</a>
+</div>
+
+<main>
+  <div class="page-hero">
+    <img class="bg" src="assets/interior-wide.jpg" alt="" />
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">Home</a> · Gallery</p>
+      <span class="kicker">Gallery</span>
+      <h1>The salon, the work, the details</h1>
+      <p>Marble, gold mirrors and very good hair. Tap any photograph to see it full-screen — use the arrows or your keyboard to wander.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="chips" role="group" aria-label="Filter gallery">
+        <button type="button" class="active" data-gal-filter="all">All photos</button>
+        <button type="button" data-gal-filter="hair">Hair</button>
+        <button type="button" data-gal-filter="nails">Nails</button>
+        <button type="button" data-gal-filter="interior">Interior</button>
+      </div>
+      <div class="gal-grid">
+        <button type="button" class="gal-item" data-cat="interior" data-caption="The styling floor — arched mirrors and crystal light">
+          <img src="assets/hero-interior.jpg" alt="The styling floor with arched gold mirrors, beige chairs and crystal chandeliers" loading="lazy" />
+          <figcaption>The styling floor</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="hair" data-caption="Balayage, finished with soft waves">
+          <img src="assets/balayage.jpg" alt="Long wavy balayage hair in ash blonde tones, photographed in the salon" loading="lazy" />
+          <figcaption>Balayage &amp; waves</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="nails" data-caption="Gel polish, applied at Lena's station">
+          <img src="assets/nails.jpg" alt="Red gel polish being brushed onto a guest's nails, polish bottles behind" loading="lazy" />
+          <figcaption>Gel in progress</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="hair" data-caption="In the chair — the blow-dry finish">
+          <img src="assets/hair-styling.jpg" alt="A stylist blow-drying and shaping a client's hair in the salon" loading="lazy" />
+          <figcaption>In the chair</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="interior" data-caption="Four stations, mirrors lit and ready">
+          <img src="assets/interior-gold.jpg" alt="Four styling stations with illuminated arched mirrors and black and gold chairs" loading="lazy" />
+          <figcaption>Mirrors &amp; marble</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="hair" data-caption="Bridal updo with pearl pins — by Amara">
+          <img src="assets/bridal.jpg" alt="Blonde bridal updo in a low twisted bun with pearl pins and pearl drop earrings" loading="lazy" />
+          <figcaption>Bridal updo</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="nails" data-caption="Lena at her manicure station">
+          <img src="assets/stylist-lena.jpg" alt="Lena smiling at her manicure station with the polish wall behind her" loading="lazy" />
+          <figcaption>The nail studio</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="hair" data-caption="Caramel dimension, root to tip">
+          <img src="assets/hair-colour.jpg" alt="Long hair coloured in a dark-to-caramel balayage gradient, in loose waves" loading="lazy" />
+          <figcaption>Caramel dimension</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="interior" data-caption="The salon from the door — welcome in">
+          <img src="assets/salon-cover.jpg" alt="Warm, elegant salon interior with styling chairs and glowing mirrors" loading="lazy" />
+          <figcaption>Welcome to Lumière</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="interior" data-caption="Every station, one calm room">
+          <img src="assets/interior-wide.jpg" alt="A wide view of the salon's styling stations, mirrors and leather chairs" loading="lazy" />
+          <figcaption>The wide view</figcaption>
+        </button>
+      </div>
+
+      <div class="cta-band reveal" style="margin-top:2.6rem">
+        <img class="bg" src="assets/hero-interior.jpg" alt="" loading="lazy" />
+        <h2>Better in person</h2>
+        <p>Photos help, but the room smells of neroli and the chairs are comfier than they look. Come and sit in one.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-rose" href="booking.html">Book an appointment</a>
+          <a class="btn btn-outline-light" href="services.html">See services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close viewer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous photo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+  <figure>
+    <img id="lbImg" src="" alt="" />
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next photo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="index.html" style="margin-bottom:1rem">
+          <span class="logo-mark">L</span>
+          <span class="logo-name" style="color:var(--on-dark)">Lumière<small>Salon &amp; Spa</small></span>
+        </a>
+        <p>Hair, beauty and quiet spa rooms in Mayfair. Unhurried appointments, honest advice, and results that last past the weekend.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul class="foot-links">
+          <li><a href="services.html">Services &amp; prices</a></li>
+          <li><a href="stylists.html">Stylists</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="booking.html">Book appointment</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Opening hours</h3>
+        <ul class="foot-links">
+          <li>Tue – Fri · 9:00 AM – 7:00 PM</li>
+          <li>Saturday · 9:00 AM – 6:00 PM</li>
+          <li>Sunday · 10:00 AM – 4:00 PM</li>
+          <li>Monday · Closed</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul class="foot-links">
+          <li>8 Blossom Row, Mayfair, London W1K 3QT</li>
+          <li><a href="tel:+442079460821">+44 20 7946 0821</a></li>
+          <li><a href="mailto:hello@lumiere-salon.example">hello@lumiere-salon.example</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Lumière Salon &amp; Spa. All rights reserved.</span>
+      <span>Website by <a href="../index.html" style="color:var(--gold)">Tazrian Rafin</a></span>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

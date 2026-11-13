@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Inside Saffron Table — the dining room, the chef's counter, the plates and the pours. Browse the gallery and tap any photo to view it full-screen." />
+<title>Gallery — Saffron Table</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site" style="position:relative;top:auto">
+  <div class="wrap header-in">
+    <a class="logo" href="index.html" aria-label="Saffron Table — home">
+      <span class="logo-mark">S</span>
+      <span class="logo-name">Saffron Table<small>Fine Dining</small></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="story.html">Our Story</a>
+      <a href="gallery.html" aria-current="page">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn-wine btn-sm header-cta" href="reservations.html">Reserve a table</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home <span class="arr">→</span></a>
+  <a href="menu.html">Menu <span class="arr">→</span></a>
+  <a href="story.html">Our Story <span class="arr">→</span></a>
+  <a href="gallery.html">Gallery <span class="arr">→</span></a>
+  <a href="reservations.html">Reservations <span class="arr">→</span></a>
+  <a href="contact.html">Contact <span class="arr">→</span></a>
+  <a class="btn btn-wine" href="reservations.html" style="margin-top:1rem;border-bottom:none">Reserve a table</a>
+</div>
+
+<main>
+  <div class="page-hero">
+    <img class="bg" src="assets/dining-room.jpg" alt="" />
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">Home</a> · Gallery</p>
+      <span class="kicker">Gallery</span>
+      <h1>The room, the plates, the pours</h1>
+      <p>Candlelight, marble and a lot of gold. Tap any photograph to see it full-screen — use the arrows or your keyboard to wander.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="gal-filters" role="group" aria-label="Filter gallery">
+        <button type="button" class="active" data-gal-filter="all">All photos</button>
+        <button type="button" data-gal-filter="room">The room</button>
+        <button type="button" data-gal-filter="plates">Plates</button>
+        <button type="button" data-gal-filter="kitchen">Kitchen</button>
+        <button type="button" data-gal-filter="bar">Bar</button>
+      </div>
+      <div class="gal-grid">
+        <button type="button" class="gal-item" data-cat="room" data-caption="The dining room, set for first sitting">
+          <img src="assets/dining-room.jpg" alt="The candle-lit dining room set for evening service" loading="lazy" />
+          <figcaption>The dining room</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="plates" data-caption="Tonight's special, plated at the pass">
+          <img src="assets/dish-hero.jpg" alt="A finely plated dish with dark sauce, berries and micro herbs on a white plate" loading="lazy" />
+          <figcaption>From the pass</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="plates" data-caption="Saffron risotto — the house signature">
+          <img src="assets/risotto.jpg" alt="Golden saffron risotto in a dark bowl, topped with saffron threads" loading="lazy" />
+          <figcaption>The signature risotto</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="kitchen" data-caption="Chef Amara finishing a plate at the pass">
+          <img src="assets/chef.jpg" alt="Chef plating a dish with meat and vegetables in the kitchen" loading="lazy" />
+          <figcaption>At the pass</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="plates" data-caption="Ember salmon with charred asparagus">
+          <img src="assets/salmon.jpg" alt="Pan-seared salmon fillet with asparagus on a white plate" loading="lazy" />
+          <figcaption>Ember salmon</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="bar" data-caption="The Saffron Old Fashioned, smoked to order">
+          <img src="assets/cocktail.jpg" alt="A smoked amber cocktail with orange peel on the dark wooden bar" loading="lazy" />
+          <figcaption>The bar</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="plates" data-caption="Midnight Chocolate — save room">
+          <img src="assets/dessert.jpg" alt="Dark chocolate dessert with cocoa, cream and chocolate shards" loading="lazy" />
+          <figcaption>Midnight Chocolate</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="room" data-caption="Evenings at Saffron Table">
+          <img src="assets/dining-room.jpg" alt="Warm light and set tables in the Saffron Table dining room" loading="lazy" />
+          <figcaption>Evening service</figcaption>
+        </button>
+        <button type="button" class="gal-item" data-cat="kitchen" data-caption="Finishing touches before the plate leaves the kitchen">
+          <img src="assets/chef.jpg" alt="Chef garnishing a plate in the kitchen" loading="lazy" />
+          <figcaption>Finishing touches</figcaption>
+        </button>
+      </div>
+
+      <div class="cta-band reveal" style="margin-top:2.6rem">
+        <img class="bg" src="assets/cocktail.jpg" alt="" loading="lazy" />
+        <h2>Better in person</h2>
+        <p>Photos help, but the room smells of brown butter and saffron — that part you have to come and get yourself.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-gold" href="reservations.html">Reserve a table</a>
+          <a class="btn btn-outline-light" href="menu.html">See the menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close viewer">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous photo">‹</button>
+  <figure>
+    <img id="lbImg" src="" alt="" />
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next photo">›</button>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="index.html" style="margin-bottom:1rem">
+          <span class="logo-mark">S</span>
+          <span class="logo-name" style="color:var(--on-dark)">Saffron Table<small>Fine Dining</small></span>
+        </a>
+        <p>Modern fine dining built around the world's rarest spice. Forty seats, two sittings, one golden thread through every plate.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul class="foot-links">
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="reservations.html">Reservations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Opening hours</h3>
+        <ul class="foot-links">
+          <li>Tue – Thu · 5:30 pm – 10:30 pm</li>
+          <li>Fri – Sat · 5:30 pm – 11:00 pm</li>
+          <li>Sunday · 12:00 pm – 9:00 pm</li>
+          <li>Monday · Closed</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul class="foot-links">
+          <li>14 Ember Lane, Mayfair, London W1K 4QT</li>
+          <li><a href="tel:+442071234567">+44 20 7123 4567</a></li>
+          <li><a href="mailto:hello@saffrontable.example">hello@saffrontable.example</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Saffron Table. All rights reserved.</span>
+      <span>Website by <a href="#" style="color:var(--gold)">Tazrian Rafin</a></span>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

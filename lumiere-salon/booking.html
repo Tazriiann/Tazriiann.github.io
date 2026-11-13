@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Book an appointment at Lumière Salon & Spa — choose your service, stylist, day and time in four gentle steps. We call to confirm every booking." />
+<title>Book an Appointment — Lumière Salon &amp; Spa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site">
+  <div class="wrap header-in">
+    <a class="logo" href="index.html" aria-label="Lumière Salon and Spa — home">
+      <span class="logo-mark">L</span>
+      <span class="logo-name">Lumière<small>Salon &amp; Spa</small></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="stylists.html">Stylists</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn-rose btn-sm header-cta" href="booking.html" aria-current="page">Book appointment</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home <span class="arr">→</span></a>
+  <a href="services.html">Services <span class="arr">→</span></a>
+  <a href="stylists.html">Stylists <span class="arr">→</span></a>
+  <a href="gallery.html">Gallery <span class="arr">→</span></a>
+  <a href="contact.html">Contact <span class="arr">→</span></a>
+  <a class="btn btn-rose" href="booking.html" style="margin-top:1rem;border-bottom:none">Book appointment</a>
+</div>
+
+<main>
+  <div class="page-hero">
+    <img class="bg" src="assets/interior-gold.jpg" alt="" />
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">Home</a> · Book appointment</p>
+      <span class="kicker">Book appointment</span>
+      <h1>Four gentle steps to your chair</h1>
+      <p>Choose a service, a stylist and a moment that suits you. We'll call to confirm — no payment now, no account to create.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="wizard" id="wizard">
+        <div class="steps-bar" aria-hidden="true"><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></div>
+        <div class="steps-labels"><span>1 · Service</span><span>2 · Stylist</span><span>3 · Date &amp; time</span><span>4 · Your details</span></div>
+
+        <div class="wiz-viewport">
+          <div class="wiz-panel" id="wizStep1">
+            <h2>What are we doing for you?</h2>
+            <p class="sub">Tap a service to select it. Colour appointments include a consultation — first time with us? We'll arrange your patch test on the confirmation call.</p>
+          <p class="pick-group">Hair</p>
+          <div class="pick-grid">
+            <button type="button" class="pick-card" data-pick-service="Signature Cut &amp; Finish" data-price="£68" data-duration="60 min" aria-pressed="false">
+              <span class="pc-body"><h3>Signature Cut &amp; Finish</h3><p>60 min · with consultation</p></span>
+              <span class="pc-price">£68</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Luxury Blow-Dry" data-price="£48" data-duration="45 min" aria-pressed="false">
+              <span class="pc-body"><h3>Luxury Blow-Dry</h3><p>45 min · with consultation</p></span>
+              <span class="pc-price">£48</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Silk Press &amp; Style" data-price="£58" data-duration="75 min" aria-pressed="false">
+              <span class="pc-body"><h3>Silk Press &amp; Style</h3><p>75 min · with consultation</p></span>
+              <span class="pc-price">£58</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Occasion Updo" data-price="£72" data-duration="60 min" aria-pressed="false">
+              <span class="pc-body"><h3>Occasion Updo</h3><p>60 min · with consultation</p></span>
+              <span class="pc-price">£72</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+          </div>
+          <p class="pick-group">Colour</p>
+          <div class="pick-grid">
+            <button type="button" class="pick-card" data-pick-service="Full Balayage" data-price="£165" data-duration="150 min" aria-pressed="false">
+              <span class="pc-body"><h3>Full Balayage</h3><p>150 min · with consultation</p></span>
+              <span class="pc-price">£165</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Full Head Colour" data-price="£110" data-duration="120 min" aria-pressed="false">
+              <span class="pc-body"><h3>Full Head Colour</h3><p>120 min · with consultation</p></span>
+              <span class="pc-price">£110</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Half Head Highlights" data-price="£125" data-duration="120 min" aria-pressed="false">
+              <span class="pc-body"><h3>Half Head Highlights</h3><p>120 min · with consultation</p></span>
+              <span class="pc-price">£125</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Gloss &amp; Tone" data-price="£55" data-duration="45 min" aria-pressed="false">
+              <span class="pc-body"><h3>Gloss &amp; Tone</h3><p>45 min · with consultation</p></span>
+              <span class="pc-price">£55</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+          </div>
+          <p class="pick-group">Nails</p>
+          <div class="pick-grid">
+            <button type="button" class="pick-card" data-pick-service="Gel Manicure" data-price="£52" data-duration="60 min" aria-pressed="false">
+              <span class="pc-body"><h3>Gel Manicure</h3><p>60 min · with consultation</p></span>
+              <span class="pc-price">£52</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Luxury Spa Pedicure" data-price="£64" data-duration="75 min" aria-pressed="false">
+              <span class="pc-body"><h3>Luxury Spa Pedicure</h3><p>75 min · with consultation</p></span>
+              <span class="pc-price">£64</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Bespoke Nail Art" data-price="£28" data-duration="40 min" aria-pressed="false">
+              <span class="pc-body"><h3>Bespoke Nail Art</h3><p>40 min · with consultation</p></span>
+              <span class="pc-price">£28</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Acrylic Extensions" data-price="£70" data-duration="90 min" aria-pressed="false">
+              <span class="pc-body"><h3>Acrylic Extensions</h3><p>90 min · with consultation</p></span>
+              <span class="pc-price">£70</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+          </div>
+          <p class="pick-group">Facials &amp; Skin</p>
+          <div class="pick-grid">
+            <button type="button" class="pick-card" data-pick-service="Lumière Signature Facial" data-price="£95" data-duration="75 min" aria-pressed="false">
+              <span class="pc-body"><h3>Lumière Signature Facial</h3><p>75 min · with consultation</p></span>
+              <span class="pc-price">£95</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Hydra-Glow Facial" data-price="£85" data-duration="60 min" aria-pressed="false">
+              <span class="pc-body"><h3>Hydra-Glow Facial</h3><p>60 min · with consultation</p></span>
+              <span class="pc-price">£85</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Anti-Ageing Lift Facial" data-price="£120" data-duration="90 min" aria-pressed="false">
+              <span class="pc-body"><h3>Anti-Ageing Lift Facial</h3><p>90 min · with consultation</p></span>
+              <span class="pc-price">£120</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Express Radiance Facial" data-price="£48" data-duration="30 min" aria-pressed="false">
+              <span class="pc-body"><h3>Express Radiance Facial</h3><p>30 min · with consultation</p></span>
+              <span class="pc-price">£48</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+          </div>
+          <p class="pick-group">Massage &amp; Spa</p>
+          <div class="pick-grid">
+            <button type="button" class="pick-card" data-pick-service="Hot Stone Massage" data-price="£88" data-duration="75 min" aria-pressed="false">
+              <span class="pc-body"><h3>Hot Stone Massage</h3><p>75 min · with consultation</p></span>
+              <span class="pc-price">£88</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Swedish Full-Body Massage" data-price="£78" data-duration="60 min" aria-pressed="false">
+              <span class="pc-body"><h3>Swedish Full-Body Massage</h3><p>60 min · with consultation</p></span>
+              <span class="pc-price">£78</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Aromatherapy Ritual" data-price="£98" data-duration="90 min" aria-pressed="false">
+              <span class="pc-body"><h3>Aromatherapy Ritual</h3><p>90 min · with consultation</p></span>
+              <span class="pc-price">£98</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Head, Neck &amp; Shoulders" data-price="£45" data-duration="30 min" aria-pressed="false">
+              <span class="pc-body"><h3>Head, Neck &amp; Shoulders</h3><p>30 min · with consultation</p></span>
+              <span class="pc-price">£45</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+          </div>
+          <p class="pick-group">Bridal</p>
+          <div class="pick-grid">
+            <button type="button" class="pick-card" data-pick-service="Bridal Hair &amp; Makeup" data-price="£220" data-duration="150 min" aria-pressed="false">
+              <span class="pc-body"><h3>Bridal Hair &amp; Makeup</h3><p>150 min · with consultation</p></span>
+              <span class="pc-price">£220</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Bridal Trial" data-price="£95" data-duration="90 min" aria-pressed="false">
+              <span class="pc-body"><h3>Bridal Trial</h3><p>90 min · with consultation</p></span>
+              <span class="pc-price">£95</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Bridesmaid Package" data-price="£110" data-duration="90 min" aria-pressed="false">
+              <span class="pc-body"><h3>Bridesmaid Package</h3><p>90 min · with consultation</p></span>
+              <span class="pc-price">£110</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-service="Mother of the Bride" data-price="£85" data-duration="60 min" aria-pressed="false">
+              <span class="pc-body"><h3>Mother of the Bride</h3><p>60 min · with consultation</p></span>
+              <span class="pc-price">£85</span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+          </div>
+          </div>
+
+          <div class="wiz-panel" id="wizStep2">
+            <h2>Who would you like?</h2>
+            <p class="sub">Book the person, not just the appointment — or let us match you.</p>
+            <div class="pick-grid">
+            <button type="button" class="pick-card" data-pick-stylist="First available" aria-pressed="false">
+              <span style="width:64px;height:64px;border-radius:50%;background:var(--rose-tint);display:grid;place-items:center;color:var(--rose-deep);flex:none"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z"/></svg></span>
+              <span class="pc-body"><h3>First available</h3><p>We&#x27;ll match you with the right specialist</p></span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-stylist="Isabelle Moreau" aria-pressed="false">
+              <img src="assets/stylist-isabelle.jpg" alt="Hair &amp; colour" loading="lazy" />
+              <span class="pc-body"><h3>Isabelle Moreau</h3><p>Creative Director — hair &amp; colour</p></span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-stylist="Amara Osei" aria-pressed="false">
+              <img src="assets/stylist-amara.jpg" alt="Bridal &amp; makeup" loading="lazy" />
+              <span class="pc-body"><h3>Amara Osei</h3><p>Bridal &amp; Makeup Lead</p></span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-stylist="Sofia Andersson" aria-pressed="false">
+              <img src="assets/stylist-sofia.jpg" alt="Skin &amp; spa" loading="lazy" />
+              <span class="pc-body"><h3>Sofia Andersson</h3><p>Skin &amp; Spa Therapist</p></span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            <button type="button" class="pick-card" data-pick-stylist="Lena Petrova" aria-pressed="false">
+              <img src="assets/stylist-lena.jpg" alt="Nails" loading="lazy" />
+              <span class="pc-body"><h3>Lena Petrova</h3><p>Nail Artistry Lead</p></span>
+              <span class="pc-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            </button>
+            </div>
+          </div>
+
+          <div class="wiz-panel" id="wizStep3">
+            <h2>Pick your moment</h2>
+            <p class="sub">We're closed on Mondays. Times shown are start times — arrive as you are, tea is on us.</p>
+            <p class="pick-group">Day</p>
+            <div class="chip-wrap" id="dateChips"></div>
+            <p class="pick-group" style="margin-top:1.6rem">Time</p>
+            <p class="sub" id="timeHint" style="margin-bottom:.9rem">Pick a day first — times will appear here.</p>
+            <div class="chip-wrap" id="timeChips"></div>
+          </div>
+
+          <div class="wiz-panel" id="wizStep4">
+            <h2>Last thing — your details</h2>
+            <p class="sub">We call this number to confirm your appointment, usually within the hour while we're open.</p>
+            <div class="field-row">
+              <div class="field" data-field="bkname">
+                <label for="bkName">Your name</label>
+                <input id="bkName" type="text" autocomplete="name" placeholder="e.g. Alex Morgan" />
+                <p class="err">Please add your name.</p>
+              </div>
+              <div class="field" data-field="bkphone">
+                <label for="bkPhone">Phone number</label>
+                <input id="bkPhone" type="tel" autocomplete="tel" inputmode="tel" placeholder="e.g. 07123 456789" />
+                <p class="err">Please add a phone number so we can confirm.</p>
+              </div>
+            </div>
+            <div class="field" data-field="bknotes">
+              <label for="bkNotes">Anything we should know? <span>(optional)</span></label>
+              <textarea id="bkNotes" placeholder="Allergies, inspiration photos, a quiet appointment, parking questions — tell us here."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <p class="wiz-error" id="wizError" role="alert"></p>
+        <div class="wiz-nav" id="wizNav">
+          <button class="btn btn-outline" type="button" id="wizBack" style="visibility:hidden"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Back</button>
+          <span class="spacer"></span>
+          <button class="btn btn-rose" type="button" id="wizNext">Continue</button>
+        </div>
+
+        <div class="done-panel" id="bookDone" role="status">
+          <div class="done-inner">
+            <div class="success-wrap">
+              <svg class="success-ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46"/><path d="M32 51l13 13 24-27"/></svg>
+              <h3>Appointment requested — thank you!</h3>
+              <p>Here's your booking. We'll call to confirm shortly; if it's your first colour with us, we'll book your quick patch test on the same call.</p>
+            </div>
+            <dl>
+              <dt>Service</dt><dd id="sumService"></dd>
+              <dt>Stylist</dt><dd id="sumStylist"></dd>
+              <dt>When</dt><dd id="sumWhen"></dd>
+              <dt>Name</dt><dd id="sumName"></dd>
+              <dt>Confirm to</dt><dd id="sumPhone"></dd>
+              <span id="sumNotesRow" style="display:contents"><dt>Notes</dt><dd id="sumNotes"></dd></span>
+            </dl>
+            <div class="done-actions">
+              <button class="btn btn-outline btn-sm" type="button" id="bookAgain">Book another appointment</button>
+              <a class="btn btn-rose btn-sm" href="services.html">Browse services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-grid" style="margin-top:3rem">
+        <div class="info reveal">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Running late?</h3>
+          <p>Call us on <a href="tel:+442079460821">+44 20 7946 0821</a> and we'll do our best. Appointments are held for ten minutes.</p>
+        </div>
+        <div class="info reveal">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12 2 12 2 9.5 7.5 8 10c-2 1.6-3 3.5-3 5.5a7 7 0 0 0 7 7z"/></svg></div>
+          <h3>First colour?</h3>
+          <p>A patch test is needed 48 hours before your first colour appointment. It takes two minutes — just pop in, no booking needed.</p>
+        </div>
+        <div class="info reveal">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.3 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4 1-4.5 2.5C10.9 4 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.2 1.5 4 3 5.5l7 7z"/></svg></div>
+          <h3>Need to cancel?</h3>
+          <p>Life happens — cancel or move free of charge up to four hours before, by phone or by replying to our confirmation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="index.html" style="margin-bottom:1rem">
+          <span class="logo-mark">L</span>
+          <span class="logo-name" style="color:var(--on-dark)">Lumière<small>Salon &amp; Spa</small></span>
+        </a>
+        <p>Hair, beauty and quiet spa rooms in Mayfair. Unhurried appointments, honest advice, and results that last past the weekend.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul class="foot-links">
+          <li><a href="services.html">Services &amp; prices</a></li>
+          <li><a href="stylists.html">Stylists</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="booking.html">Book appointment</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Opening hours</h3>
+        <ul class="foot-links">
+          <li>Tue – Fri · 9:00 AM – 7:00 PM</li>
+          <li>Saturday · 9:00 AM – 6:00 PM</li>
+          <li>Sunday · 10:00 AM – 4:00 PM</li>
+          <li>Monday · Closed</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul class="foot-links">
+          <li>8 Blossom Row, Mayfair, London W1K 3QT</li>
+          <li><a href="tel:+442079460821">+44 20 7946 0821</a></li>
+          <li><a href="mailto:hello@lumiere-salon.example">hello@lumiere-salon.example</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Lumière Salon &amp; Spa. All rights reserved.</span>
+      <span>Website by <a href="../index.html" style="color:var(--gold)">Tazrian Rafin</a></span>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
