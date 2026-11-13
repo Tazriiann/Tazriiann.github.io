@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<meta name="description" content="Salon Sway — Hair salon in Austin, Texas. Cuts, colour, styling and treatments on South Congress Avenue.">
+<title>Salon Sway — Hair Salon in Austin, TX</title>
+<style>
+  :root{
+    --cream:#faf6ef; --cream2:#f3ead9; --forest:#1e3a2f; --forest2:#2c5240;
+    --gold:#c9a86a; --gold-dark:#a9863f; --ink:#22271f; --muted:#5f6a60; --white:#fff;
+    --radius:20px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--cream);color:var(--ink);
+    font-size:17px;line-height:1.65;overflow-x:hidden}
+  img{max-width:100%;height:auto;display:block}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;width:100%}
+  /* Header */
+  header{position:sticky;top:0;z-index:20;background:rgba(250,246,239,.96);border-bottom:1px solid #e6dcc8}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:8px 16px;min-height:64px;flex-wrap:wrap}
+  .logo{font-size:24px;letter-spacing:.06em;color:var(--forest);text-decoration:none;font-weight:700;white-space:nowrap}
+  .logo span{color:var(--gold-dark)}
+  .nav-links{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+  .nav-links a{text-decoration:none;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;
+    padding:12px 10px;min-height:44px;display:inline-flex;align-items:center;color:var(--forest)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 28px;
+    border-radius:999px;text-decoration:none;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:16px;font-weight:700;letter-spacing:.02em;border:2px solid transparent;cursor:pointer;
+    transition:transform .25s ease,background .25s ease,color .25s ease,box-shadow .25s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:active{transform:translateY(0)}
+  .btn-dark{background:var(--forest);color:#fff}
+  .btn-dark:hover{background:var(--forest2)}
+  .btn-outline{background:transparent;border-color:var(--forest);color:var(--forest)}
+  .btn-outline:hover{background:var(--forest);color:#fff}
+  .btn-small{min-height:44px;padding:10px 20px;font-size:15px}
+  /* Hero — centred, editorial, arched image */
+  .hero{padding:56px 0 48px;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;width:520px;height:520px;border:1px solid #e2d3ae;border-radius:50%;
+    top:-180px;right:-180px;opacity:.7;pointer-events:none}
+  .eyebrow{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:13px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--gold-dark);font-weight:700}
+  h1{font-size:clamp(44px,11vw,84px);line-height:1.02;color:var(--forest);font-weight:400;margin:16px 0 12px}
+  h1 em{font-style:italic;color:var(--gold-dark)}
+  .hero p.lead{font-size:19px;color:var(--muted);max-width:560px;margin:0 auto 28px}
+  .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .hero-img{margin:36px auto 0;max-width:720px;border-radius:260px 260px var(--radius) var(--radius);overflow:hidden;
+    box-shadow:0 24px 48px rgba(30,58,47,.18);animation:rise .9s ease both}
+  .hero-img img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .hero-meta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;color:var(--forest)}
+  .pill{background:#fff;border:1px solid #e6dcc8;border-radius:999px;padding:10px 16px;min-height:44px;
+    display:inline-flex;align-items:center}
+  .stars{color:#d99a26;letter-spacing:.1em}
+  /* Sections */
+  section{padding:56px 0}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 32px}
+  .section-head.left{text-align:left;margin-left:0}
+  h2{font-size:clamp(30px,7vw,44px);line-height:1.12;color:var(--forest);font-weight:400;margin:10px 0 12px}
+  h2 em{font-style:italic;color:var(--gold-dark)}
+  .section-head p{color:var(--muted);font-size:17px}
+  /* Services — soft cards */
+  .services{background:var(--forest);color:#f4efe4;border-radius:28px;padding:48px 24px}
+  .services h2{color:#fff}
+  .services h2 em{color:var(--gold)}
+  .services .section-head p{color:#cbd8cd}
+  .service-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  .service{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;
+    padding:22px;transition:transform .25s ease,background .25s ease}
+  .service:hover{transform:translateY(-4px);background:rgba(255,255,255,.1)}
+  .service h3{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:18px;color:#fff;margin-bottom:6px}
+  .service p{font-size:16px;color:#cbd8cd;line-height:1.55}
+  .service .tag{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:13px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold)}
+  /* Gallery */
+  .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .gallery-grid figure{border-radius:16px;overflow:hidden;position:relative}
+  .gallery-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .5s ease}
+  .gallery-grid figure:hover img{transform:scale(1.06)}
+  .gallery-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;color:#fff;
+    background:linear-gradient(transparent,rgba(0,0,0,.65))}
+  /* About — split, image left on desktop */
+  .about-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+  .about-img{border-radius:var(--radius);overflow:hidden;box-shadow:0 18px 36px rgba(30,58,47,.15)}
+  .about-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .about-copy p{color:var(--muted);margin-bottom:16px}
+  .about-copy ul{list-style:none;display:grid;gap:10px;margin:20px 0 24px}
+  .about-copy li{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16px;
+    padding-left:30px;position:relative}
+  .about-copy li::before{content:"✓";position:absolute;left:0;color:var(--gold-dark);font-weight:700}
+  /* Reviews — rating only, no invented quotes */
+  .reviews{background:var(--cream2);border-radius:28px;padding:44px 24px;text-align:center}
+  .big-rating{font-size:clamp(52px,14vw,76px);line-height:1;color:var(--forest)}
+  .reviews .stars{font-size:26px}
+  .reviews p{color:var(--muted);max-width:520px;margin:12px auto 0}
+  .review-note{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;
+    background:#fff;border:1px solid #e6dcc8;border-radius:12px;padding:16px;margin-top:24px;display:inline-block}
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:20px}
+  .contact-card{background:#fff;border:1px solid #e6dcc8;border-radius:var(--radius);padding:28px}
+  .contact-card h3{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:19px;color:var(--forest);margin-bottom:14px}
+  .contact-card address{font-style:normal;line-height:1.7;color:var(--muted)}
+  .contact-card a.tel{font-size:22px;color:var(--forest);text-decoration:none;font-weight:700;
+    display:inline-block;padding:8px 0;min-height:44px}
+  .hours{width:100%;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16px}
+  .hours div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid #eee5d2}
+  .cta-band{background:var(--forest);color:#fff;border-radius:28px;padding:44px 24px;text-align:center;margin-top:20px}
+  .cta-band h2{color:#fff}
+  .cta-band p{color:#cbd8cd;margin-bottom:24px}
+  footer{background:var(--forest);color:#b9c8ba;padding:36px 0;margin-top:56px;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;text-align:center}
+  footer strong{color:#fff;font-size:17px}
+  footer p{margin-top:8px;line-height:1.7}
+  /* Reveal — transform / opacity only, light */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+  @media (min-width:700px){
+    .service-grid{grid-template-columns:1fr 1fr}
+    .gallery-grid{grid-template-columns:repeat(4,1fr)}
+    .about-grid{grid-template-columns:1fr 1fr}
+    .contact-grid{grid-template-columns:1.2fr 1fr}
+    .hero{padding:72px 0 56px}
+  }
+  @media (max-width:420px){
+    .nav-links a{padding:12px 7px;font-size:14px}
+    .logo{font-size:21px}
+    .hero{padding:44px 0 40px}
+    section{padding:44px 0}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">Salon <span>Sway</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Hair Salon &nbsp;·&nbsp; South Congress, Austin</p>
+      <h1>Beautiful hair,<br><em>effortlessly</em> yours.</h1>
+      <p class="lead">A calm, welcoming salon on South Congress — thoughtful cuts, rich colour and styling that fits the way you actually live.</p>
+      <div class="hero-actions">
+        <a class="btn btn-dark" href="#">Book Now</a>
+        <a class="btn btn-outline" href="#services">Explore Services</a>
+      </div>
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&amp;q=80&amp;auto=format&amp;fit=crop" alt="Stylist finishing a client's hair inside a bright, modern salon" width="800" height="500" loading="eager">
+      </div>
+      <div class="hero-meta">
+        <span class="pill"><span class="stars" aria-hidden="true">★★★★★</span>&nbsp; 4.8 stars from 53 Google reviews</span>
+        <span class="pill">2900 S Congress Ave, Austin</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="services reveal">
+        <div class="section-head">
+          <p class="eyebrow">What we do</p>
+          <h2>Services, <em>tailored</em> to you</h2>
+          <p>Every visit starts with a consultation, so your cut and colour are shaped around you — not a template.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service"><p class="tag">Cut &amp; Style</p><h3>Haircuts</h3><p>Precision cuts for women, men and children, finished with a blow-dry and style.</p></article>
+          <article class="service"><p class="tag">Colour</p><h3>Hair Colour</h3><p>Full colour, root touch-ups, highlights and balayage for depth and dimension.</p></article>
+          <article class="service"><p class="tag">Colour</p><h3>Balayage &amp; Highlights</h3><p>Soft, sun-kissed blending and lived-in colour that grows out beautifully.</p></article>
+          <article class="service"><p class="tag">Style</p><h3>Blowouts &amp; Styling</h3><p>Smooth blowouts, waves and curls, and styling for special occasions.</p></article>
+          <article class="service"><p class="tag">Care</p><h3>Deep Conditioning Treatments</h3><p>Restorative treatments to bring back shine, softness and strength.</p></article>
+          <article class="service"><p class="tag">Occasion</p><h3>Bridal &amp; Event Styling</h3><p>Updos and polished looks for weddings, parties and big days.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Recent work</p>
+        <h2>Fresh from <em>the chair</em></h2>
+        <p>A look at the cuts, colour and finishes our stylists love creating.</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <figure><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&amp;q=80&amp;auto=format&amp;fit=crop" alt="Freshly styled hair with soft waves" width="800" height="800" loading="lazy"><figcaption>Soft waves</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&amp;q=80&amp;auto=format&amp;fit=crop" alt="Stylist working on a client's hair" width="800" height="800" loading="lazy"><figcaption>In the chair</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800&amp;q=80&amp;auto=format&amp;fit=crop" alt="Salon styling station with mirror and tools" width="800" height="800" loading="lazy"><figcaption>The salon</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&amp;q=80&amp;auto=format&amp;fit=crop" alt="Finished hairstyle with volume and shine" width="800" height="800" loading="lazy"><figcaption>Finished look</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-img reveal">
+          <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=800&amp;q=80&amp;auto=format&amp;fit=crop" alt="Stylist blow-drying a client's hair at Salon Sway" width="800" height="600" loading="lazy">
+        </div>
+        <div class="about-copy reveal">
+          <p class="eyebrow">About Salon Sway</p>
+          <h2>A neighbourhood salon with a <em>gentle touch</em></h2>
+          <p>Salon Sway sits on South Congress Avenue in Austin, Texas — a relaxed space where good conversation, honest advice and careful work come first.</p>
+          <p>Whether you want a small refresh or a whole new look, our stylists listen first, then shape a cut and colour that suits your hair, your routine and your style.</p>
+          <ul>
+            <li>Consultation before every cut and colour</li>
+            <li>Welcoming, unhurried appointments</li>
+            <li>On South Congress, easy to find in Austin</li>
+          </ul>
+          <a class="btn btn-dark" href="#">Book an Appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <div class="reviews reveal">
+        <p class="eyebrow">Loved by Austin</p>
+        <p class="big-rating">4.8</p>
+        <p class="stars" aria-label="4.8 out of 5 stars">★★★★★</p>
+        <p><strong>4.8 stars from 53 Google reviews</strong></p>
+        <p>Our clients keep coming back — and keep telling their friends. Come and see what the South Congress neighbourhood loves about Salon Sway.</p>
+        <p class="review-note">Read our reviews on Google — search “Salon Sway Austin”.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Visit us</p>
+        <h2>Find us on <em>South Congress</em></h2>
+      </div>
+      <div class="contact-grid reveal">
+        <div class="contact-card">
+          <h3>Salon Sway</h3>
+          <address>
+            2900 S Congress Ave Ste 107<br>
+            Austin, TX 78704
+          </address>
+          <p style="margin-top:14px"><a class="tel" href="tel:+15129390229">+1 512-939-0229</a></p>
+          <p style="color:var(--muted)">Call to book, or ask about a service — we’ll be happy to help.</p>
+          <p style="margin-top:18px"><a class="btn btn-dark" href="#">Book Now</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>Opening Hours</h3>
+          <div class="hours">
+            <div><span>Monday – Friday</span><span>9:00 AM – 7:00 PM</span></div>
+            <div><span>Saturday</span><span>9:00 AM – 6:00 PM</span></div>
+            <div><span>Sunday</span><span>Closed</span></div>
+          </div>
+          <p style="color:var(--muted);margin-top:16px;font-size:15px">Hours may vary on holidays — please call ahead to confirm.</p>
+        </div>
+      </div>
+      <div class="cta-band reveal">
+        <h2>Ready for a fresh look?</h2>
+        <p>Book your chair at Salon Sway today.</p>
+        <a class="btn btn-outline" style="border-color:#fff;color:#fff" href="#">Book Now</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Salon Sway</strong>
+    <p>2900 S Congress Ave Ste 107, Austin, TX 78704<br>
+    +1 512-939-0229 &nbsp;·&nbsp; 4.8 stars from 53 Google reviews</p>
+    <p>© 2026 Salon Sway. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Light scroll-reveal: IntersectionObserver, transform/opacity only.
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('visible')});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+</body>
+</html>

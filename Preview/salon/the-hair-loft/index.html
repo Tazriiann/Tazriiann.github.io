@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<meta name="description" content="The Hair Loft — hair salon on South Lamar Boulevard, Austin, Texas. Cuts, colour, extensions and styling.">
+<title>The Hair Loft | Austin, TX</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Verdana,Geneva,sans-serif;background:#fdfbf8;color:#1f1d1c;font-size:17px;line-height:1.65;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#1f1d1c;color:#fff;position:sticky;top:0;z-index:20}
+.nav{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{color:#fff;text-decoration:none;font-size:20px;font-weight:700;letter-spacing:.14em;white-space:nowrap}
+.logo b{color:#e8a7b8}
+.nav nav{display:flex;gap:18px;flex-wrap:wrap}
+.nav nav a{color:#f3e9e4;text-decoration:none;font-size:15px;padding:10px 2px;min-height:44px;display:inline-flex;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 26px;border-radius:999px;background:#e8a7b8;color:#1f1d1c;text-decoration:none;font-weight:700;font-size:16px;border:0;cursor:pointer;transition:transform .25s ease,background .25s ease}
+.btn:hover{background:#d98ba0;transform:translateY(-2px)}
+.btn.dark{background:#1f1d1c;color:#fff}
+.hero{position:relative;text-align:center;padding:72px 20px 56px;color:#fff;overflow:hidden;background:#1f1d1c}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;animation:kenburns 16s ease-out both}
+@keyframes kenburns{from{transform:scale(1.1)}to{transform:scale(1)}}
+.hero-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
+.hero h1{font-size:clamp(42px,11vw,76px);line-height:1.02;letter-spacing:-.02em;text-transform:uppercase}
+.hero h1 span{color:#e8a7b8}
+.hero p{font-size:19px;color:#f3e9e4;margin:16px auto 10px;max-width:560px}
+.stars{font-size:16px;color:#ffd1dc;font-weight:700;margin:14px 0 22px}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.strip{display:flex;justify-content:center;gap:0;flex-wrap:wrap;background:#e8a7b8;color:#1f1d1c;font-weight:700;font-size:15px}
+.strip span{padding:14px 20px;min-height:44px;display:inline-flex;align-items:center}
+section{padding:60px 0}
+h2{font-size:clamp(28px,7vw,42px);line-height:1.15;letter-spacing:-.01em;text-transform:uppercase;margin-bottom:10px}
+.lead{font-size:18px;color:#6b625e;max-width:620px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.service{background:#fff;border:1px solid #eee0da;border-radius:8px;padding:26px 22px;box-shadow:0 2px 10px rgba(31,29,28,.05);transition:transform .25s ease,box-shadow .25s ease}
+.service:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(31,29,28,.12)}
+.service .num{font-size:14px;font-weight:700;color:#c97a8e;letter-spacing:.12em}
+.service h3{font-size:20px;margin:10px 0 6px;text-transform:none}
+.service p{font-size:15px;color:#6b625e}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:32px}
+.gallery img{width:100%;height:220px;object-fit:cover;border-radius:8px;transition:transform .3s ease,opacity .3s ease}
+.gallery img:hover{transform:scale(1.03)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;background:#f6e8e6;border-radius:20px;padding:32px}
+.split img{width:100%;height:380px;object-fit:cover;border-radius:14px}
+.reviews{background:#1f1d1c;color:#fff;text-align:center}
+.reviews h2{color:#fff}
+.reviews .big{font-size:64px;line-height:1;color:#e8a7b8;margin:16px 0 8px}
+.reviews p{color:#e8ddd8;font-size:17px}
+.contact{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-top:32px}
+.contact-card{background:#fff;border:1px solid #eee0da;border-radius:12px;padding:26px}
+.contact-card h3{font-size:20px;margin-bottom:10px}
+.contact-card p{font-size:17px;line-height:1.7}
+.contact-card a{color:#1f1d1c;font-weight:700;text-decoration:none;display:inline-block;min-height:44px;padding:6px 0}
+footer{background:#141212;color:#cbbcb6;text-align:center;padding:36px 20px;font-size:15px;line-height:1.8}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:760px){
+ .nav nav{display:none}
+ .services-grid{grid-template-columns:1fr}
+ .gallery{grid-template-columns:1fr 1fr}
+ .gallery img{height:180px}
+ .split{grid-template-columns:1fr;padding:24px 20px}
+ .split img{height:280px}
+ .contact{grid-template-columns:1fr}
+ section{padding:46px 0}
+ .hero{padding:56px 20px 44px}
+ .btn{width:100%}
+ .hero-actions .btn{width:auto;flex:1}
+ .strip span{padding:10px 14px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="nav"><a class="logo" href="#">THE <b>HAIR LOFT</b></a><nav><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#contact">Contact</a></nav><a class="btn" href="#" style="min-height:44px;padding:10px 20px">Book Now</a></div></header>
+<section class="hero"><img class="bg" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1200&q=80&auto=format&fit=crop" alt="Hair styling at The Hair Loft" fetchpriority="high"><div class="hero-inner"><h1>The Hair <span>Loft</span></h1><p>Modern cuts, beautiful colour and styling you'll love — right on South Lamar in Austin.</p><div class="stars">★★★★★ 4.9 stars from 47 Google reviews</div><div class="hero-actions"><a class="btn" href="#">Book an Appointment</a><a class="btn dark" href="#gallery">See Our Work</a></div></div></section>
+<div class="strip"><span>✂ Cuts</span><span>🎨 Colour</span><span>✨ Styling</span><span>💇 Treatments</span></div>
+<main>
+<section id="services"><div class="wrap reveal"><h2>Services</h2><p class="lead">From a quick refresh to a whole new look — find the service for you.</p><div class="services-grid">
+<div class="service"><span class="num">01</span><h3>Haircuts</h3><p>Women's, men's and kids' cuts, styled to suit you.</p></div>
+<div class="service"><span class="num">02</span><h3>Hair Colour</h3><p>Full colour, root touch-ups and grey coverage.</p></div>
+<div class="service"><span class="num">03</span><h3>Highlights &amp; Balayage</h3><p>Bright, dimensional colour with a natural finish.</p></div>
+<div class="service"><span class="num">04</span><h3>Extensions</h3><p>Length and volume, blended seamlessly.</p></div>
+<div class="service"><span class="num">05</span><h3>Blowouts &amp; Styling</h3><p>Polished styling for work, weddings and nights out.</p></div>
+<div class="service"><span class="num">06</span><h3>Treatments &amp; Care</h3><p>Deep conditioning and treatments for healthy hair.</p></div>
+</div></div></section>
+<section id="gallery" style="background:#fff"><div class="wrap reveal"><h2>Gallery</h2><p class="lead">A peek at the salon and the looks we create.</p><div class="gallery">
+<img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80&auto=format&fit=crop" alt="Salon interior" loading="lazy">
+<img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=800&q=80&auto=format&fit=crop" alt="Styled hair" loading="lazy">
+<img src="https://images.unsplash.com/photo-1523263685509-57c1d050d19b?w=800&q=80&auto=format&fit=crop" alt="Hair colour work" loading="lazy">
+<img src="https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?w=800&q=80&auto=format&fit=crop" alt="Hair styling" loading="lazy">
+</div></div></section>
+<section id="about"><div class="wrap reveal"><div class="split"><div><h2>Welcome to the Loft</h2><p>The Hair Loft is a hair salon on South Lamar Boulevard in Austin, Texas. We believe great hair starts with listening — understanding what you want, then bringing it to life with skill and care.</p><p style="margin-top:14px;color:#6b625e">Walk in for a trim or a transformation. Either way, you'll leave feeling refreshed.</p></div><img src="https://images.unsplash.com/photo-1526045478516-99145907023c?w=800&q=80&auto=format&fit=crop" alt="Stylist finishing a look" loading="lazy"></div></div></section>
+<section class="reviews"><div class="wrap reveal"><h2>What Austin Says</h2><div class="big">4.9 ★</div><p>4.9 stars from 47 Google reviews</p><p style="margin-top:12px">We're grateful for every client who recommends us to friends and family.</p></div></section>
+<section id="contact"><div class="wrap reveal"><h2>Find Us</h2><p class="lead">Visit us on South Lamar Boulevard.</p><div class="contact"><div class="contact-card"><h3>Visit the Salon</h3><p>2239 S Lamar Blvd<br>Austin, TX 78704</p><p style="margin-top:12px"><a href="tel:+15129993869">(512) 999-3869</a></p></div><div class="contact-card"><h3>Book a Visit</h3><p>Call us to book an appointment or ask about a service.</p><p style="margin-top:16px"><a class="btn" href="#">Book Now</a></p></div></div></div></section>
+</main>
+<footer><strong>The Hair Loft</strong><br>2239 S Lamar Blvd, Austin, TX 78704<br>(512) 999-3869<br>© 2026 The Hair Loft. All rights reserved.</footer>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

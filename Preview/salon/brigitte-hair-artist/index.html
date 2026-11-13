@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<meta name="description" content="Brigitte Hair Artist — bespoke hair artistry in South Austin, Texas.">
+<title>Brigitte Hair Artist | South Austin, TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#16130f;--gold:#c9a227;--gold-soft:#e6cf7a;--ivory:#faf6ee;--stone:#6b6257;--line:#e5dcc8}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Jost',system-ui,-apple-system,sans-serif;background:var(--ivory);color:var(--ink);font-size:17px;line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.12}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px;width:100%}
+/* Top bar — solid, no blur */
+.topbar{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--ivory)}
+.topbar-in{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:60px}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+.brand em{color:var(--gold);font-style:normal}
+.top-links{display:flex;gap:4px;align-items:center}
+.top-links a{padding:12px 10px;min-height:44px;display:inline-flex;align-items:center;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase}
+.top-links a:hover{color:var(--gold-soft)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 26px;background:var(--gold);color:#16130f;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.9rem;border:1px solid var(--gold);cursor:pointer;transition:background .25s,color .25s,transform .25s}
+.btn:hover{background:transparent;color:var(--gold)}
+.btn.light{background:transparent;color:var(--ivory);border-color:var(--ivory)}
+.btn.light:hover{background:var(--ivory);color:var(--ink)}
+.btn.dark{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.btn.dark:hover{background:transparent;color:var(--ink)}
+/* Hero — full-bleed image, dark overlay, single column on mobile */
+.hero{position:relative;color:#fff;min-height:88vh;display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kenburns 18s ease-out both}
+@keyframes kenburns{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,5,.88) 0%,rgba(10,8,5,.45) 55%,rgba(10,8,5,.25) 100%)}
+.hero-in{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:72px 20px 56px;width:100%}
+.kicker{color:var(--gold-soft);letter-spacing:.28em;text-transform:uppercase;font-size:.8rem;font-weight:500}
+.hero h1{font-size:clamp(2.6rem,9vw,4.8rem);margin:14px 0 12px;max-width:12ch}
+.hero h1 i{color:var(--gold-soft)}
+.hero p{font-size:1.1rem;font-weight:300;max-width:34rem;opacity:.94}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero-cta .btn{flex:1 1 auto;max-width:280px}
+.rating{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:24px;font-size:1rem}
+.stars{color:var(--gold-soft);letter-spacing:3px;font-size:1.15rem}
+/* Sections — mobile-first single column */
+section{padding:64px 0}
+.sec-label{color:#9a7b1a;letter-spacing:.26em;text-transform:uppercase;font-size:.78rem;font-weight:600}
+.sec-title{font-size:clamp(1.9rem,6vw,2.7rem);margin:10px 0 12px}
+.rule{width:56px;height:2px;background:var(--gold);margin:16px 0 20px}
+.lead{color:var(--stone);max-width:36rem}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+/* Services — numbered editorial rows */
+.svc-list{margin-top:36px;border-top:1px solid var(--line)}
+.svc-row{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:22px 6px;border-bottom:1px solid var(--line);align-items:start;transition:background .25s,transform .25s}
+.svc-row:hover{background:#fff;transform:translateX(6px)}
+.svc-num{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--gold);line-height:1}
+.svc-row h3{font-size:1.45rem}
+.svc-row p{color:var(--stone);font-size:1rem;margin-top:4px}
+/* Gallery — 1 col mobile, 3 col desktop */
+.gallery{background:var(--ink);color:var(--ivory)}
+.gallery .lead{color:#c9c0ae}
+.g-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:36px}
+.g-grid figure{overflow:hidden;position:relative}
+.g-grid img{width:100%;height:300px;object-fit:cover;transition:transform .5s ease}
+.g-grid figure:hover img{transform:scale(1.05)}
+.g-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 16px 14px;background:linear-gradient(to top,rgba(0,0,0,.75),transparent);font-size:.92rem;letter-spacing:.12em;text-transform:uppercase}
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
+.about-grid img{width:100%;height:380px;object-fit:cover}
+.about-frame{border:1px solid var(--gold);padding:10px}
+.about-frame img{height:360px}
+.about-grid h2{font-size:clamp(1.9rem,6vw,2.6rem)}
+.about-grid p{color:var(--stone);margin-bottom:12px}
+.quote{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-style:italic;color:var(--ink);border-left:3px solid var(--gold);padding-left:18px;margin:20px 0}
+/* Reviews */
+.reviews{text-align:center;background:#f3ecdb}
+.big{font-family:'Cormorant Garamond',serif;font-size:4.4rem;font-weight:700;line-height:1;color:#9a7b1a}
+.reviews .stars{color:#b08d1e;font-size:1.6rem;letter-spacing:4px}
+.review-note{max-width:34rem;margin:16px auto 0;color:var(--stone);font-size:1.08rem}
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
+.card{border:1px solid var(--line);background:#fff;padding:28px 24px}
+.card h3{font-size:1.5rem;margin-bottom:12px}
+.card p{color:var(--stone);margin-bottom:8px}
+.card .tel{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--ink);display:inline-block;padding:6px 0;min-height:44px}
+.card .tel:hover{color:#9a7b1a}
+footer{background:var(--ink);color:#c9c0ae;padding:40px 0 28px;text-align:center}
+footer .brand{color:#fff;font-size:1.5rem}
+footer p{margin-top:10px;font-size:.98rem}
+footer a{min-height:44px;display:inline-block;padding:10px 6px}
+@media(min-width:700px){
+  .g-grid{grid-template-columns:repeat(3,1fr)}
+  .g-grid figure:nth-child(2){transform:translateY(20px)}
+  .g-grid figure:nth-child(5){transform:translateY(20px)}
+  .about-grid{grid-template-columns:1fr 1fr;gap:48px}
+  .contact-grid{grid-template-columns:1fr 1fr}
+  section{padding:88px 0}
+  .hero-cta .btn{flex:0 1 auto}
+}
+@media(max-width:520px){
+  .brand{font-size:1.08rem;letter-spacing:.02em}
+  .topbar-in{padding:0 14px}
+}
+@media(max-width:699px){
+  .top-links a:not(.btn){display:none}
+  .top-links .btn{min-height:44px;padding:10px 16px;font-size:.82rem}
+  .hero{min-height:78vh}
+  .g-grid img{height:280px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+<a class="brand" href="#">BRIGITTE <em>HAIR ARTIST</em></a>
+<nav class="top-links" aria-label="Main navigation">
+<a href="#services">Services</a><a href="#gallery">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
+<a class="btn" href="#">Book Now</a>
+</nav>
+</div></div>
+
+<header class="hero">
+<img class="hero-bg" src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80&auto=format&fit=crop" alt="Hair artistry by Brigitte">
+<div class="hero-in">
+<span class="kicker">South Austin · Hair Artistry</span>
+<h1>Hair, made <i>art.</i></h1>
+<p>Brigitte Hair Artist is a bespoke hair studio on South 1st Street — considered cuts, luminous colour and styling shaped entirely around you.</p>
+<div class="hero-cta"><a class="btn" href="#">Book an Appointment</a><a class="btn light" href="#gallery">See the Work</a></div>
+<div class="rating"><span class="stars">★★★★★</span><span>5.0 stars from 63 Google reviews</span></div>
+</div>
+</header>
+
+<section id="services"><div class="wrap reveal">
+<span class="sec-label">Services</span>
+<h2 class="sec-title">The craft, in detail</h2>
+<div class="rule"></div>
+<p class="lead">Every appointment begins with a consultation — your hair, your lifestyle, your vision — before a single strand is touched.</p>
+<div class="svc-list">
+<div class="svc-row"><span class="svc-num">01</span><div><h3>Signature Haircuts</h3><p>Precision, tailored cuts designed around your face shape, texture and how you actually live in your hair.</p></div></div>
+<div class="svc-row"><span class="svc-num">02</span><div><h3>Colour &amp; Balayage</h3><p>Dimensional colour, balayage and blonding — soft, luminous and grown-out gracefully.</p></div></div>
+<div class="svc-row"><span class="svc-num">03</span><div><h3>Styling &amp; Finishing</h3><p>Polished blowouts and elegant styling for evenings, events and everything in between.</p></div></div>
+<div class="svc-row"><span class="svc-num">04</span><div><h3>Hair Treatments</h3><p>Restorative care to rebuild strength, shine and softness for healthier hair over time.</p></div></div>
+<div class="svc-row"><span class="svc-num">05</span><div><h3>Bridal &amp; Occasion Hair</h3><p>Refined, timeless looks for weddings and special occasions — planned with you, down to the last detail.</p></div></div>
+</div>
+</div></section>
+
+<section id="gallery" class="gallery"><div class="wrap reveal">
+<span class="sec-label" style="color:var(--gold-soft)">Selected Work</span>
+<h2 class="sec-title">The portfolio</h2>
+<div class="rule"></div>
+<p class="lead">Colour, cut and finish — recent work from the studio chair.</p>
+<div class="g-grid">
+<figure><img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=800&q=80&auto=format&fit=crop" alt="Finished hairstyle" loading="lazy"><figcaption>Colour &amp; Finish</figcaption></figure>
+<figure><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80&auto=format&fit=crop" alt="Hair detail" loading="lazy"><figcaption>Detail</figcaption></figure>
+<figure><img src="https://images.unsplash.com/photo-1526045478516-99145907023c?w=800&q=80&auto=format&fit=crop" alt="Styling work" loading="lazy"><figcaption>Styling</figcaption></figure>
+<figure><img src="https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?w=800&q=80&auto=format&fit=crop" alt="Hair colour work" loading="lazy"><figcaption>Colour</figcaption></figure>
+<figure><img src="https://images.unsplash.com/photo-1554519515-242161756769?w=800&q=80&auto=format&fit=crop" alt="Salon work" loading="lazy"><figcaption>The Studio</figcaption></figure>
+<figure><img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=800&q=80&auto=format&fit=crop" alt="Hair artistry" loading="lazy"><figcaption>Artistry</figcaption></figure>
+</div>
+</div></section>
+
+<section id="about"><div class="wrap"><div class="about-grid">
+<div class="about-frame reveal"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80&auto=format&fit=crop" alt="Brigitte at work in the studio" loading="lazy"></div>
+<div class="reveal"><span class="sec-label">About the Studio</span>
+<h2>One artist. One chair. All of you.</h2>
+<p>Brigitte Hair Artist is a one-to-one studio in South Austin. No rush, no noise — just focused, unhurried artistry and a chair that is entirely yours for the appointment.</p>
+<p class="quote">"Great hair isn't a service. It's a craft — and it starts with listening."</p>
+<p>Clients travel across Austin for that care, and the reviews speak for themselves: a perfect 5.0 stars on Google.</p>
+<a class="btn dark" href="#">Book Your Appointment</a>
+</div></div></div></section>
+
+<section class="reviews"><div class="wrap reveal">
+<span class="sec-label">Client Love</span>
+<div class="big">5.0</div>
+<div class="stars">★★★★★</div>
+<p class="review-note"><strong>5.0 stars from 63 Google reviews.</strong><br>A perfect rating, earned one appointment at a time.</p>
+</div></section>
+
+<section id="contact"><div class="wrap reveal">
+<span class="sec-label">Visit the Studio</span>
+<h2 class="sec-title">Book your chair</h2>
+<div class="rule"></div>
+<p class="lead">Call to book — appointments are one-to-one, so please book ahead.</p>
+<div class="contact-grid">
+<div class="card"><h3>The Studio</h3>
+<p><strong>Brigitte Hair Artist</strong><br>6311 S 1st St, Ste 106<br>Austin, TX 78745</p>
+<p style="margin-top:12px">Call to book:</p>
+<a class="tel" href="tel:+17373954338">+1 737-395-4338</a>
+<p style="margin-top:14px"><a class="btn" href="#">Book Now</a></p></div>
+<div class="card"><h3>Your Visit</h3>
+<p>Every appointment starts with a consultation, so bring your ideas — photos, inspiration, or simply a feeling of what you want.</p>
+<p>Please call ahead to confirm availability, as the studio books by appointment.</p>
+<p style="margin-top:14px"><a class="btn dark" href="tel:+17373954338">Call the Studio</a></p></div>
+</div>
+</div></section>
+
+<footer><div class="wrap">
+<a class="brand" href="#">BRIGITTE <em>HAIR ARTIST</em></a>
+<p>6311 S 1st St, Ste 106, Austin, TX 78745 &nbsp;·&nbsp; +1 737-395-4338</p>
+<p>© 2026 Brigitte Hair Artist. All rights reserved.</p>
+</div></footer>
+
+<script>
+const io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault()})});
+</script>
+</body>
+</html>
