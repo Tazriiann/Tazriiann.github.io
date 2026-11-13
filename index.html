@@ -969,7 +969,7 @@
           <div class="contact-side reveal">
             <span class="kicker">Contact</span>
             <h2>Let's build <em>yours</em></h2>
-            <p>Tell me a little about your business and what you'd like your website to do. Fill in the form and hit <strong>Send enquiry</strong> — your message is prepared for you to send from your own email app in one tap.</p>
+            <p>Tell me a little about your business and what you'd like your website to do. Fill in the form and hit <strong>Send enquiry</strong> — it comes straight to me, and I'll reply personally.</p>
             <ul class="expect">
               <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> A personal reply — no bots, no call centres</li>
               <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Honest advice on what your business actually needs</li>
@@ -977,7 +977,8 @@
             </ul>
           </div>
           <div class="form-shell reveal">
-            <form class="enquiry" id="enquiryForm" novalidate>
+            <form class="enquiry" id="enquiryForm" action="https://formspree.io/f/xyewkwwd" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="New website enquiry — Tazrian Rafin portfolio" />
               <div class="field-row">
                 <div class="field" data-field="name">
                   <label for="fName">Your name</label>
@@ -1014,18 +1015,15 @@
                 <textarea id="fMessage" name="message" placeholder="Tell me about your business and what you'd like the website to do — booking, a menu, more calls, anything."></textarea>
                 <p class="err">A sentence or two helps me reply properly.</p>
               </div>
-              <button class="btn btn-amber" type="submit">
-                Send enquiry
+              <button class="btn btn-amber" type="submit" id="enquirySubmit">
+                <span id="submitLabel">Send enquiry</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
               </button>
-              <p class="form-note">Your enquiry opens in your email app, ready to send — or copy it and send it any way you like.</p>
+              <p class="form-note">Sent directly to me — no email app needed. I'll reply from my own email.</p>
               <div class="enquiry-done" id="enquiryDone" role="status">
-                <h3>Your enquiry is ready ✉</h3>
-                <p>Send it from your email app, or copy the text below and paste it into any email or message to me.</p>
-                <pre id="enquiryText"></pre>
+                <h3>Enquiry sent ✓</h3>
+                <p>Thanks — your message is on its way to me. I'll reply personally, usually within a day.</p>
                 <div class="done-actions">
-                  <a class="btn btn-teal btn-sm" id="mailBtn" href="#">Open in email app</a>
-                  <button class="btn btn-ghost btn-sm" type="button" id="copyBtn">Copy enquiry</button>
                   <button class="btn btn-ghost btn-sm" type="button" id="againBtn">Write another</button>
                 </div>
               </div>
@@ -1182,11 +1180,14 @@
           });
         });
 
-        /* Enquiry form → opens the visitor's email app via mailto:,
-           with a copyable fallback shown on the page. */
+        /* Enquiry form → sent straight to Formspree (AJAX),
+           which emails it to Tazrian. Same validation as before,
+           plus a real "sent" state. */
         var form = document.getElementById('enquiryForm');
         var done = document.getElementById('enquiryDone');
-        var doneText = document.getElementById('enquiryText');
+        var submitBtn = document.getElementById('enquirySubmit');
+        var submitLabel = document.getElementById('submitLabel');
+        var submitLabelText = submitLabel.textContent;
 
         function fieldVal(id) { return document.getElementById(id).value.trim(); }
         function setInvalid(name, bad) {
@@ -1214,26 +1215,31 @@
             return;
           }
 
-          var lines = [
-            'New website enquiry',
-            '--------------------',
-            'Name: ' + name,
-            business ? 'Business: ' + business : null,
-            'Email: ' + email,
-            'Type of business: ' + type,
-            '',
-            'What they need:',
-            message
-          ].filter(function (l) { return l !== null; });
-          var body = lines.join('\n');
-          var subject = 'Website enquiry — ' + (business || name);
+          submitBtn.disabled = true;
+          submitLabel.textContent = 'Sending\u2026';
 
-          doneText.textContent = body;
-          document.getElementById('mailBtn').href =
-            'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-          done.classList.add('show');
-          done.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          showToast('Enquiry ready — open it in your email app or copy it to send.');
+          fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          }).then(function (res) {
+            if (res.ok) {
+              done.classList.add('show');
+              done.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              showToast('Enquiry sent — thanks! I\'ll reply personally.');
+            } else {
+              return res.json().then(function (data) {
+                var msg = (data && data.errors && data.errors[0] && data.errors[0].message) ||
+                  'Something went wrong sending your enquiry — please try again.';
+                showToast(msg);
+              });
+            }
+          }).catch(function () {
+            showToast('Couldn\'t send right now — check your connection and try again.');
+          }).finally(function () {
+            submitBtn.disabled = false;
+            submitLabel.textContent = submitLabelText;
+          });
         });
 
         ['fName', 'fEmail', 'fType', 'fMessage'].forEach(function (id) {
@@ -1241,21 +1247,6 @@
             var map = { fName: 'name', fEmail: 'email', fType: 'type', fMessage: 'message' };
             setInvalid(map[id], false);
           });
-        });
-
-        document.getElementById('copyBtn').addEventListener('click', function () {
-          var text = doneText.textContent;
-          function copied() { showToast('Enquiry copied — paste it into an email or message to send it.'); }
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(text).then(copied, function () { fallbackCopy(); });
-          } else { fallbackCopy(); }
-          function fallbackCopy() {
-            var ta = document.createElement('textarea');
-            ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
-            document.body.appendChild(ta); ta.select();
-            try { document.execCommand('copy'); copied(); } catch (err) { showToast('Select the enquiry text above and copy it manually.'); }
-            document.body.removeChild(ta);
-          }
         });
 
         document.getElementById('againBtn').addEventListener('click', function () {
