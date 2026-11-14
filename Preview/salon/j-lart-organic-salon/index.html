@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script>document.documentElement.classList.add('js');window.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(!window.__revealOK){var e=document.querySelectorAll('.reveal');for(var i=0;i<e.length;i++){e[i].classList.add('in');e[i].classList.add('visible');}}},4000);});</script><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
@@ -50,7 +50,7 @@ header{position:sticky;top:0;z-index:50;background:var(--hbg);backdrop-filter:bl
 .d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}.d5{animation-delay:.7s}
 section{padding:84px 0}
 .sec-head{text-align:center;max-width:640px;margin:0 auto 48px}
-.sec-head .kicker{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--p);font-weight:800}
+.sec-head .kicker{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--pd);font-weight:800}
 .sec-head h2{font-size:clamp(30px,5vw,44px);margin:10px 0 12px;line-height:1.15}
 .sec-head h2::after{content:"";display:block;width:64px;height:4px;background:var(--p);border-radius:4px;margin:16px auto 0;animation:grow 1s ease both}
 @keyframes grow{from{width:0}to{width:64px}}
@@ -88,8 +88,8 @@ section{padding:84px 0}
 .contact-card strong{color:var(--dark)}
 footer{background:var(--dark);color:#D9C8D2;text-align:center;padding:34px 22px;font-size:15px}
 footer strong{color:#fff}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:translateY(0)}
+html.js .reveal{opacity:0opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+html.js .reveal.in{opacity:1;transform:translateY(0)}
 /* variant: editorial (left hero, numbered rows) */
 body.v1 .hero{text-align:left}
 body.v1 .hero p{margin-left:0}
@@ -129,6 +129,10 @@ body.v2 .hero .wrap{grid-template-columns:1fr}
 section{padding:60px 0}
 }
 
+
+/* CONTRAST FIX 2026-11-14: pale stars on the mid-tone reviews band (was 1.7-2.9:1, now >=3.4:1) */
+.reviews .stars{color:#FFD94D}
+.reviews .big-rating small{color:#FFD94D}
 </style>
 </head>
 <body class="v2">
@@ -170,7 +174,7 @@ section{padding:60px 0}
   <div class="wrap about-grid">
     <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?w=800&q=80" alt="J L'Art Organic Salon" class="reveal">
     <div class="reveal">
-      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--p);font-weight:800">About J L'Art</div>
+      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--pd);font-weight:800">About J L'Art</div>
       <h2>Organic care, expert hands</h2>
       <p>J L'Art Organic Salon in Katy is a Davines concept salon — a women-owned, LGBTQ+ friendly studio for curly cuts, blonde, keratin and nanoplastia.</p>
       <p>Our hair extension technicians and stylists use clean, organic products, so your hair stays healthy and beautiful.</p>
@@ -198,7 +202,7 @@ section{padding:60px 0}
 </section><section id="contact">
   <div class="wrap contact-grid">
     <div class="reveal">
-      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--p);font-weight:800">Visit Us</div>
+      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--pd);font-weight:800">Visit Us</div>
       <h2 style="font-size:clamp(28px,4vw,40px);margin:10px 0 16px">Book your appointment</h2>
       <p style="color:var(--mut)">Call or message us on Facebook or Instagram to book.</p>
       <a class="btn" href="#" style="margin-top:14px">Get Directions</a>
@@ -218,8 +222,17 @@ section{padding:60px 0}
   Curly cuts &middot; Blonde &middot; Keratin &middot; Nanoplastia &middot; +1 346-387-9905
 </footer>
 <script>
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.documentElement.classList.add('js');
+window.__revealOK=true;
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  function show(el){el.classList.add('in');el.classList.add('visible');}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+  setTimeout(function(){els.forEach(show);},4000);
+  document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+})();
 </script>
 </body>
 </html>
