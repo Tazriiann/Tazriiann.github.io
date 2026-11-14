@@ -66,9 +66,10 @@
   .about-img img{width:100%;height:100%;object-fit:cover}
   .about-copy h2{font-size:clamp(1.9rem,4vw,2.5rem);line-height:1.2;font-weight:400;color:var(--forest);margin-bottom:16px}
   .about-copy p{color:#4A554A;margin-bottom:14px}
-  .stats{display:flex;gap:34px;margin-top:26px;flex-wrap:wrap}
-  .stat b{display:block;font-size:1.9rem;color:var(--forest);font-weight:400}
-  .stat span{font-family:'Helvetica Neue',Arial,sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#A04A28}
+  .stats{display:flex;gap:20px;margin-top:26px;flex-wrap:nowrap}
+  .stat{flex:1 1 0;min-width:0;overflow-wrap:break-word}
+  .stat b{display:block;font-size:1.55rem;color:var(--forest);font-weight:400}
+  .stat span{font-family:'Helvetica Neue',Arial,sans-serif;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#A04A28}
   .reviews-sec{background:var(--forest);color:#F0F4EA;text-align:center}
   .reviews-sec .sec-head h2{color:#fff}
   .reviews-sec .sec-head p{color:#C8DCC2}
@@ -112,6 +113,13 @@
   .rating-card .stars{animation:twinkle 2.8s ease-in-out infinite}
   @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.75}}
   .strip figure:hover img{transform:scale(1.07) rotate(.6deg)}
+</style>
+<style>/* mobile-wrap-fix */
+@media(max-width:480px){
+  header .btn{white-space:nowrap;padding:12px 20px;font-size:15px}
+  .logo{font-size:20px!important}
+  .rating{flex-wrap:wrap;justify-content:center;text-align:center}
+}
 </style>
 </head>
 <body>
