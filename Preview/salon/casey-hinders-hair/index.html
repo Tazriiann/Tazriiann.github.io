@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script>document.documentElement.classList.add('js');window.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(!window.__revealOK){var e=document.querySelectorAll('.reveal');for(var i=0;i<e.length;i++){e[i].classList.add('in');e[i].classList.add('visible');}}},4000);});</script><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
@@ -58,8 +58,8 @@ h2{font-size:clamp(28px,7vw,40px);line-height:1.15;letter-spacing:-.02em;margin-
 .contact-card p{font-size:17px;line-height:1.7}
 .contact-card a{color:#b4552d;font-weight:700;text-decoration:none;display:inline-block;min-height:44px;padding:6px 0}
 footer{background:#2e211a;color:#e8d5c5;text-align:center;padding:36px 20px;font-size:15px;line-height:1.8}
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:none}
+html.js .reveal{opacity:0opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+html.js .reveal.visible{opacity:1;transform:none}
 @media(max-width:720px){
  .nav nav{display:none}
  .hero{grid-template-columns:1fr;padding-top:28px}
@@ -75,6 +75,8 @@ footer{background:#2e211a;color:#e8d5c5;text-align:center;padding:36px 20px;font
  .service-row{flex-wrap:wrap}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+/* CONTRAST FIX 2026-11-14 */
+.contact-card a.btn{color:#fff}
 </style>
 </head>
 <body>
@@ -101,8 +103,17 @@ footer{background:#2e211a;color:#e8d5c5;text-align:center;padding:36px 20px;font
 </main>
 <footer><strong>Casey Hinders Hair</strong><br>4403 S Congress Ave, Studio 119, Austin, TX 78745<br>(208) 449-6154<br>© 2026 Casey Hinders Hair. All rights reserved.</footer>
 <script>
-const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.documentElement.classList.add('js');
+window.__revealOK=true;
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  function show(el){el.classList.add('in');el.classList.add('visible');}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+  setTimeout(function(){els.forEach(show);},4000);
+  document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+})();
 </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script>document.documentElement.classList.add('js');window.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(!window.__revealOK){var e=document.querySelectorAll('.reveal');for(var i=0;i<e.length;i++){e[i].classList.add('in');e[i].classList.add('visible');}}},4000);});</script><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
@@ -43,8 +43,8 @@
   .stars{color:var(--copper2);letter-spacing:.14em;font-size:1.15rem}
   .gold-rule{width:72px;height:3px;background:var(--copper);margin-bottom:20px}
   @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.visible{opacity:1;transform:none}
+  html.js .reveal{opacity:0opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  html.js .reveal.visible{opacity:1;transform:none}
   section{padding:72px 0}
   .sec-head{max-width:640px;margin:0 auto 44px;text-align:center}
   .sec-head .kicker{font-size:.85rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--copper2);margin-bottom:10px}
@@ -237,10 +237,17 @@
 </footer>
 
 <script>
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.documentElement.classList.add('js');
+window.__revealOK=true;
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  function show(el){el.classList.add('in');el.classList.add('visible');}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+  setTimeout(function(){els.forEach(show);},4000);
+  document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+})();
 </script>
 </body>
 </html>

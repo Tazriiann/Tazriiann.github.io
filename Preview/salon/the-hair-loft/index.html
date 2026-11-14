@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script>document.documentElement.classList.add('js');window.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(!window.__revealOK){var e=document.querySelectorAll('.reveal');for(var i=0;i<e.length;i++){e[i].classList.add('in');e[i].classList.add('visible');}}},4000);});</script><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
@@ -37,7 +37,7 @@ h2{font-size:clamp(28px,7vw,42px);line-height:1.15;letter-spacing:-.01em;text-tr
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
 .service{background:#fff;border:1px solid #eee0da;border-radius:8px;padding:26px 22px;box-shadow:0 2px 10px rgba(31,29,28,.05);transition:transform .25s ease,box-shadow .25s ease}
 .service:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(31,29,28,.12)}
-.service .num{font-size:14px;font-weight:700;color:#c97a8e;letter-spacing:.12em}
+.service .num{font-size:14px;font-weight:700;color:#9E4A5E;letter-spacing:.12em}
 .service h3{font-size:20px;margin:10px 0 6px;text-transform:none}
 .service p{font-size:15px;color:#6b625e}
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:32px}
@@ -55,8 +55,8 @@ h2{font-size:clamp(28px,7vw,42px);line-height:1.15;letter-spacing:-.01em;text-tr
 .contact-card p{font-size:17px;line-height:1.7}
 .contact-card a{color:#1f1d1c;font-weight:700;text-decoration:none;display:inline-block;min-height:44px;padding:6px 0}
 footer{background:#141212;color:#cbbcb6;text-align:center;padding:36px 20px;font-size:15px;line-height:1.8}
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:none}
+html.js .reveal{opacity:0opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+html.js .reveal.visible{opacity:1;transform:none}
 @media(max-width:760px){
  .nav nav{display:none}
  .services-grid{grid-template-columns:1fr}
@@ -99,8 +99,17 @@ footer{background:#141212;color:#cbbcb6;text-align:center;padding:36px 20px;font
 </main>
 <footer><strong>The Hair Loft</strong><br>2239 S Lamar Blvd, Austin, TX 78704<br>(512) 999-3869<br>© 2026 The Hair Loft. All rights reserved.</footer>
 <script>
-const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.documentElement.classList.add('js');
+window.__revealOK=true;
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  function show(el){el.classList.add('in');el.classList.add('visible');}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+  setTimeout(function(){els.forEach(show);},4000);
+  document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+})();
 </script>
 </body>
 </html>
