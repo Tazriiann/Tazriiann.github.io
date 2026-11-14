@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script>document.documentElement.classList.add('js');window.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(!window.__revealOK){var e=document.querySelectorAll('.reveal');for(var i=0;i<e.length;i++){e[i].classList.add('in');e[i].classList.add('visible');}}},4000);});</script><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
@@ -13,7 +13,7 @@
   img{max-width:100%;height:auto;display:block}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-  .topbar{background:var(--pink);color:#fff;text-align:center;font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;padding:10px 16px}
+  .topbar{background:var(--pink2);color:#fff;text-align:center;font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;padding:10px 16px}
   nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:2px solid var(--black)}
   .nav-in{max-width:1080px;margin:0 auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center}
   .logo{font-size:1.45rem;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
@@ -22,9 +22,9 @@
   .nav-links a{padding:10px 0;min-height:44px;display:inline-flex;align-items:center}
   .nav-links a:hover{color:var(--pink)}
   .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--black);color:#fff;font-size:.92rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:15px 32px;min-height:48px;border-radius:0;border:2px solid var(--black);cursor:pointer;transition:transform .3s,background .3s}
-  .btn:hover{background:var(--pink);border-color:var(--pink);transform:translateY(-2px)}
-  .btn.pink{background:var(--pink);border-color:var(--pink);color:#fff}
-  .btn.pink:hover{background:transparent;color:var(--pink)}
+  .btn:hover{background:var(--pink2);border-color:var(--pink2);transform:translateY(-2px)}
+  .btn.pink{background:var(--pink2);border-color:var(--pink2);color:#fff}
+  .btn.pink:hover{background:transparent;color:var(--pink2)}
   .btn.small{padding:10px 22px;min-height:44px}
   @media(max-width:760px){.nav-links{display:none}}
   .hero{position:relative;min-height:88vh;display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--black)}
@@ -40,11 +40,11 @@
   .hero-meta{margin-top:26px;font-size:.9rem;letter-spacing:.06em;color:#D8D2C6;animation:fu 1s .6s ease both}
   .stars{color:var(--pink);letter-spacing:.15em;font-size:1.05rem}
   @keyframes fu{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
-  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
-  .reveal.visible{opacity:1;transform:none}
+  html.js .reveal{opacity:0opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+  html.js .reveal.visible{opacity:1;transform:none}
   section{padding:78px 0}
   .sec-head{max-width:640px;margin:0 auto 48px}
-  .sec-head .kicker{letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--pink);margin-bottom:12px}
+  .sec-head .kicker{letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--pink2);margin-bottom:12px}
   .sec-head h2{font-size:clamp(2rem,4.5vw,2.7rem);line-height:1.1;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
   .sec-head h2::after{content:"";display:block;width:64px;height:4px;background:var(--pink);margin:18px 0 0}
   .sec-head p{margin-top:16px;color:#5A5A5A}
@@ -121,6 +121,8 @@
   .rating-card .stars{animation:twinkle 2.8s ease-in-out infinite}
   @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.75}}
   .strip figure:hover img{transform:scale(1.07) rotate(.6deg)}
+/* CONTRAST FIX 2026-11-14 */
+.rating-card .stars{color:#F27BB0}
 </style>
 </head>
 <body>
@@ -174,7 +176,7 @@
   <div class="wrap about-grid">
     <div class="about-img reveal"><img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80&auto=format&fit=crop" alt="Inside Beauty Gallery" loading="lazy"></div>
     <div class="about-copy reveal">
-      <p class="kicker" style="letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--pink);margin-bottom:12px">About Us</p>
+      <p class="kicker" style="letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--pink2);margin-bottom:12px">About Us</p>
       <h2>Cedar Park's <span>most-loved</span> salon.</h2>
       <p>With a 4.9-star rating from 459 Google reviews, Beauty Gallery is one of Cedar Park's most-loved salons — for cuts, color, balayage, Brazilian blowouts and extensions that look like they were always yours.</p>
       <p>Come in for a consultation and leave with hair you'll want to show off.</p>
@@ -225,10 +227,17 @@
 </footer>
 
 <script>
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.documentElement.classList.add('js');
+window.__revealOK=true;
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  function show(el){el.classList.add('in');el.classList.add('visible');}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+  setTimeout(function(){els.forEach(show);},4000);
+  document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+})();
 </script>
 </body>
 </html>

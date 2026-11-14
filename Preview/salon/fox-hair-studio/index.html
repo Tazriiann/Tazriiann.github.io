@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script>document.documentElement.classList.add('js');window.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(!window.__revealOK){var e=document.querySelectorAll('.reveal');for(var i=0;i<e.length;i++){e[i].classList.add('in');e[i].classList.add('visible');}}},4000);});</script><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
@@ -18,12 +18,12 @@
   nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);border-bottom:1px solid #E5E0D8}
   .nav-in{max-width:1080px;margin:0 auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center}
   .logo{font-size:1.5rem;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:var(--char)}
-  .logo span{color:var(--orange)}
+  .logo span{color:#B34A17}
   .nav-links{display:flex;gap:26px;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase}
   .nav-links a{padding:10px 0;min-height:44px;display:inline-flex;align-items:center}
   .nav-links a:hover{color:var(--orange)}
-  .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--orange);color:#fff;font-size:.92rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:15px 32px;min-height:48px;border-radius:6px;border:2px solid var(--orange);cursor:pointer;transition:transform .3s,background .3s}
-  .btn:hover{background:transparent;color:var(--orange);transform:translateY(-2px)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--orange2);color:#fff;font-size:.92rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:15px 32px;min-height:48px;border-radius:6px;border:2px solid var(--orange);cursor:pointer;transition:transform .3s,background .3s}
+  .btn:hover{background:transparent;color:#B34A17;transform:translateY(-2px)}
   .btn.dark{background:var(--char);border-color:var(--char);color:#fff}
   .btn.dark:hover{background:transparent;color:var(--char)}
   .btn.small{padding:10px 22px;min-height:44px}
@@ -41,11 +41,11 @@
   .hero-meta{margin-top:26px;font-size:.9rem;letter-spacing:.06em;color:#D8D2C6;animation:fu 1s .6s ease both}
   .stars{color:var(--orange);letter-spacing:.15em;font-size:1.05rem}
   @keyframes fu{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
-  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
-  .reveal.visible{opacity:1;transform:none}
+  html.js .reveal{opacity:0opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+  html.js .reveal.visible{opacity:1;transform:none}
   section{padding:78px 0}
   .sec-head{max-width:640px;margin:0 auto 48px}
-  .sec-head .kicker{letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--orange);margin-bottom:12px}
+  .sec-head .kicker{letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:#B34A17;margin-bottom:12px}
   .sec-head h2{font-size:clamp(2rem,4.5vw,2.7rem);line-height:1.1;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
   .sec-head h2::after{content:"";display:block;width:64px;height:4px;background:var(--orange);margin:18px 0 0}
   .sec-head p{margin-top:16px;color:#5A5A5A}
@@ -118,6 +118,8 @@
   .rating-card .stars{animation:twinkle 2.8s ease-in-out infinite}
   @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.75}}
   .strip figure:hover img{transform:scale(1.07) rotate(.6deg)}
+/* CONTRAST FIX 2026-11-14 */
+.rating-card .stars{color:#B34A17}
 </style>
 </head>
 <body>
@@ -169,7 +171,7 @@
   <div class="wrap about-grid">
     <div class="about-img reveal"><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80&auto=format&fit=crop" alt="Finished hairstyle" loading="lazy"></div>
     <div class="about-copy reveal">
-      <p class="kicker" style="letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--orange);margin-bottom:12px">About Us</p>
+      <p class="kicker" style="letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:#B34A17;margin-bottom:12px">About Us</p>
       <h2>Modern hair, zero fuss.</h2>
       <p>Fox Hair Studio is a modern Round Rock studio built around one idea: great hair should feel effortless. Our stylists focus on cuts, color and transformations that grow out beautifully.</p>
       <p>With a 4.8-star rating from nearly 100 Google reviews, we're the studio Round Rock trusts for a fresh look.</p>
@@ -221,10 +223,17 @@
 </footer>
 
 <script>
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.documentElement.classList.add('js');
+window.__revealOK=true;
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  function show(el){el.classList.add('in');el.classList.add('visible');}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+  setTimeout(function(){els.forEach(show);},4000);
+  document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+})();
 </script>
 </body>
 </html>

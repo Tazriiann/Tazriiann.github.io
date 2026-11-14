@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script>document.documentElement.classList.add('js');window.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(!window.__revealOK){var e=document.querySelectorAll('.reveal');for(var i=0;i<e.length;i++){e[i].classList.add('in');e[i].classList.add('visible');}}},4000);});</script><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
@@ -17,10 +17,10 @@
   nav{position:sticky;top:0;z-index:50;background:rgba(255,249,246,.95);border-bottom:1px solid #EFD9D4}
   .nav-in{max-width:1080px;margin:0 auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center}
   .logo{font-size:1.5rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--plum)}
-  .logo span{color:var(--rose)}
+  .logo span{color:#A34A5C}
   .nav-links{display:flex;gap:24px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
   .nav-links a{padding:10px 0;min-height:44px;display:inline-flex;align-items:center}
-  .nav-links a:hover{color:var(--rose)}
+  .nav-links a:hover{color:#A34A5C}
   .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--plum);color:#fff;font-family:'Helvetica Neue',Arial,sans-serif;font-size:.92rem;letter-spacing:.14em;text-transform:uppercase;padding:14px 30px;min-height:48px;border-radius:999px;border:2px solid var(--plum);cursor:pointer;transition:transform .3s,background .3s}
   .btn:hover{background:transparent;color:var(--plum);transform:translateY(-2px)}
   .btn.small{padding:10px 22px;min-height:44px}
@@ -38,11 +38,11 @@
   .hero-meta{margin-top:26px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:.9rem;letter-spacing:.08em;color:#F3D9D2;animation:fu 1s .6s ease both}
   .stars{color:var(--gold);letter-spacing:.15em;font-size:1.1rem}
   @keyframes fu{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
-  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
-  .reveal.visible{opacity:1;transform:none}
+  html.js .reveal{opacity:0opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+  html.js .reveal.visible{opacity:1;transform:none}
   section{padding:80px 0}
   .sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
-  .sec-head .kicker{font-family:'Helvetica Neue',Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--rose);margin-bottom:12px}
+  .sec-head .kicker{font-family:'Helvetica Neue',Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:#A34A5C;margin-bottom:12px}
   .sec-head h2{font-size:clamp(2rem,4.5vw,2.8rem);line-height:1.15;font-weight:400;color:var(--plum)}
   .sec-head h2::after{content:"";display:block;width:64px;height:3px;background:var(--rose);margin:18px auto 0}
   .sec-head p{margin-top:16px;color:#6B4A54}
@@ -66,7 +66,7 @@
   .about-copy p{color:#5A3A44;margin-bottom:14px}
   .stats{display:flex;gap:34px;margin-top:26px;flex-wrap:wrap}
   .stat b{display:block;font-size:1.9rem;color:var(--plum);font-weight:400}
-  .stat span{font-family:'Helvetica Neue',Arial,sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rose)}
+  .stat span{font-family:'Helvetica Neue',Arial,sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#A34A5C}
   .reviews-sec{background:var(--blush);text-align:center}
   .rating-card{background:#fff;max-width:660px;margin:0 auto;border-radius:20px;padding:46px 30px;box-shadow:0 16px 40px rgba(92,46,62,.1)}
   .rating-card .big{font-size:3.8rem;line-height:1;color:var(--plum)}
@@ -114,6 +114,8 @@
   .rating-card .stars{animation:twinkle 2.8s ease-in-out infinite}
   @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.75}}
   .strip figure:hover img{transform:scale(1.07) rotate(.6deg)}
+/* CONTRAST FIX 2026-11-14 */
+.rating-card .stars{color:#7A5F0E}
 </style>
 </head>
 <body>
@@ -164,7 +166,7 @@
   <div class="wrap about-grid">
     <div class="about-img reveal"><img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80&auto=format&fit=crop" alt="Inside Salon Rosé" loading="lazy"></div>
     <div class="about-copy reveal">
-      <p class="kicker" style="font-family:'Helvetica Neue',Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--rose);margin-bottom:12px">About Us</p>
+      <p class="kicker" style="font-family:'Helvetica Neue',Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:#A34A5C;margin-bottom:12px">About Us</p>
       <h2>A neighborhood salon with a big reputation.</h2>
       <p>Tucked into South Congress, Salon Rosé has earned a 4.9-star rating from more than 160 Google reviews — for cuts, color and barbering that people come back for again and again.</p>
       <p>Every appointment starts with a real conversation about your hair, so you leave with a look that suits you — not just a style off the shelf.</p>
@@ -216,10 +218,17 @@
 </footer>
 
 <script>
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.documentElement.classList.add('js');
+window.__revealOK=true;
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  function show(el){el.classList.add('in');el.classList.add('visible');}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+  setTimeout(function(){els.forEach(show);},4000);
+  document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+})();
 </script>
 </body>
 </html>

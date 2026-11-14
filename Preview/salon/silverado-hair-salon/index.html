@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script>document.documentElement.classList.add('js');window.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(!window.__revealOK){var e=document.querySelectorAll('.reveal');for(var i=0;i<e.length;i++){e[i].classList.add('in');e[i].classList.add('visible');}}},4000);});</script><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
@@ -17,7 +17,7 @@
   nav{position:sticky;top:0;z-index:50;background:rgba(255,253,246,.96);border-bottom:1px solid #EADFC6}
   .nav-in{max-width:1080px;margin:0 auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center}
   .logo{font-size:1.45rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--brown)}
-  .logo span{color:var(--teal)}
+  .logo span{color:var(--teal2)}
   .nav-links{display:flex;gap:24px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
   .nav-links a{padding:10px 0;min-height:44px;display:inline-flex;align-items:center}
   .nav-links a:hover{color:var(--teal)}
@@ -40,11 +40,11 @@
   .hero-meta{margin-top:26px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:.9rem;letter-spacing:.06em;color:#F0D9B5;animation:fu 1s .6s ease both}
   .stars{color:#F0C060;letter-spacing:.15em;font-size:1.05rem}
   @keyframes fu{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
-  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
-  .reveal.visible{opacity:1;transform:none}
+  html.js .reveal{opacity:0opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+  html.js .reveal.visible{opacity:1;transform:none}
   section{padding:80px 0}
   .sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
-  .sec-head .kicker{font-family:'Helvetica Neue',Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--teal);margin-bottom:12px}
+  .sec-head .kicker{font-family:'Helvetica Neue',Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--teal2);margin-bottom:12px}
   .sec-head h2{font-size:clamp(2rem,4.5vw,2.8rem);line-height:1.15;font-weight:400;color:var(--brown)}
   .sec-head h2::after{content:"";display:block;width:64px;height:3px;background:var(--teal);margin:18px auto 0}
   .sec-head p{margin-top:16px;color:#6B5648}
@@ -170,7 +170,7 @@
   <div class="wrap about-grid">
     <div class="about-img reveal"><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80&auto=format&fit=crop" alt="Finished hairstyle" loading="lazy"></div>
     <div class="about-copy reveal">
-      <p class="kicker" style="font-family:'Helvetica Neue',Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--teal);margin-bottom:12px">About Us</p>
+      <p class="kicker" style="font-family:'Helvetica Neue',Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;color:var(--teal2);margin-bottom:12px">About Us</p>
       <h2>A women-owned salon Cedar Park trusts.</h2>
       <p>Silverado Hair Salon has earned 665 Google reviews from Cedar Park families — for honest prices, friendly stylists and hair that looks great long after you leave the chair.</p>
       <p>Whether it's a kids' first cut, a fresh balayage or a classic perm, you'll get the same warm, unhurried care every visit.</p>
@@ -222,10 +222,17 @@
 </footer>
 
 <script>
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.documentElement.classList.add('js');
+window.__revealOK=true;
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  function show(el){el.classList.add('in');el.classList.add('visible');}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+  setTimeout(function(){els.forEach(show);},4000);
+  document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+})();
 </script>
 </body>
 </html>
