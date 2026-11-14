@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script>document.documentElement.classList.add('js');window.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(!window.__revealOK){var e=document.querySelectorAll('.reveal');for(var i=0;i<e.length;i++){e[i].classList.add('in');e[i].classList.add('visible');}}},4000);});</script><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
@@ -17,7 +17,7 @@ img{display:block;max-width:100%}
 header{position:sticky;top:0;z-index:50;background:rgba(246,242,233,.95);backdrop-filter:blur(6px);border-bottom:1px solid #E0D9C6}
 .nav{display:flex;align-items:center;justify-content:space-between;min-height:66px}
 .logo{font-family:Georgia,serif;font-size:23px;font-weight:700;color:var(--forest-d)}
-.logo span{color:var(--terrac)}
+.logo span{color:#A04A28}
 .nav-links{display:flex;gap:26px;font-size:15px;font-weight:600}
 .nav-links a{position:relative;padding:6px 0}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--terrac);transition:width .35s ease}
@@ -48,7 +48,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(246,242,233,.95);backdro
 .d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}.d5{animation-delay:.7s}
 section{padding:84px 0}
 .sec-head{text-align:center;max-width:640px;margin:0 auto 48px}
-.sec-head .kicker{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--terrac);font-weight:800}
+.sec-head .kicker{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#A04A28;font-weight:800}
 .sec-head h2{font-size:clamp(30px,5vw,44px);margin:10px 0 12px;line-height:1.15}
 .sec-head h2::after{content:"";display:block;width:64px;height:4px;background:var(--terrac);border-radius:4px;margin:16px auto 0;animation:grow 1s ease both}
 @keyframes grow{from{width:0}to{width:64px}}
@@ -87,8 +87,8 @@ section{padding:84px 0}
 .contact-card strong{color:var(--ink)}
 footer{background:var(--forest-d);color:#B9CFC2;text-align:center;padding:34px 22px;font-size:15px}
 footer strong{color:#fff}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:translateY(0)}
+html.js .reveal{opacity:0opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+html.js .reveal.in{opacity:1;transform:translateY(0)}
 @media(max-width:760px){
 .nav-links{display:none}
 .about-grid,.contact-grid{grid-template-columns:1fr}
@@ -144,7 +144,7 @@ section{padding:60px 0}
   <div class="wrap about-grid">
     <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80" alt="Hair styling" class="reveal">
     <div class="reveal">
-      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--terrac);font-weight:800">About Us</div>
+      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#A04A28;font-weight:800">About Us</div>
       <h2>15+ years at the Arboretum</h2>
       <p>The Salon at The Arboretum has been Austin's trusted hair destination for over 15 years. Our Goldwell color specialists are known for extensions, color, and cuts that look effortless and feel amazing.</p>
       <p>Visit us in the beautiful Arboretum shopping area — and leave with hair you'll love.</p>
@@ -180,7 +180,7 @@ section{padding:60px 0}
 <section id="contact">
   <div class="wrap contact-grid">
     <div class="reveal">
-      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--terrac);font-weight:800">Visit Us</div>
+      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#A04A28;font-weight:800">Visit Us</div>
       <h2 style="font-size:clamp(28px,4vw,40px);margin:10px 0 16px">Reserve your chair</h2>
       <p style="color:#5A6B62">Find us at the Arboretum on Research Boulevard. Request a reservation or call us — we'd love to see you.</p>
       <a class="btn" href="#" style="margin-top:14px">Get Directions</a>
@@ -201,8 +201,17 @@ section{padding:60px 0}
 </footer>
 
 <script>
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.documentElement.classList.add('js');
+window.__revealOK=true;
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  function show(el){el.classList.add('in');el.classList.add('visible');}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+  setTimeout(function(){els.forEach(show);},4000);
+  document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+})();
 </script>
 </body>
 </html>

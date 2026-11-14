@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script>document.documentElement.classList.add('js');window.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(!window.__revealOK){var e=document.querySelectorAll('.reveal');for(var i=0;i<e.length;i++){e[i].classList.add('in');e[i].classList.add('visible');}}},4000);});</script><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
@@ -22,11 +22,11 @@ header{position:sticky;top:0;z-index:50;background:rgba(253,243,240,.95);backdro
 .nav-links a{position:relative;padding:6px 0}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--rose);transition:width .35s ease}
 .nav-links a:hover::after{width:100%}
-.btn{display:inline-block;background:linear-gradient(120deg,var(--rose),var(--rose-d));color:#fff;font-weight:700;font-size:16px;padding:14px 30px;border-radius:999px;border:none;cursor:pointer;min-height:48px;transition:transform .25s ease,box-shadow .25s ease;position:relative;overflow:hidden}
+.btn{display:inline-block;background:linear-gradient(120deg,#96404F,#7E3543);color:#fff;font-weight:700;font-size:16px;padding:14px 30px;border-radius:999px;border:none;cursor:pointer;min-height:48px;transition:transform .25s ease,box-shadow .25s ease;position:relative;overflow:hidden}
 .btn::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .6s ease}
 .btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(217,123,140,.4)}
 .btn:hover::after{left:130%}
-.btn.ghost{background:transparent;color:var(--rose-d);border:2px solid var(--rose-d)}
+.btn.ghost{background:transparent;color:#96404F;border:2px solid #96404F}
 .btn.ghost:hover{background:var(--rose-d);color:#fff}
 .hero{position:relative;min-height:92vh;display:flex;align-items:center;text-align:center;color:#fff;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url("https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=1200&q=80") center/cover;animation:kenburns 22s ease-in-out infinite alternate}
@@ -39,7 +39,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(253,243,240,.95);backdro
 .hero p{font-size:19px;max-width:620px;margin:0 auto 30px;opacity:.96}
 .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .rating{display:inline-flex;align-items:center;gap:10px;margin-top:28px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);padding:10px 20px;border-radius:999px;font-weight:600}
-.stars{color:#FFD94D;letter-spacing:2px;animation:twinkle 2.2s ease-in-out infinite}
+.stars{color:#D9A441;letter-spacing:2px;animation:twinkle 2.2s ease-in-out infinite}
 @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.55}}
 .scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.85;animation:bob 1.8s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
@@ -48,7 +48,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(253,243,240,.95);backdro
 .d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}.d5{animation-delay:.7s}
 section{padding:84px 0}
 .sec-head{text-align:center;max-width:640px;margin:0 auto 48px}
-.sec-head .kicker{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);font-weight:800}
+.sec-head .kicker{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#96404F;font-weight:800}
 .sec-head h2{font-size:clamp(30px,5vw,44px);margin:10px 0 12px;line-height:1.15}
 .sec-head h2::after{content:"";display:block;width:64px;height:4px;background:linear-gradient(90deg,var(--rose),var(--gold));border-radius:4px;margin:16px auto 0;animation:grow 1s ease both}
 @keyframes grow{from{width:0}to{width:64px}}
@@ -67,11 +67,11 @@ section{padding:84px 0}
 .about-grid h2{font-size:clamp(28px,4vw,40px);margin-bottom:16px}
 .about-grid p{color:var(--mut);margin-bottom:14px}
 .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.pill{background:#FDECEC;color:var(--rose-d);font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px}
+.pill{background:#FDECEC;color:#96404F;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px}
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .gallery img{border-radius:18px;height:280px;width:100%;object-fit:cover;transition:transform .4s ease,box-shadow .4s ease}
 .gallery img:hover{transform:scale(1.03);box-shadow:0 16px 32px rgba(184,90,107,.2)}
-.reviews{background:linear-gradient(135deg,var(--rose-d),#C97B8A);color:#fff;text-align:center}
+.reviews{background:linear-gradient(135deg,#96404F,#A34A5C);color:#fff;text-align:center}
 .reviews h2{color:#fff}
 .big-rating{font-size:64px;font-weight:800;font-family:Georgia,serif;line-height:1}
 .big-rating small{font-size:26px;color:#FFD94D}
@@ -82,10 +82,10 @@ section{padding:84px 0}
 .contact-card h3{font-size:24px;margin-bottom:18px}
 .contact-card p{margin-bottom:12px;color:var(--mut)}
 .contact-card strong{color:var(--ink)}
-footer{background:var(--rose-d);color:#F3D3D8;text-align:center;padding:34px 22px;font-size:15px}
+footer{background:#96404F;color:#F3D3D8;text-align:center;padding:34px 22px;font-size:15px}
 footer strong{color:#fff}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:translateY(0)}
+html.js .reveal{opacity:0opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+html.js .reveal.in{opacity:1;transform:translateY(0)}
 @media(max-width:760px){
 .nav-links{display:none}
 .about-grid,.contact-grid{grid-template-columns:1fr}
@@ -93,6 +93,8 @@ footer strong{color:#fff}
 .hero{min-height:84vh}
 section{padding:60px 0}
 }
+/* CONTRAST FIX 2026-11-14 (round 5) */
+.reviews .stars{color:#FFD94D}
 </style>
 </head>
 <body>
@@ -140,7 +142,7 @@ section{padding:60px 0}
   <div class="wrap about-grid">
     <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=800&q=80" alt="Salon interior" class="reveal">
     <div class="reveal">
-      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);font-weight:800">About Lavish</div>
+      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#96404F;font-weight:800">About Lavish</div>
       <h2>A salon the whole family loves</h2>
       <p>Lavish is a family-owned, kid-friendly beauty salon in Pflugerville. Walk-ins are always welcome, and our team takes great care of every client — from little ones getting their first haircut to moms treating themselves to lashes and makeup.</p>
       <p>Come in and feel lavish.</p>
@@ -176,7 +178,7 @@ section{padding:60px 0}
 <section id="contact">
   <div class="wrap contact-grid">
     <div class="reveal">
-      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);font-weight:800">Visit Us</div>
+      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#96404F;font-weight:800">Visit Us</div>
       <h2 style="font-size:clamp(28px,4vw,40px);margin:10px 0 16px">Walk in today</h2>
       <p style="color:var(--mut)">Find us on East Pecan Street in Pflugerville. Walk-ins accepted — or call ahead and we'll be ready for you.</p>
       <a class="btn" href="#" style="margin-top:14px">Get Directions</a>
@@ -198,8 +200,17 @@ section{padding:60px 0}
 </footer>
 
 <script>
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.documentElement.classList.add('js');
+window.__revealOK=true;
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  function show(el){el.classList.add('in');el.classList.add('visible');}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+  setTimeout(function(){els.forEach(show);},4000);
+  document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+})();
 </script>
 </body>
 </html>

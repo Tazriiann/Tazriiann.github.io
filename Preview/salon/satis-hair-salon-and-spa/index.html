@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script>document.documentElement.classList.add('js');window.addEventListener('DOMContentLoaded',function(){setTimeout(function(){if(!window.__revealOK){var e=document.querySelectorAll('.reveal');for(var i=0;i<e.length;i++){e[i].classList.add('in');e[i].classList.add('visible');}}},4000);});</script><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
@@ -36,7 +36,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.95);backdro
 .hero p{font-size:18px;color:#4A5A57;max-width:520px;margin-bottom:28px}
 .hero .cta{display:flex;gap:14px;flex-wrap:wrap}
 .rating{display:flex;align-items:center;gap:10px;margin-top:26px;font-weight:600}
-.stars{color:var(--gold);letter-spacing:2px;animation:twinkle 2.4s ease-in-out infinite}
+.stars{color:#7A5F0E;letter-spacing:2px;animation:twinkle 2.4s ease-in-out infinite}
 @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.5}}
 .hero-img{position:relative;height:100%;min-height:480px;overflow:hidden}
 .hero-img img{width:100%;height:100%;object-fit:cover;animation:kenburns 24s ease-in-out infinite alternate}
@@ -83,8 +83,8 @@ section{padding:84px 0}
 .contact-card strong{color:var(--ink)}
 footer{background:var(--ink);color:#B9C6C2;text-align:center;padding:34px 22px;font-size:15px}
 footer strong{color:#fff}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:translateY(0)}
+html.js .reveal{opacity:0opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+html.js .reveal.in{opacity:1;transform:translateY(0)}
 @media(max-width:820px){
 .nav-links{display:none}
 .hero{grid-template-columns:1fr;min-height:0}
@@ -94,6 +94,8 @@ footer strong{color:#fff}
 .gallery{grid-template-columns:1fr}
 section{padding:60px 0}
 }
+/* CONTRAST FIX 2026-11-14 (round 3) */
+.reviews .stars{color:#C9A227}
 </style>
 </head>
 <body>
@@ -197,8 +199,17 @@ section{padding:60px 0}
 </footer>
 
 <script>
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.documentElement.classList.add('js');
+window.__revealOK=true;
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  function show(el){el.classList.add('in');el.classList.add('visible');}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12});
+  els.forEach(function(el){io.observe(el);});
+  setTimeout(function(){els.forEach(show);},4000);
+  document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+})();
 </script>
 </body>
 </html>
