@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>J L'Art Organic Salon — Katy, TX | Organic Hair Salon</title>
+<style>
+:root{--p:#5F7A54;--pd:#48603F;--dark:#22301F;--bg:#F6F8F2;--acc:#C9A227;--ink:#232B20;--mut:#5A6656;--line:#DEE6D6;--hbg:rgba(246,248,242,.96);--sh:rgba(95,122,84,.35);--sh2:rgba(34,48,31,.07);--pillbg:#E9F0E2;--ov1:rgba(34,48,31,.55);--ov2:rgba(95,122,84,.45);--fh:Georgia,"Times New Roman",serif;--fb:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--br:999px;--cr:999px;--ha:center}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);font-size:17px;line-height:1.65;color:var(--ink);background:var(--bg);overflow-x:hidden}
+h1,h2,h3{font-family:var(--fh);color:var(--dark)}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;z-index:50;background:var(--hbg);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.logo{font-family:var(--fh);font-size:25px;font-weight:700;color:var(--p);letter-spacing:.5px}
+.logo span{color:var(--dark)}
+.nav-links{display:flex;gap:26px;font-size:15px;font-weight:600}
+.nav-links a{position:relative;padding:6px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--p);transition:width .35s ease}
+.nav-links a:hover::after{width:100%}
+.btn{display:inline-block;background:var(--p);color:#fff;font-weight:700;font-size:16px;padding:14px 30px;border-radius:var(--br);border:none;cursor:pointer;min-height:48px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .6s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px var(--sh);background:var(--pd)}
+.btn:hover::after{left:130%}
+.btn.ghost{background:transparent;color:var(--dark);border:2px solid var(--dark)}
+.btn.ghost:hover{background:var(--dark);color:#fff;box-shadow:0 12px 24px var(--sh)}
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;text-align:var(--ha);color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url("https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1200&q=80") center/cover;animation:kenburns 22s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.12)}}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--ov1),var(--ov2))}
+.hero .wrap{position:relative;z-index:2;padding:80px 22px;width:100%}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);padding:8px 18px;border-radius:999px;animation:fadeUp .7s ease both}
+.hero h1{font-size:clamp(42px,8vw,74px);line-height:1.05;color:#fff;margin:22px 0 16px;text-shadow:0 3px 24px rgba(0,0,0,.35)}
+.hero h1 em{color:var(--acc);font-style:italic}
+.hero p{font-size:19px;max-width:640px;margin:0 auto 30px;opacity:.96}
+.hero.left p{margin-left:0}
+.hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero.left .cta{justify-content:flex-start}
+.rating{display:inline-flex;align-items:center;gap:10px;margin-top:28px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);padding:10px 20px;border-radius:999px;font-weight:600}
+.stars{color:var(--acc);letter-spacing:2px;animation:twinkle 2.2s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:1}50%{opacity:.55}}
+.scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.85;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+.fade{animation:fadeUp .8s ease both}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}.d5{animation-delay:.7s}
+section{padding:84px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 48px}
+.sec-head .kicker{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--p);font-weight:800}
+.sec-head h2{font-size:clamp(30px,5vw,44px);margin:10px 0 12px;line-height:1.15}
+.sec-head h2::after{content:"";display:block;width:64px;height:4px;background:var(--p);border-radius:4px;margin:16px auto 0;animation:grow 1s ease both}
+@keyframes grow{from{width:0}to{width:64px}}
+.sec-head p{color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{background:#fff;border-radius:var(--cr);padding:34px 26px;box-shadow:0 6px 24px var(--sh2);transition:transform .3s ease,box-shadow .3s ease;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--p),var(--acc));transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.card:hover{transform:translateY(-8px);box-shadow:0 20px 40px var(--sh2)}
+.card:hover::before{transform:scaleX(1)}
+.card .icon{font-size:38px;line-height:1;margin-bottom:14px;transition:transform .3s ease}
+.card:hover .icon{transform:rotate(-8deg) scale(1.15)}
+.card h3{font-size:22px;margin-bottom:8px}
+.card p{color:var(--mut);font-size:16px}
+.about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about-grid img{border-radius:var(--cr);box-shadow:0 20px 44px var(--sh2);transition:transform .4s ease}
+.about-grid img:hover{transform:scale(1.02) rotate(-.5deg)}
+.about-grid h2{font-size:clamp(28px,4vw,40px);margin-bottom:16px}
+.about-grid p{color:var(--mut);margin-bottom:14px}
+.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.pill{background:var(--pillbg);color:var(--pd);font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery img{border-radius:var(--cr);height:280px;width:100%;object-fit:cover;transition:transform .4s ease,box-shadow .4s ease}
+.gallery img:hover{transform:scale(1.03);box-shadow:0 16px 32px var(--sh2)}
+.reviews{background:linear-gradient(135deg,var(--dark),var(--p));color:#fff;text-align:center}
+.reviews h2{color:#fff}
+.big-rating{font-size:64px;font-weight:800;font-family:var(--fh);line-height:1}
+.big-rating small{font-size:26px;color:var(--acc)}
+.reviews .stars{font-size:26px}
+.reviews p{opacity:.9;max-width:560px;margin:14px auto 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-card{background:#fff;border-radius:var(--cr);padding:34px;box-shadow:0 6px 24px var(--sh2)}
+.contact-card h3{font-size:24px;margin-bottom:18px}
+.contact-card p{margin-bottom:12px;color:var(--mut)}
+.contact-card strong{color:var(--dark)}
+footer{background:var(--dark);color:#D9C8D2;text-align:center;padding:34px 22px;font-size:15px}
+footer strong{color:#fff}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+/* variant: editorial (left hero, numbered rows) */
+body.v1 .hero{text-align:left}
+body.v1 .hero p{margin-left:0}
+body.v1 .hero .cta{justify-content:flex-start}
+body.v1 .cards{grid-template-columns:1fr;gap:0}
+body.v1 .card{display:flex;gap:22px;align-items:flex-start;border-radius:0;border-bottom:1px solid var(--line);box-shadow:none;padding:28px 8px}
+body.v1 .card::before{display:none}
+body.v1 .card:hover{transform:none;box-shadow:none}
+body.v1 .card .num{font-family:var(--fh);font-size:44px;font-weight:800;color:var(--p);opacity:.35;line-height:1}
+body.v1 .card .icon{display:none}
+body.v1 .gallery{grid-template-columns:1fr 1fr}
+body.v1 .gallery img:first-child{grid-row:span 2;height:100%}
+/* variant: split hero */
+body.v2 .hero{min-height:88vh}
+body.v2 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;text-align:left}
+body.v2 .hero p{margin-left:0}
+body.v2 .hero .cta{justify-content:flex-start}
+body.v2 .hero-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:var(--cr);padding:28px;backdrop-filter:blur(4px)}
+body.v2 .hero-card img{border-radius:calc(var(--cr) - 6px);height:300px;width:100%;object-fit:cover}
+body.v2 .hero-card p{font-size:15px;margin:16px 0 0}
+/* variant: dark luxe */
+body.v3 header{background:var(--dark);border-bottom:1px solid rgba(255,255,255,.12)}
+body.v3 .nav-links a{color:#fff}
+body.v3 .logo{color:var(--acc)}
+body.v3 .logo span{color:#fff}
+body.v3 .card{border:1px solid var(--line)}
+body.v3 .sec-head h2::after{width:120px}
+body.v3 .gallery img{height:320px}
+@media(max-width:760px){
+.nav-links{display:none}
+.about-grid,.contact-grid{grid-template-columns:1fr}
+.gallery{grid-template-columns:1fr}
+body.v1 .gallery{grid-template-columns:1fr}
+body.v1 .gallery img:first-child{grid-row:auto;height:280px}
+body.v2 .hero .wrap{grid-template-columns:1fr}
+.hero{min-height:84vh}
+section{padding:60px 0}
+}
+
+</style>
+</head>
+<body class="v2">
+<header>
+  <div class="wrap nav">
+    <div class="logo">J <span>L'Art Organic Salon</span></div>
+    <nav class="nav-links">
+      <a href="#services">Services</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#">Book Now</a>
+  </div>
+</header>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-text"><span class="eyebrow fade d1">Katy &middot; Davines Concept Salon</span>
+    <h1 class="fade d2">Organic beauty,<br><em>artfully done.</em></h1>
+    <p class="fade d3">A Davines concept salon — curly cuts, perms, blonde, keratin and nanoplastia, with clean, organic care for your hair.</p>
+    <div class="cta fade d4">
+      <a class="btn" href="#">Book an Appointment</a>
+      <a class="btn ghost" href="#" style="background:rgba(255,255,255,.9)">Call the Salon</a>
+    </div>
+    <div class="rating fade d5"><span class="stars">★★★★★</span> 4.9 stars from 531 Google reviews</div></div><div class="hero-card reveal"><img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?w=800&q=80" alt="J L'Art Organic Salon"><p>Curly cuts, blonde, keratin and nanoplastia — organic care, artfully done.</p></div>
+  </div>
+  <div class="scroll-cue">Scroll ↓</div>
+</section>
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Our Services</div>
+      <h2>Healthy hair, naturally</h2>
+      <p>Organic products, expert technique, and hair that feels as good as it looks.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal" style="transition-delay:.0s"><div class="icon">🌀</div><h3>Curly Cuts</h3><p>Curly cuts by specialists who understand your curls — shape, bounce and definition.</p></div><div class="card reveal" style="transition-delay:.1s"><div class="icon">✨</div><h3>Blonde & Keratin</h3><p>Beautiful blonde and smoothing keratin treatments for healthy, shiny hair.</p></div><div class="card reveal" style="transition-delay:.2s"><div class="icon">🌿</div><h3>Nanoplastia & Perms</h3><p>Nanoplastia smoothing and perms, with gentle, organic Davines care.</p></div>
+    </div>
+  </div>
+</section><section class="about" id="about">
+  <div class="wrap about-grid">
+    <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?w=800&q=80" alt="J L'Art Organic Salon" class="reveal">
+    <div class="reveal">
+      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--p);font-weight:800">About J L'Art</div>
+      <h2>Organic care, expert hands</h2>
+      <p>J L'Art Organic Salon in Katy is a Davines concept salon — a women-owned, LGBTQ+ friendly studio for curly cuts, blonde, keratin and nanoplastia.</p>
+      <p>Our hair extension technicians and stylists use clean, organic products, so your hair stays healthy and beautiful.</p>
+      <div class="pill-row">
+        <span class="pill">Davines concept salon</span><span class="pill">Women-owned</span><span class="pill">LGBTQ+ friendly</span>
+      </div>
+    </div>
+  </div>
+</section><section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Gallery</div>
+      <h2>A little peek inside</h2>
+    </div>
+    <div class="gallery reveal">
+      <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&q=80" alt="J L'Art Organic Salon"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=800&q=80" alt="J L'Art Organic Salon"><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80" alt="J L'Art Organic Salon">
+    </div>
+  </div>
+</section><section class="reviews" id="reviews">
+  <div class="wrap reveal">
+    <div class="big-rating">4.9 <small>★</small></div>
+    <div class="stars">★★★★★</div>
+    <p>From 531 Google reviews — Katy's organic salon for curls, blonde and keratin.</p>
+  </div>
+</section><section id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <div class="kicker" style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--p);font-weight:800">Visit Us</div>
+      <h2 style="font-size:clamp(28px,4vw,40px);margin:10px 0 16px">Book your appointment</h2>
+      <p style="color:var(--mut)">Call or message us on Facebook or Instagram to book.</p>
+      <a class="btn" href="#" style="margin-top:14px">Get Directions</a>
+    </div>
+    <div class="contact-card reveal">
+      <h3>Contact</h3>
+      <p><strong>Address</strong><br>9920 Gaston Rd Ste 140<br>Katy, TX 77494</p>
+<p><strong>Phone</strong><br>+1 346-387-9905</p>
+<p><strong>Find Us</strong><br>Instagram<br><a href="https://instagram.com/hausofcurlsstudio">@hausofcurlsstudio</a><br>Facebook<br><a href="https://facebook.com/JLartorganicsalon">facebook.com/JLartorganicsalon</a></p>
+<p><strong>Hours</strong><br>Call for hours</p>
+
+    </div>
+  </div>
+</section>
+<footer>
+  <strong>J L'Art Organic Salon</strong> — 9920 Gaston Rd Ste 140, Katy, TX 77494<br>
+  Curly cuts &middot; Blonde &middot; Keratin &middot; Nanoplastia &middot; +1 346-387-9905
+</footer>
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
